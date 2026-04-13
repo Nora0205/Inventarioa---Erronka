@@ -9,14 +9,16 @@ namespace StockBaseApp.Modeloak
         public string Kokalekua { get; set; } = "";
         public string Egoera { get; set; } = "";
         public DateTime ErosketaData { get; set; }
+        public int IdMintegia { get; set; }
 
-        public Gailua(int id, string marka, string kokalekua, string egoera, DateTime erosketaData)
+        public Gailua(int id, string marka, string kokalekua, string egoera, DateTime erosketaData, int idMintegia = 1)
         {
             IdGailua = id;
             Marka = marka;
             Kokalekua = kokalekua;
             Egoera = egoera;
             ErosketaData = erosketaData;
+            IdMintegia = idMintegia;
         }
 
         public virtual string LortuInformazioa()
