@@ -61,9 +61,9 @@ CREATE TABLE EzabatutakoGailua (
 );
 
 -- MINTEGIA
-INSERT INTO Mintegia (id_mintegia, izena) VALUES
-(M01, 'Informatika Mintegia'),
-(M02, 'Mekanika Mintegia');
+INSERT INTO Mintegia VALUES
+(1, 'Informatika Mintegia'),
+(2, 'Mekanika Mintegia');
 
 -- ERABILTZAILEA
 INSERT INTO Erabiltzailea (id_erabiltzailea, izena, email, pasahitza, rola) VALUES
@@ -72,20 +72,28 @@ INSERT INTO Erabiltzailea (id_erabiltzailea, izena, email, pasahitza, rola) VALU
 (003, 'Mikel Goikoetxea', 'mintegiburua@ikastetxea.eus', '76543219', 'Mintegi burua');
 
 -- GAILUA
-INSERT INTO Gailua (id_gailua, marka, erosketa_data, kokalekua, egoera, id_mintegia) VALUES
-(G01, 'Dell', '2020-01-10', '1. gela', 'Aktibo', 1),
-(G02, 'HP', '2019-05-20', '2. gela', 'Hondatuta', 2),
-(G03, 'Lenovo', '2021-03-15', 'Bulegoa', 'Hondatuta', 1);
+INSERT INTO Gailua VALUES
+(1, 'Dell', '2020-01-10', '1. gela', 'Aktibo', 1),
+(2, 'HP', '2019-05-20', '2. gela', 'Hondatuta', 2),
+(3, 'Lenovo', '2021-03-15', 'Bulegoa', 'Hondatuta', 1);
 
 -- ORDENAGAILUA
-INSERT INTO Ordenagailua (gailua_id, prozesagailua, ram) VALUES
-(G01, 'Intel i7', '16GB'),
-(G03, 'Intel i5', '8GB');
+INSERT INTO Ordenagailua VALUES
+(1, 'Intel i7', '16GB'),
+(3, 'Intel i5', '8GB');
 
 -- INPRIMAGAILUA
-INSERT INTO Inprimagailua (gailua_id, koloretakoa) VALUES
-(G02, TRUE);
+INSERT INTO Inprimagailua VALUES
+(2, TRUE);
 
 -- EZABATUTAKO GAILUA (normalean trigger-ak betetzen du, baina eskuz adibidea)
-INSERT INTO EzabatutakoGailua (id_gailua, marka, erosketa_data, kokalekua, ezabatze_data) VALUES
-(G04, 'Epson', '2020-01-01', 'Biltegia', CURRENT_TIMESTAMP);
+INSERT INTO EzabatutakoGailua (id_gailua, marka, erosketa_data, kokalekua)
+VALUES (4, 'Epson', '2020-01-01', 'Biltegia');
+
+-- ERABILTZENDU
+INSERT INTO ErabiltzenDu (id_erabiltzailea, id_gailua) VALUES
+(1, 1),  -- Ane → Dell
+(1, 2),  -- Ane → HP
+(2, 1),  -- Jon → Dell
+(2, 3),  -- Jon → Lenovo
+(3, 3);  -- Mikel → Lenovo
