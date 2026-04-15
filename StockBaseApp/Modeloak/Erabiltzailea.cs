@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace StockBaseApp.Modeloak
 {
     public class Erabiltzailea
@@ -6,6 +8,7 @@ namespace StockBaseApp.Modeloak
         public string Izena { get; set; } = "";
         public string Email { get; set; } = "";
         public string Rola { get; set; } = "";
+        public Mintegia? MintegiJabea { get; set; }
 
         public Erabiltzailea(int id, string izena, string email, string rola)
         {

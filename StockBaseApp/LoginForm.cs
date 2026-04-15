@@ -7,13 +7,13 @@ namespace StockBaseApp
 {
     public partial class LoginForm : Form
     {
-        private InbentarioKudeatzailea kudeatzailea;
+        private InbentarioSistema kudeatzailea;
         public Erabiltzailea LoggedUser { get; private set; }
 
         public LoginForm()
         {
             InitializeComponent();
-            kudeatzailea = new InbentarioKudeatzailea();
+            kudeatzailea = new InbentarioSistema();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             txtId = new TextBox();
             txtMarka = new TextBox();
@@ -56,28 +56,29 @@
             // 
             txtId.Location = new Point(35, 100);
             txtId.Name = "txtId";
-            txtId.Size = new Size(165, 34);
+            txtId.Size = new Size(165, 30);
             txtId.TabIndex = 1;
             // 
             // txtMarka
             // 
-            txtMarka.Location = new Point(35, 168);
+            txtMarka.Location = new Point(35, 169);
             txtMarka.Name = "txtMarka";
-            txtMarka.Size = new Size(165, 34);
+            txtMarka.Size = new Size(165, 30);
             txtMarka.TabIndex = 2;
+            txtMarka.TextChanged += txtMarka_TextChanged;
             // 
             // txtKokalekua
             // 
             txtKokalekua.Location = new Point(35, 248);
             txtKokalekua.Name = "txtKokalekua";
-            txtKokalekua.Size = new Size(165, 34);
+            txtKokalekua.Size = new Size(165, 30);
             txtKokalekua.TabIndex = 3;
             // 
             // dtpErosketa
             // 
             dtpErosketa.Location = new Point(55, 91);
             dtpErosketa.Name = "dtpErosketa";
-            dtpErosketa.Size = new Size(412, 34);
+            dtpErosketa.Size = new Size(412, 30);
             dtpErosketa.TabIndex = 4;
             // 
             // cmbMota
@@ -86,18 +87,20 @@
             cmbMota.Items.AddRange(new object[] { "Inprimagailua", "Ordenagailua" });
             cmbMota.Location = new Point(417, 100);
             cmbMota.Name = "cmbMota";
-            cmbMota.Size = new Size(200, 36);
+            cmbMota.Size = new Size(200, 31);
             cmbMota.TabIndex = 5;
+            cmbMota.SelectedIndexChanged += cmbMota_SelectedIndexChanged_1;
             // 
             // chkKolorea
             // 
             chkKolorea.AutoSize = true;
             chkKolorea.Location = new Point(434, 183);
             chkKolorea.Name = "chkKolorea";
-            chkKolorea.Size = new Size(181, 32);
+            chkKolorea.Size = new Size(155, 27);
             chkKolorea.TabIndex = 6;
             chkKolorea.Text = "Koloretakoa da?";
             chkKolorea.UseVisualStyleBackColor = true;
+            chkKolorea.CheckedChanged += chkKolorea_CheckedChanged;
             // 
             // btnGorde
             // 
@@ -114,7 +117,7 @@
             label1.AutoSize = true;
             label1.Location = new Point(35, 63);
             label1.Name = "label1";
-            label1.Size = new Size(35, 28);
+            label1.Size = new Size(31, 23);
             label1.TabIndex = 8;
             label1.Text = "ID:";
             label1.Click += label1_Click;
@@ -122,9 +125,9 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(35, 138);
+            label2.Location = new Point(35, 133);
             label2.Name = "label2";
-            label2.Size = new Size(71, 28);
+            label2.Size = new Size(61, 23);
             label2.TabIndex = 9;
             label2.Text = "Marka:";
             label2.Click += label2_Click;
@@ -134,7 +137,7 @@
             label3.AutoSize = true;
             label3.Location = new Point(35, 216);
             label3.Name = "label3";
-            label3.Size = new Size(106, 28);
+            label3.Size = new Size(91, 23);
             label3.TabIndex = 10;
             label3.Text = "Kokalekua:";
             label3.Click += label3_Click;
@@ -144,7 +147,7 @@
             label4.AutoSize = true;
             label4.Location = new Point(55, 34);
             label4.Name = "label4";
-            label4.Size = new Size(136, 28);
+            label4.Size = new Size(119, 23);
             label4.TabIndex = 11;
             label4.Text = "Erosketa Data:";
             label4.Click += label4_Click;
@@ -154,7 +157,7 @@
             label5.AutoSize = true;
             label5.Location = new Point(417, 57);
             label5.Name = "label5";
-            label5.Size = new Size(63, 28);
+            label5.Size = new Size(54, 23);
             label5.TabIndex = 12;
             label5.Text = "Mota:";
             label5.Click += label5_Click;
@@ -174,7 +177,7 @@
             groupBox1.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             groupBox1.Location = new Point(52, 187);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(653, 402);
+            groupBox1.Size = new Size(803, 402);
             groupBox1.TabIndex = 13;
             groupBox1.TabStop = false;
             groupBox1.Text = "Gailu Berria";
@@ -183,9 +186,9 @@
             // groupBox2
             // 
             groupBox2.Controls.Add(dgvInbentarioa);
-            groupBox2.Location = new Point(722, 187);
+            groupBox2.Location = new Point(861, 187);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(565, 402);
+            groupBox2.Size = new Size(815, 402);
             groupBox2.TabIndex = 14;
             groupBox2.TabStop = false;
             groupBox2.Text = "Inbentarioa";
@@ -193,24 +196,24 @@
             // 
             // dgvInbentarioa
             // 
-            dataGridViewCellStyle3.BackColor = Color.AliceBlue;
-            dgvInbentarioa.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = Color.AliceBlue;
+            dgvInbentarioa.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvInbentarioa.BackgroundColor = SystemColors.Window;
             dgvInbentarioa.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvInbentarioa.Location = new Point(22, 57);
+            dgvInbentarioa.Location = new Point(19, 57);
             dgvInbentarioa.Name = "dgvInbentarioa";
             dgvInbentarioa.ReadOnly = true;
             dgvInbentarioa.RowHeadersVisible = false;
             dgvInbentarioa.RowHeadersWidth = 62;
             dgvInbentarioa.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvInbentarioa.Size = new Size(524, 312);
+            dgvInbentarioa.Size = new Size(774, 312);
             dgvInbentarioa.TabIndex = 7;
             dgvInbentarioa.CellContentClick += dgvInbentarioa_CellContentClick;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.StockBase_logoa;
-            pictureBox1.Location = new Point(1008, 2);
+            pictureBox1.Location = new Point(1382, 12);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(294, 150);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -220,9 +223,9 @@
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(11F, 28F);
+            AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1300, 692);
+            ClientSize = new Size(1768, 757);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Controls.Add(label4);
