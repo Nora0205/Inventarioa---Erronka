@@ -32,7 +32,7 @@ namespace StockBaseApp
             this.lblEmail.Location = new System.Drawing.Point(30, 30);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(35, 13);
-            this.lblEmail.Text = "Email:";
+            this.lblEmail.Text = "Erabiltzailea:";
 
             // txtEmail
             this.txtEmail.Location = new System.Drawing.Point(30, 50);
@@ -57,7 +57,7 @@ namespace StockBaseApp
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(200, 30);
             this.btnLogin.Text = "Saioa Hasi";
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            this.btnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
 
             // LoginForm
             this.ClientSize = new System.Drawing.Size(260, 220);

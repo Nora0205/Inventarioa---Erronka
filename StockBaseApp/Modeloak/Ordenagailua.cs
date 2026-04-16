@@ -1,18 +1,12 @@
-﻿using System;
+using System;
 
 namespace StockBaseApp.Modeloak
 {
-    public class Ordenagailua : Gailua
+    public class Ordenagailua(int id, string marka, string kokalekua, string egoera, DateTime erosketaData, string prozesagailua, int ram) 
+        : Gailua(id, marka, kokalekua, egoera, erosketaData)
     {
-        public string Prozesagailua { get; set; } = "";
-        public int RamGB { get; set; }
-
-        public Ordenagailua(int id, string marka, string kokalekua, string egoera, DateTime erosketaData, string prozesagailua, int ram)
-            : base(id, marka, kokalekua, egoera, erosketaData)
-        {
-            Prozesagailua = prozesagailua;
-            RamGB = ram;
-        }
+        public string Prozesagailua { get; set; } = prozesagailua;
+        public int RamGB { get; set; } = ram;
 
         public override string LortuInformazioa()
         {

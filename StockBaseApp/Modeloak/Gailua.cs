@@ -1,27 +1,16 @@
-﻿using System;
+using System;
 
 namespace StockBaseApp.Modeloak
 {
-    public class Gailua
+    public class Gailua(int id, string marka, string kokalekua, string egoera, DateTime erosketaData, int idMintegia = 1, string modeloa = "")
     {
-        public int IdGailua { get; set; }
-        public string Marka { get; set; } = "";
-        public string Modeloa { get; set; } = "";
-        public string Kokalekua { get; set; } = "";
-        public string Egoera { get; set; } = "";
-        public DateTime ErosketaData { get; set; }
-        public int IdMintegia { get; set; }
-
-        public Gailua(int id, string marka, string kokalekua, string egoera, DateTime erosketaData, int idMintegia = 1, string modeloa = "")
-        {
-            IdGailua = id;
-            Marka = marka;
-            Modeloa = modeloa;
-            Kokalekua = kokalekua;
-            Egoera = egoera;
-            ErosketaData = erosketaData;
-            IdMintegia = idMintegia;
-        }
+        public int IdGailua { get; set; } = id;
+        public string Marka { get; set; } = marka;
+        public string Modeloa { get; set; } = modeloa;
+        public string Kokalekua { get; set; } = kokalekua;
+        public string Egoera { get; set; } = egoera;
+        public DateTime ErosketaData { get; set; } = erosketaData;
+        public int IdMintegia { get; set; } = idMintegia;
 
         public virtual string LortuInformazioa()
         {

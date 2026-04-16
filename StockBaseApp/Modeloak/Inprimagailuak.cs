@@ -1,16 +1,11 @@
-﻿using System;
+using System;
 
 namespace StockBaseApp.Modeloak
 {
-    public class Inprimagailua : Gailua
+    public class Inprimagailua(int id, string marka, string kokalekua, string egoera, DateTime erosketaData, bool koloretakoa) 
+        : Gailua(id, marka, kokalekua, egoera, erosketaData)
     {
-        public bool Koloretakoa { get; set; }
-
-        public Inprimagailua(int id, string marka, string kokalekua, string egoera, DateTime erosketaData, bool koloretakoa)
-            : base(id, marka, kokalekua, egoera, erosketaData)
-        {
-            Koloretakoa = koloretakoa;
-        }
+        public bool Koloretakoa { get; set; } = koloretakoa;
 
         public override string LortuInformazioa()
         {

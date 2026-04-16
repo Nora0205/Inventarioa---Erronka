@@ -7,27 +7,28 @@ namespace StockBaseApp
 {
     public partial class LoginForm : Form
     {
-        private InbentarioSistema kudeatzailea;
-        public Erabiltzailea LoggedUser { get; private set; }
+        private readonly InbentarioSistema kudeatzailea;
+        public Erabiltzailea? LoggedUser { get; private set; }
 
         public LoginForm()
         {
             InitializeComponent();
             kudeatzailea = new InbentarioSistema();
+            LoggedUser = null;
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void BtnLogin_Click(object sender, EventArgs e)
         {
-            string email = txtEmail.Text;
+            string izena = txtEmail.Text; // Mantenemos el nombre del control txtEmail para no romper el Designer
             string pass = txtPass.Text;
 
-            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(pass))
+            if (string.IsNullOrEmpty(izena) || string.IsNullOrEmpty(pass))
             {
                 MessageBox.Show("Mesedez, bete eremu guztiak.");
                 return;
             }
 
-            var usuario = kudeatzailea.SaioaHasi(email, pass);
+            var usuario = kudeatzailea.SaioaHasi(izena, pass);
             if (usuario != null)
             {
                 LoggedUser = usuario;
@@ -36,7 +37,7 @@ namespace StockBaseApp
             }
             else
             {
-                MessageBox.Show("Email edo pasahitza okerra.");
+                MessageBox.Show("Erabiltzailea edo pasahitza okerra.");
             }
         }
     }

@@ -13,7 +13,7 @@ namespace StockBaseApp
             LoginForm login = new LoginForm();
             if (login.ShowDialog() == DialogResult.OK)
             {
-                Application.Run(new Form1(login.LoggedUser));
+                Application.Run(new MainForm(login.LoggedUser));
             }
         }
     }
