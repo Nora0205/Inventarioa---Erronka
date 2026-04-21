@@ -4,26 +4,28 @@ namespace StockBaseApp.Kontrolagailuak
 {
     public class Konexioa
     {
-        private string servidor = "DESKTOP-7C5QQLJ"; // Valor por defecto
-        private string bd = "Inventarioa";
+        private string zerbitzaria = "DESKTOP-7C5QQLJ"; 
+        private string datuBasea = "Inventarioa";
         private string erabiltzailea = "root";
         private string pasahitza = "root";
 
         public Konexioa()
         {
-            // Intentar leer la IP desde un archivo local para que sea fácil de cambiar
-            string configPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "config.txt");
-            if (System.IO.File.Exists(configPath))
+            string konfigurazioBidea = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "config.txt");
+            if (System.IO.File.Exists(konfigurazioBidea))
             {
-                string contenido = System.IO.File.ReadAllText(configPath).Trim();
-                if (!string.IsNullOrEmpty(contenido)) servidor = contenido;
+                string edukia = System.IO.File.ReadAllText(konfigurazioBidea).Trim();
+                if (!string.IsNullOrEmpty(edukia)) 
+                {
+                    zerbitzaria = edukia;
+                }
             }
         }
 
         public MySqlConnection LortuKonexioa()
         {
-            // Añadimos AllowPublicKeyRetrieval=True para corregir el error de la captura de pantalla
-            string konexioKatea = $"Server={servidor};Database={bd};Uid={erabiltzailea};Pwd={pasahitza};Port=3306;SslMode=Disabled;AllowUserVariables=True;AllowPublicKeyRetrieval=True;";
+            string konexioKatea = $"Server={zerbitzaria};Database={datuBasea};Uid={erabiltzailea};Pwd={pasahitza};Port=3306;SslMode=Disabled;AllowUserVariables=True;AllowPublicKeyRetrieval=True;Connection Timeout=5;";
             return new MySqlConnection(konexioKatea);
         }
-    }}
+    }
+}

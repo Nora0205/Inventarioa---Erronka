@@ -7,7 +7,6 @@ namespace StockBaseApp.Modeloak
         public int IdMintegia { get; set; } = id;
         public string Izena { get; set; } = izena;
 
-        // Relación 1 --- * con Gailua (como en el diagrama)
         public List<Gailua> Gailuak { get; set; } = [];
     }
 }

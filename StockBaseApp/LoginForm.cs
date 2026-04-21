@@ -1,5 +1,7 @@
 using System;
+using System.Drawing;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 using StockBaseApp.Kontrolagailuak;
 using StockBaseApp.Modeloak;
 
@@ -9,36 +11,95 @@ namespace StockBaseApp
     {
         private readonly InbentarioSistema kudeatzailea;
         public Erabiltzailea? LoggedUser { get; private set; }
+        private Color primaryColor = Color.FromArgb(45, 52, 54);
+
+        [DllImport("user32.dll")]
+        public static extern bool ReleaseCapture();
+        [DllImport("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
 
         public LoginForm()
         {
-            InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.None;
             kudeatzailea = new InbentarioSistema();
             LoggedUser = null;
+            InitModernUI();
         }
 
-        private void BtnLogin_Click(object sender, EventArgs e)
+        private void InitModernUI()
         {
-            string izena = txtEmail.Text; // Mantenemos el nombre del control txtEmail para no romper el Designer
-            string pass = txtPass.Text;
+            this.Size = new Size(400, 500);
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.BackColor = Color.FromArgb(241, 242, 246);
+            this.Font = new Font("Segoe UI", 10);
 
-            if (string.IsNullOrEmpty(izena) || string.IsNullOrEmpty(pass))
+            Panel headerPanel = new Panel
             {
-                MessageBox.Show("Mesedez, bete eremu guztiak.");
-                return;
-            }
+                Dock = DockStyle.Top,
+                Height = 120,
+                BackColor = primaryColor
+            };
+            headerPanel.MouseDown += (s, e) => { ReleaseCapture(); SendMessage(this.Handle, 0xA1, 0x2, 0); };
 
-            var usuario = kudeatzailea.SaioaHasi(izena, pass);
-            if (usuario != null)
+            Label lblLogo = new Label
             {
-                LoggedUser = usuario;
-                this.DialogResult = DialogResult.OK;
-                this.Close();
-            }
-            else
+                Text = "STOCKBASE",
+                Size = new Size(300, 120),
+                Location = new Point(50, 0),
+                ForeColor = Color.White,
+                TextAlign = ContentAlignment.MiddleCenter,
+                Font = new Font("Segoe UI", 24, FontStyle.Bold)
+            };
+            headerPanel.Controls.Add(lblLogo);
+
+            Button btnClose = new Button
             {
-                MessageBox.Show("Erabiltzailea edo pasahitza okerra.");
-            }
+                Text = "✕",
+                Size = new Size(40, 40),
+                Location = new Point(360, 0),
+                FlatStyle = FlatStyle.Flat,
+                ForeColor = Color.White,
+                Cursor = Cursors.Hand
+            };
+            btnClose.FlatAppearance.BorderSize = 0;
+            btnClose.Click += (s, e) => this.Close();
+            headerPanel.Controls.Add(btnClose);
+            btnClose.BringToFront();
+
+            Label lblIzena = new Label { Text = "Erabiltzaile Izena", Location = new Point(50, 160), AutoSize = true, ForeColor = Color.FromArgb(99, 110, 114) };
+            TextBox txtIzena = new TextBox { Name = "txtEmail", Location = new Point(50, 185), Size = new Size(300, 30), Font = new Font("Segoe UI", 12) };
+
+            Label lblPass = new Label { Text = "Pasahitza", Location = new Point(50, 240), AutoSize = true, ForeColor = Color.FromArgb(99, 110, 114) };
+            TextBox txtPasahitza = new TextBox { Name = "txtPass", Location = new Point(50, 265), Size = new Size(300, 30), Font = new Font("Segoe UI", 12), PasswordChar = '*' };
+
+            Button btnLogin = new Button
+            {
+                Text = "SAIOA HASI",
+                Location = new Point(50, 350),
+                Size = new Size(300, 50),
+                BackColor = Color.FromArgb(9, 132, 227),
+                ForeColor = Color.White,
+                FlatStyle = FlatStyle.Flat,
+                Font = new Font("Segoe UI", 12, FontStyle.Bold),
+                Cursor = Cursors.Hand
+            };
+            btnLogin.FlatAppearance.BorderSize = 0;
+            btnLogin.Click += (s, e) =>
+            {
+                var usuario = kudeatzailea.SaioaHasi(txtIzena.Text, txtPasahitza.Text);
+                if (usuario != null)
+                {
+                    LoggedUser = usuario;
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Datuak ez dira zuzenak.");
+                }
+            };
+
+            this.Controls.AddRange(new Control[] { headerPanel, lblIzena, txtIzena, lblPass, txtPasahitza, btnLogin });
         }
     }
 }

@@ -1,19 +1,33 @@
+using System;
+using System.Windows.Forms;
+
 namespace StockBaseApp
 {
     internal static class Program
     {
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {
             ApplicationConfiguration.Initialize();
-            
-            LoginForm login = new LoginForm();
-            if (login.ShowDialog() == DialogResult.OK)
+
+            bool restart = true;
+            while (restart)
             {
-                Application.Run(new MainForm(login.LoggedUser));
+                LoginForm login = new LoginForm();
+                if (login.ShowDialog() == DialogResult.OK)
+                {
+                    MainForm main = new MainForm(login.LoggedUser!);
+                    DialogResult result = main.ShowDialog();
+                    
+                    if (result != DialogResult.Retry)
+                    {
+                        restart = false;
+                    }
+                }
+                else
+                {
+                    restart = false;
+                }
             }
         }
     }

@@ -1,6 +1,7 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 using StockBaseApp.Modeloak;
 
 namespace StockBaseApp
@@ -8,50 +9,131 @@ namespace StockBaseApp
     public class MainForm : Form
     {
         private Erabiltzailea erabiltzailea;
+        private Color primaryColor = Color.FromArgb(45, 52, 54);
+        private Color backgroundColor = Color.FromArgb(241, 242, 246);
+
+        [DllImport("user32.dll")]
+        public static extern bool ReleaseCapture();
+        [DllImport("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
 
         public MainForm(Erabiltzailea user)
         {
             this.erabiltzailea = user;
-            InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.None;
+            InitializeComponent(); 
+            InitCustomUI();        
         }
 
         private void InitializeComponent()
         {
-            this.Text = "StockBaseApp - Menú Nagusia";
-            this.Size = new Size(500, 600);
+            this.SuspendLayout();
+            this.Name = "MainForm";
+            this.Text = "StockBaseApp";
+            this.ResumeLayout(false);
+        }
+
+        private void InitCustomUI()
+        {
+            this.Size = new Size(500, 720); 
             this.StartPosition = FormStartPosition.CenterScreen;
-            this.BackColor = Color.White;
+            this.BackColor = backgroundColor;
+            this.Font = new Font("Segoe UI", 10);
+
+            Panel headerPanel = new Panel {
+                Dock = DockStyle.Top,
+                Height = 110,
+                BackColor = primaryColor
+            };
+            headerPanel.MouseDown += (s, e) => { ReleaseCapture(); SendMessage(this.Handle, 0xA1, 0x2, 0); };
 
             Label lblWelcome = new Label { 
-                Text = $"Kaixo, {erabiltzailea.Izena}\n({erabiltzailea.Rola})", 
-                Location = new Point(20, 20), 
-                Size = new Size(440, 60), 
+                Text = $"Kaixo, {erabiltzailea.Izena}\n{erabiltzailea.Rola}", 
+                Location = new Point(50, 45),
+                Size = new Size(400, 60),
+                ForeColor = Color.White,
                 TextAlign = ContentAlignment.MiddleCenter,
-                Font = new Font("Arial", 12, FontStyle.Bold)
+                Font = new Font("Segoe UI", 13, FontStyle.Bold)
             };
 
-            Button btnAddPC = new Button { Text = "Ordenagailua Gehitu", Location = new Point(100, 100), Size = new Size(300, 60), BackColor = Color.LightBlue };
-            Button btnAddPrint = new Button { Text = "Inprimagailua Gehitu", Location = new Point(100, 180), Size = new Size(300, 60), BackColor = Color.LightGreen };
-            Button btnView = new Button { Text = "Inbentarioa Ikusi", Location = new Point(100, 260), Size = new Size(300, 60), BackColor = Color.LightYellow };
-            Button btnLogout = new Button { Text = "Saioa Itxi", Location = new Point(100, 450), Size = new Size(300, 40), BackColor = Color.LightCoral };
+            Button btnExitApp = new Button {
+                Text = "✕", Size = new Size(40, 40), Location = new Point(460, 0),
+                FlatStyle = FlatStyle.Flat, ForeColor = Color.White, Cursor = Cursors.Hand
+            };
+            btnExitApp.FlatAppearance.BorderSize = 0;
+            btnExitApp.MouseEnter += (s, e) => btnExitApp.BackColor = Color.Red;
+            btnExitApp.MouseLeave += (s, e) => btnExitApp.BackColor = primaryColor;
+            btnExitApp.Click += (s, e) => { 
+                this.DialogResult = DialogResult.Abort; 
+                this.Close(); 
+            };
+
+            headerPanel.Controls.Add(lblWelcome);
+            headerPanel.Controls.Add(btnExitApp);
+            btnExitApp.BringToFront();
+
+            Button btnAddPC = CreateStyledButton("🖥️  Ordenagailua Gehitu", 130, Color.FromArgb(0, 184, 148));
+            Button btnAddPrint = CreateStyledButton("🖨️  Inprimagailua Gehitu", 205, Color.FromArgb(0, 206, 201));
+            Button btnView = CreateStyledButton("📋  Inbentarioa Ikusi", 280, Color.FromArgb(253, 203, 110));
+            Button btnManageUsers = CreateStyledButton("👥  Erabiltzaileak Kudeatu", 355, Color.FromArgb(108, 92, 231));
+            
+            Button btnSwitchUser = CreateStyledButton("🔄  Aldatu Erabiltzailea", 450, Color.FromArgb(9, 132, 227), true);
+            Button btnLogout = CreateStyledButton("🚪  Saioa Itxi", 510, Color.FromArgb(214, 48, 49), true);
+
+            try
+            {
+                string logoPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Logoa2.png");
+                PictureBox pbLogo = new PictureBox {
+                    Image = Image.FromFile(logoPath),
+                    Size = new Size(150, 150),
+                    Location = new Point(200, 590),
+                    SizeMode = PictureBoxSizeMode.Zoom,
+                    BackColor = Color.Transparent
+                };
+                this.Controls.Add(pbLogo);
+            }
+            catch { }
 
             btnAddPC.Click += (s, e) => new AddComputerForm(erabiltzailea).ShowDialog();
             btnAddPrint.Click += (s, e) => new AddPrinterForm(erabiltzailea).ShowDialog();
             btnView.Click += (s, e) => new ViewDevicesForm(erabiltzailea).ShowDialog();
-            btnLogout.Click += (s, e) => this.Close();
+            btnManageUsers.Click += (s, e) => new ManageUsersForm(erabiltzailea).ShowDialog();
+            
+            btnSwitchUser.Click += (s, e) => { this.DialogResult = DialogResult.Retry; this.Close(); };
+            btnLogout.Click += (s, e) => { this.DialogResult = DialogResult.Abort; this.Close(); };
 
-            // Segurtasuna rolen arabera
             if (erabiltzailea.Rola == "Irakaslea")
             {
-                btnAddPC.Enabled = false;
-                btnAddPrint.Enabled = false;
+                btnAddPC.Enabled = false; btnAddPrint.Enabled = false;
+                btnAddPC.BackColor = Color.FromArgb(180, 180, 180);
+                btnAddPrint.BackColor = Color.FromArgb(180, 180, 180);
             }
 
-            this.Controls.Add(lblWelcome);
+            this.Controls.Add(headerPanel);
             this.Controls.Add(btnAddPC);
             this.Controls.Add(btnAddPrint);
             this.Controls.Add(btnView);
+            this.Controls.Add(btnManageUsers);
+            this.Controls.Add(btnSwitchUser);
             this.Controls.Add(btnLogout);
+        }
+
+        private Button CreateStyledButton(string text, int top, Color baseColor, bool isSmall = false)
+        {
+            Button btn = new Button {
+                Text = text,
+                Location = new Point(75, top),
+                Size = new Size(350, isSmall ? 45 : 60),
+                FlatStyle = FlatStyle.Flat,
+                BackColor = baseColor,
+                ForeColor = Color.White,
+                Font = new Font("Segoe UI", isSmall ? 10 : 12, FontStyle.Bold),
+                Cursor = Cursors.Hand
+            };
+            btn.FlatAppearance.BorderSize = 0;
+            btn.MouseEnter += (s, e) => btn.BackColor = ControlPaint.Light(baseColor);
+            btn.MouseLeave += (s, e) => btn.BackColor = baseColor;
+            return btn;
         }
     }
 }

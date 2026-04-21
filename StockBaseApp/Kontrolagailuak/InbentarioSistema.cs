@@ -17,176 +17,270 @@ namespace StockBaseApp.Kontrolagailuak
 
         public Erabiltzailea? SaioaHasi(string izena, string pasahitza)
         {
-            using var conn = konexioa.LortuKonexioa();
-            conn.Open();
-            string sql = "SELECT id_erabiltzailea, izena, email, rola, id_mintegia FROM Erabiltzailea WHERE izena = @izena AND pasahitza = @pass";
-            using var cmd = new MySqlCommand(sql, conn);
-            cmd.Parameters.AddWithValue("@izena", izena);
-            cmd.Parameters.AddWithValue("@pass", pasahitza);
-            using var reader = cmd.ExecuteReader();
-            if (reader.Read())
+            using var kon = konexioa.LortuKonexioa();
+            kon.Open();
+            string sqlKatea = "SELECT id_erabiltzailea, izena, email, rola, id_mintegia FROM Erabiltzailea WHERE izena = @izena AND pasahitza = @pass";
+            using var komandoa = new MySqlCommand(sqlKatea, kon);
+            komandoa.Parameters.AddWithValue("@izena", izena);
+            komandoa.Parameters.AddWithValue("@pass", pasahitza);
+            using var irakurlea = komandoa.ExecuteReader();
+            if (irakurlea.Read())
             {
-                var user = new Erabiltzailea(
-                    Convert.ToInt32(reader["id_erabiltzailea"]),
-                    reader["izena"].ToString() ?? "",
-                    reader["email"].ToString() ?? "",
-                    reader["rola"].ToString() ?? ""
+                var erabiltzailea = new Erabiltzailea(
+                    Convert.ToInt32(irakurlea["id_erabiltzailea"]),
+                    irakurlea["izena"].ToString() ?? "",
+                    irakurlea["email"].ToString() ?? "",
+                    irakurlea["rola"].ToString() ?? ""
                 )
                 {
-                    // Cargar ID del departamento del usuario
-                    MintegiJabea = new Mintegia(Convert.IsDBNull(reader["id_mintegia"]) ? 1 : Convert.ToInt32(reader["id_mintegia"]), "")
+                    MintegiJabea = new Mintegia(Convert.IsDBNull(irakurlea["id_mintegia"]) ? 1 : Convert.ToInt32(irakurlea["id_mintegia"]), "")
                 };
-                return user;
+                return erabiltzailea;
             }
             return null;
         }
 
         public void GailuaGehitu(Gailua gailua, string kokalekua)
         {
-            using var conn = konexioa.LortuKonexioa();
-            conn.Open();
-            using var trans = conn.BeginTransaction();
+            using var kon = konexioa.LortuKonexioa();
+            kon.Open();
+            using var transakzioa = kon.BeginTransaction();
             try
             {
                 string sqlGailua = "INSERT INTO Gailua (marka, modeloa, erosketa_data, egoera, id_mintegia, kokalekua) " +
                                    "VALUES (@marka, @modeloa, @data, @egoera, @mintegia, @kokalekua)";
-                int idGenerado = 0;
-                using (var cmd = new MySqlCommand(sqlGailua, conn, trans))
+                int sortutakoIda = 0;
+                using (var komandoa = new MySqlCommand(sqlGailua, kon, transakzioa))
                 {
-                    cmd.Parameters.AddWithValue("@marka", gailua.Marka);
-                    cmd.Parameters.AddWithValue("@modeloa", gailua.Modeloa);
-                    cmd.Parameters.AddWithValue("@data", gailua.ErosketaData);
-                    cmd.Parameters.AddWithValue("@egoera", gailua.Egoera);
-                    cmd.Parameters.AddWithValue("@mintegia", gailua.IdMintegia);
-                    cmd.Parameters.AddWithValue("@kokalekua", kokalekua);
-                    cmd.ExecuteNonQuery();
-                    idGenerado = (int)cmd.LastInsertedId;
+                    komandoa.Parameters.AddWithValue("@marka", gailua.Marka);
+                    komandoa.Parameters.AddWithValue("@modeloa", gailua.Modeloa);
+                    komandoa.Parameters.AddWithValue("@data", gailua.ErosketaData);
+                    komandoa.Parameters.AddWithValue("@egoera", gailua.Egoera);
+                    komandoa.Parameters.AddWithValue("@mintegia", gailua.IdMintegia);
+                    komandoa.Parameters.AddWithValue("@kokalekua", kokalekua);
+                    komandoa.ExecuteNonQuery();
+                    sortutakoIda = (int)komandoa.LastInsertedId;
                 }
 
-                if (gailua is Ordenagailua ordenador)
+                if (gailua is Ordenagailua ordenagailua)
                 {
                     string sqlPC = "INSERT INTO Ordenagailua (gailua_id, prozesagailua, ram) VALUES (@id, @cpu, @ram)";
-                    using var cmd = new MySqlCommand(sqlPC, conn, trans);
-                    cmd.Parameters.AddWithValue("@id", idGenerado);
-                    cmd.Parameters.AddWithValue("@cpu", ordenador.Prozesagailua);
-                    cmd.Parameters.AddWithValue("@ram", ordenador.RamGB);
-                    cmd.ExecuteNonQuery();
+                    using var komandoa = new MySqlCommand(sqlPC, kon, transakzioa);
+                    komandoa.Parameters.AddWithValue("@id", sortutakoIda);
+                    komandoa.Parameters.AddWithValue("@cpu", ordenagailua.Prozesagailua);
+                    komandoa.Parameters.AddWithValue("@ram", ordenagailua.RamGB);
+                    komandoa.ExecuteNonQuery();
                 }
-                else if (gailua is Inprimagailua impresora)
+                else if (gailua is Inprimagailua inprimagailua)
                 {
                     string sqlPrint = "INSERT INTO Inprimagailua (gailua_id, koloretakoa) VALUES (@id, @color)";
-                    using var cmd = new MySqlCommand(sqlPrint, conn, trans);
-                    cmd.Parameters.AddWithValue("@id", idGenerado);
-                    cmd.Parameters.AddWithValue("@color", impresora.Koloretakoa);
-                    cmd.ExecuteNonQuery();
+                    using var komandoa = new MySqlCommand(sqlPrint, kon, transakzioa);
+                    komandoa.Parameters.AddWithValue("@id", sortutakoIda);
+                    komandoa.Parameters.AddWithValue("@color", inprimagailua.Koloretakoa);
+                    komandoa.ExecuteNonQuery();
                 }
-                trans.Commit();
+                transakzioa.Commit();
             }
-            catch (Exception) { trans.Rollback(); throw; }
+            catch (Exception) { transakzioa.Rollback(); throw; }
         }
 
         public DataTable LortuGailuakGuztiak(int? idMintegia = null)
         {
-            DataTable dt = new();
-            using var conn = konexioa.LortuKonexioa();
-            conn.Open();
-            // SQL mejorado para incluir el nombre del Mintegia y permitir filtrado
-            string whereClause = idMintegia.HasValue ? " WHERE g.id_mintegia = " + idMintegia.Value : "";
+            DataTable datuTaula = new();
+            using var kon = konexioa.LortuKonexioa();
+            kon.Open();
+            string nonBaldintza = idMintegia.HasValue ? " AND g.id_mintegia = " + idMintegia.Value : "";
 
-            string sql = $@"
-                    SELECT g.id_gailua as ID, 'Ordenagailua' as Mota, g.marka as Marka, g.modeloa as Modeloa, 
-                           m.izena as Mintegia, g.kokalekua as Kokalekua, 
+            string sqlKatea = $@"
+                    SELECT g.id_gailua as Identifikatzailea, 'Ordenagailua' as Mota, g.marka as Marka, g.modeloa as Modeloa, 
+                           m.izena as Mintegia, g.kokalekua as Kokalekua, g.egoera as Egoera,
                            g.erosketa_data as Data, o.prozesagailua as CPU, o.ram as RAM, '' as Kolorea
                     FROM Gailua g 
                     INNER JOIN Ordenagailua o ON g.id_gailua = o.gailua_id
                     INNER JOIN Mintegia m ON g.id_mintegia = m.id_mintegia
-                    {whereClause}
+                    WHERE g.egoera = 'Aktiboa' {nonBaldintza}
                     UNION ALL
-                    SELECT g.id_gailua as ID, 'Inprimagailua' as Mota, g.marka as Marka, g.modeloa as Modeloa, 
-                           m.izena as Mintegia, g.kokalekua as Kokalekua, 
+                    SELECT g.id_gailua as Identifikatzailea, 'Inprimagailua' as Mota, g.marka as Marka, g.modeloa as Modeloa, 
+                           m.izena as Mintegia, g.kokalekua as Kokalekua, g.egoera as Egoera,
                            g.erosketa_data as Data, '' as CPU, '' as RAM, CASE WHEN i.koloretakoa = 1 THEN 'Bai' ELSE 'Ez' END as Kolorea
                     FROM Gailua g 
                     INNER JOIN Inprimagailua i ON g.id_gailua = i.gailua_id
                     INNER JOIN Mintegia m ON g.id_mintegia = m.id_mintegia
-                    {whereClause}";
+                    WHERE g.egoera = 'Aktiboa' {nonBaldintza}";
 
-            using var cmd = new MySqlCommand(sql, conn);
-            using var adapter = new MySqlDataAdapter(cmd);
-            adapter.Fill(dt);
-            return dt;
+            using var komandoa = new MySqlCommand(sqlKatea, kon);
+            using var egokitzailea = new MySqlDataAdapter(komandoa);
+            egokitzailea.Fill(datuTaula);
+            return datuTaula;
+        }
+
+        public DataTable LortuBajaEtaMantentzeSistema()
+        {
+            DataTable datuTaula = new();
+            using var kon = konexioa.LortuKonexioa();
+            kon.Open();
+            string sqlKatea = @"
+                SELECT id_gailua as Identifikatzailea, marka as Marka, kokalekua as Kokalekua, egoera as Egoera, erosketa_data as 'Erosketa Data', NULL as 'Ezabatze Data'
+                FROM Gailua 
+                WHERE egoera != 'Aktiboa'
+                UNION ALL
+                SELECT id_gailua as Identifikatzailea, marka as Marka, kokalekua as Kokalekua, 'EZABATUA' as Egoera, erosketa_data as 'Erosketa Data', ezabatze_data as 'Ezabatze Data'
+                FROM EzabatutakoGailua
+                ORDER BY Egoera DESC";
+            
+            using var komandoa = new MySqlCommand(sqlKatea, kon);
+            using var egokitzailea = new MySqlDataAdapter(komandoa);
+            egokitzailea.Fill(datuTaula);
+            return datuTaula;
         }
 
         public List<KeyValuePair<int, string>> LortuMintegiak()
         {
-            var list = new List<KeyValuePair<int, string>>();
-            using var conn = konexioa.LortuKonexioa();
-            conn.Open();
-            string sql = "SELECT id_mintegia, izena FROM Mintegia";
-            using var cmd = new MySqlCommand(sql, conn);
-            using var reader = cmd.ExecuteReader();
-            while (reader.Read()) 
-                list.Add(new(Convert.ToInt32(reader["id_mintegia"]), reader["izena"].ToString() ?? ""));
-            return list;
+            var zerrenda = new List<KeyValuePair<int, string>>();
+            using var kon = konexioa.LortuKonexioa();
+            kon.Open();
+            string sqlKatea = "SELECT id_mintegia, izena FROM Mintegia";
+            using var komandoa = new MySqlCommand(sqlKatea, kon);
+            using var irakurlea = komandoa.ExecuteReader();
+            while (irakurlea.Read()) 
+                zerrenda.Add(new(Convert.ToInt32(irakurlea["id_mintegia"]), irakurlea["izena"].ToString() ?? ""));
+            return zerrenda;
         }
 
         public List<KeyValuePair<int, string>> LortuKokalekuak()
         {
-            var list = new List<KeyValuePair<int, string>>();
-            using var conn = konexioa.LortuKonexioa();
-            conn.Open();
-            string sql = "SELECT id_kokalekua, izena FROM Kokalekua";
-            using var cmd = new MySqlCommand(sql, conn);
-            using var reader = cmd.ExecuteReader();
-            while (reader.Read()) 
-                list.Add(new(Convert.ToInt32(reader["id_kokalekua"]), reader["izena"].ToString() ?? ""));
-            return list;
-        }
-
-        public DataTable LortuEzabatutakoGailuak()
-        {
-            DataTable dt = new();
-            using var conn = konexioa.LortuKonexioa();
-            conn.Open();
-            string sql = "SELECT id_ezabapena as 'ID Baja', id_gailua as 'ID Original', marka as Marka, " +
-                         "erosketa_data as 'Erosketa Data', kokalekua as Kokalekua, ezabatze_data as 'Baja Data' " +
-                         "FROM EzabatutakoGailua ORDER BY ezabatze_data DESC";
-            using var cmd = new MySqlCommand(sql, conn);
-            using var adapter = new MySqlDataAdapter(cmd);
-            adapter.Fill(dt);
-            return dt;
+            var zerrenda = new List<KeyValuePair<int, string>>();
+            using var kon = konexioa.LortuKonexioa();
+            kon.Open();
+            string sqlKatea = "SELECT id_kokalekua, izena FROM Kokalekua";
+            using var komandoa = new MySqlCommand(sqlKatea, kon);
+            using var irakurlea = komandoa.ExecuteReader();
+            while (irakurlea.Read()) 
+                zerrenda.Add(new(Convert.ToInt32(irakurlea["id_kokalekua"]), irakurlea["izena"].ToString() ?? ""));
+            return zerrenda;
         }
 
         public void GailuaEzabatu(Gailua gailua)
         {
-            using var conn = konexioa.LortuKonexioa();
-            conn.Open();
-            using var trans = conn.BeginTransaction();
+            using var kon = konexioa.LortuKonexioa();
+            kon.Open();
+            using var transakzioa = kon.BeginTransaction();
             try
             {
                 string sqlHist = "INSERT INTO EzabatutakoGailua (id_gailua, marka, erosketa_data, kokalekua) VALUES (@id, @marka, @data, @kokalekua)";
-                using (var cmd = new MySqlCommand(sqlHist, conn, trans))
+                using (var komandoa = new MySqlCommand(sqlHist, kon, transakzioa))
                 {
-                    cmd.Parameters.AddWithValue("@id", gailua.IdGailua);
-                    cmd.Parameters.AddWithValue("@marka", gailua.Marka);
-                    cmd.Parameters.AddWithValue("@data", gailua.ErosketaData);
-                    cmd.Parameters.AddWithValue("@kokalekua", gailua.Kokalekua);
-                    cmd.ExecuteNonQuery();
+                    komandoa.Parameters.AddWithValue("@id", gailua.IdGailua);
+                    komandoa.Parameters.AddWithValue("@marka", gailua.Marka);
+                    komandoa.Parameters.AddWithValue("@data", gailua.ErosketaData);
+                    komandoa.Parameters.AddWithValue("@kokalekua", gailua.Kokalekua);
+                    komandoa.ExecuteNonQuery();
                 }
                 string sqlDelSpec = gailua is Ordenagailua ? "DELETE FROM Ordenagailua WHERE gailua_id = @id" : "DELETE FROM Inprimagailua WHERE gailua_id = @id";
-                using (var cmd = new MySqlCommand(sqlDelSpec, conn, trans))
+                using (var komandoa = new MySqlCommand(sqlDelSpec, kon, transakzioa))
                 {
-                    cmd.Parameters.AddWithValue("@id", gailua.IdGailua);
-                    cmd.ExecuteNonQuery();
+                    komandoa.Parameters.AddWithValue("@id", gailua.IdGailua);
+                    komandoa.ExecuteNonQuery();
                 }
                 string sqlDelBase = "DELETE FROM Gailua WHERE id_gailua = @id";
-                using (var cmd = new MySqlCommand(sqlDelBase, conn, trans))
+                using (var komandoa = new MySqlCommand(sqlDelBase, kon, transakzioa))
                 {
-                    cmd.Parameters.AddWithValue("@id", gailua.IdGailua);
-                    cmd.ExecuteNonQuery();
+                    komandoa.Parameters.AddWithValue("@id", gailua.IdGailua);
+                    komandoa.ExecuteNonQuery();
                 }
-                trans.Commit();
+                transakzioa.Commit();
             }
-            catch (Exception) { trans.Rollback(); throw; }
+            catch (Exception) { transakzioa.Rollback(); throw; }
+        }
+
+        public void ErabiltzaileaGehitu(string izena, string email, string pasahitza, string rola, int idMintegia)
+        {
+            using var kon = konexioa.LortuKonexioa();
+            kon.Open();
+            string sqlKatea = "INSERT INTO Erabiltzailea (izena, email, pasahitza, rola, id_mintegia) VALUES (@izena, @email, @pass, @rola, @mintegia)";
+            using var komandoa = new MySqlCommand(sqlKatea, kon);
+            komandoa.Parameters.AddWithValue("@izena", izena);
+            komandoa.Parameters.AddWithValue("@email", email);
+            komandoa.Parameters.AddWithValue("@pass", pasahitza);
+            komandoa.Parameters.AddWithValue("@rola", rola);
+            komandoa.Parameters.AddWithValue("@mintegia", idMintegia);
+            komandoa.ExecuteNonQuery();
+        }
+
+        public void ErabiltzaileaEzabatu(int id, string izena)
+        {
+            if (izena.Equals("Jon Agirretxe", StringComparison.OrdinalIgnoreCase))
+            {
+                throw new Exception("Ezin da IKT arduradun nagusia ezabatu.");
+            }
+
+            using var kon = konexioa.LortuKonexioa();
+            kon.Open();
+            string sqlKatea = "DELETE FROM Erabiltzailea WHERE id_erabiltzailea = @id";
+            using var komandoa = new MySqlCommand(sqlKatea, kon);
+            komandoa.Parameters.AddWithValue("@id", id);
+            komandoa.ExecuteNonQuery();
+        }
+
+        public DataTable ErabiltzaileGuztiakLortu()
+        {
+            DataTable datuTaula = new();
+            using var kon = konexioa.LortuKonexioa();
+            kon.Open();
+            string sqlKatea = @"
+                SELECT e.id_erabiltzailea as Identifikatzailea, e.izena as Izena, e.email as Email, 
+                       e.rola as Rola, m.izena as Mintegia 
+                FROM Erabiltzailea e
+                INNER JOIN Mintegia m ON e.id_mintegia = m.id_mintegia";
+            using var komandoa = new MySqlCommand(sqlKatea, kon);
+            using var egokitzailea = new MySqlDataAdapter(komandoa);
+            egokitzailea.Fill(datuTaula);
+            return datuTaula;
+        }
+
+        public int ErabiltzaileKopuruaLortu(string rola, int? idMintegia = null)
+        {
+            using var kon = konexioa.LortuKonexioa();
+            kon.Open();
+            string sqlKatea = "SELECT COUNT(*) FROM Erabiltzailea WHERE rola = @rola";
+            if (idMintegia.HasValue) sqlKatea += " AND id_mintegia = @mintegia";
+            
+            using var komandoa = new MySqlCommand(sqlKatea, kon);
+            komandoa.Parameters.AddWithValue("@rola", rola);
+            if (idMintegia.HasValue) komandoa.Parameters.AddWithValue("@mintegia", idMintegia.Value);
+            
+            return Convert.ToInt32(komandoa.ExecuteScalar());
+        }
+
+        public void GailuaEgoeraAldatu(int id, string egoeraBerria)
+        {
+            using var kon = konexioa.LortuKonexioa();
+            kon.Open();
+            
+            // Hautsia bada, IKT Tailerrera mugitu automatikoki
+            string kokalekuaBerria = "";
+            if (egoeraBerria == "Mantentze-lanetan" || egoeraBerria == "Hautsia")
+            {
+                kokalekuaBerria = ", kokalekua = 'IKT Tailerra'";
+            }
+            // Aktibatu bada (berreskuratu), EZ dugu kokalekua aldatuko, IKT Tailerretan utziko dugu
+
+            string sqlKatea = $"UPDATE Gailua SET egoera = @egoera {kokalekuaBerria} WHERE id_gailua = @id";
+            using var komandoa = new MySqlCommand(sqlKatea, kon);
+            komandoa.Parameters.AddWithValue("@egoera", egoeraBerria);
+            komandoa.Parameters.AddWithValue("@id", id);
+            komandoa.ExecuteNonQuery();
+        }
+
+        public void GailuaKokalekuaAldatu(int id, string kokalekua)
+        {
+            using var kon = konexioa.LortuKonexioa();
+            kon.Open();
+            string sqlKatea = "UPDATE Gailua SET kokalekua = @kokalekua WHERE id_gailua = @id";
+            using var komandoa = new MySqlCommand(sqlKatea, kon);
+            komandoa.Parameters.AddWithValue("@kokalekua", kokalekua);
+            komandoa.Parameters.AddWithValue("@id", id);
+            komandoa.ExecuteNonQuery();
         }
     }
 }
