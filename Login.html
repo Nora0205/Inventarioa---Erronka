@@ -253,17 +253,28 @@ Aplikazioak baliabideen kudeaketa errazten du eta ingurumenarekiko errespetua su
 </div>
 
 <!-- ================= ADMIN ONLY ================= -->
-<div id="instaladorea" class="sectionBox card p-4 container mt-3 text-center">
+<div class="container">
 
-<h3>📦 Instaladorea</h3>
+    <!-- INSTALADOREA -->
+    <div id="instaladorea" class="sectionBox card p-4 mt-3 text-center">
+        <h3>📦 Instaladorea</h3>
+        <p>Egin klik beheko botoian programa deskargatzeko eta instalatzeko:</p>
 
-<p>Egin klik beheko botoian programa deskargatzeko eta instalatzeko:</p>
+        <a class="btn btn-success btn-lg mt-3" href="StockBaseApp.rar" download>
+            ⬇️ Deskargatu Instaladorea
+        </a>
+    </div>
 
-<a class="btn btn-success btn-lg mt-3" href="StockBaseApp.rar" download>
-    ⬇️ Deskargatu Instaladorea
-</a>
+    <!-- DOKUMENTAZIO TEKNIKOA -->
+    <div id="dokumentazioa" class="sectionBox card p-4 mt-3 text-center">
+        <h3>📄 Dokumentazio Teknikoa</h3>
+        <p>Egin klik beheko botoian dokumentazio teknikoa deskargatzeko:</p>
 
-</div>
+        <a class="btn btn-primary btn-lg mt-3" href="DokumentazioTeknikoa.pdf" download>
+            ⬇️ Deskargatu Dokumentazioa
+        </a>
+    </div>
+
 </div>
 
 <div id="video" class="sectionBox card p-3 container mt-3">
@@ -295,7 +306,6 @@ Aplikazioak baliabideen kudeaketa errazten du eta ingurumenarekiko errespetua su
 
 <!-- ================= SCRIPT ================= -->
 <script>
-
 function login(){
 
   let user = document.getElementById("user").value;
@@ -317,11 +327,18 @@ function login(){
 }
 
 function show(page){
+  // Atal guztiak ezkutatu
   document.querySelectorAll(".sectionBox").forEach(e=>{
     e.style.display="none";
   });
 
+  // Aukeratutako atala erakutsi
   document.getElementById(page).style.display="block";
+
+  // 👉 Instaladorea bada, dokumentazioa ere erakutsi
+  if(page === "instaladorea"){
+    document.getElementById("dokumentazioa").style.display = "block";
+  }
 }
 
 function logout(){
