@@ -1,0 +1,382 @@
+{
+  "source_base_path": "C:/Users/MDX/source/repos/StockBaseApp/Dokumentazioa",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StockBaseApp.AddComputerForm.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StockBaseApp.AddComputerForm.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StockBaseApp.AddComputerForm",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StockBaseApp.AddPrinterForm.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StockBaseApp.AddPrinterForm.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StockBaseApp.AddPrinterForm",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StockBaseApp.CreateUserForm.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StockBaseApp.CreateUserForm.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StockBaseApp.CreateUserForm",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StockBaseApp.DeleteUserForm.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StockBaseApp.DeleteUserForm.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StockBaseApp.DeleteUserForm",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StockBaseApp.EzabatuakForm.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StockBaseApp.EzabatuakForm.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StockBaseApp.EzabatuakForm",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StockBaseApp.Kontrolagailuak.InbentarioSistema.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StockBaseApp.Kontrolagailuak.InbentarioSistema.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StockBaseApp.Kontrolagailuak.InbentarioSistema",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StockBaseApp.Kontrolagailuak.Konexioa.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StockBaseApp.Kontrolagailuak.Konexioa.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StockBaseApp.Kontrolagailuak.Konexioa",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StockBaseApp.Kontrolagailuak.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StockBaseApp.Kontrolagailuak.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StockBaseApp.Kontrolagailuak",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StockBaseApp.LoginForm.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StockBaseApp.LoginForm.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StockBaseApp.LoginForm",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StockBaseApp.MainForm.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StockBaseApp.MainForm.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StockBaseApp.MainForm",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StockBaseApp.ManageUsersForm.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StockBaseApp.ManageUsersForm.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StockBaseApp.ManageUsersForm",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StockBaseApp.Modeloak.Erabiltzailea.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StockBaseApp.Modeloak.Erabiltzailea.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StockBaseApp.Modeloak.Erabiltzailea",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StockBaseApp.Modeloak.EzabatutakoGailua.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StockBaseApp.Modeloak.EzabatutakoGailua.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StockBaseApp.Modeloak.EzabatutakoGailua",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StockBaseApp.Modeloak.Gailua.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StockBaseApp.Modeloak.Gailua.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StockBaseApp.Modeloak.Gailua",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StockBaseApp.Modeloak.Inprimagailua.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StockBaseApp.Modeloak.Inprimagailua.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StockBaseApp.Modeloak.Inprimagailua",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StockBaseApp.Modeloak.Mintegia.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StockBaseApp.Modeloak.Mintegia.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StockBaseApp.Modeloak.Mintegia",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StockBaseApp.Modeloak.Ordenagailua.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StockBaseApp.Modeloak.Ordenagailua.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StockBaseApp.Modeloak.Ordenagailua",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StockBaseApp.Modeloak.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StockBaseApp.Modeloak.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StockBaseApp.Modeloak",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StockBaseApp.ViewDevicesForm.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StockBaseApp.ViewDevicesForm.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StockBaseApp.ViewDevicesForm",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StockBaseApp.ViewUsersForm.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StockBaseApp.ViewUsersForm.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StockBaseApp.ViewUsersForm",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StockBaseApp.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StockBaseApp.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StockBaseApp",
+      "Summary": null
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/getting-started.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/getting-started.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/introduction.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/introduction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

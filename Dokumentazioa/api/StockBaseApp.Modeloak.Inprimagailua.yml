@@ -1,0 +1,550 @@
+### YamlMime:ManagedReference
+items:
+- uid: StockBaseApp.Modeloak.Inprimagailua
+  commentId: T:StockBaseApp.Modeloak.Inprimagailua
+  id: Inprimagailua
+  parent: StockBaseApp.Modeloak
+  children:
+  - StockBaseApp.Modeloak.Inprimagailua.#ctor(System.Int32,System.String,System.String,System.String,System.DateTime,System.Boolean)
+  - StockBaseApp.Modeloak.Inprimagailua.Koloretakoa
+  - StockBaseApp.Modeloak.Inprimagailua.LortuInformazioa
+  langs:
+  - csharp
+  - vb
+  name: Inprimagailua
+  nameWithType: Inprimagailua
+  fullName: StockBaseApp.Modeloak.Inprimagailua
+  type: Class
+  source:
+    remote:
+      path: StockBaseApp/Modeloak/Inprimagailuak.cs
+      branch: master
+      repo: https://github.com/Nora0205/Inventarioa---Erronka.git
+    id: Inprimagailua
+    path: ../StockBaseApp/Modeloak/Inprimagailuak.cs
+    startLine: 4
+  assemblies:
+  - StockBaseApp
+  namespace: StockBaseApp.Modeloak
+  syntax:
+    content: 'public class Inprimagailua : Gailua'
+    content.vb: Public Class Inprimagailua Inherits Gailua
+  inheritance:
+  - System.Object
+  - StockBaseApp.Modeloak.Gailua
+  inheritedMembers:
+  - StockBaseApp.Modeloak.Gailua.IdGailua
+  - StockBaseApp.Modeloak.Gailua.Marka
+  - StockBaseApp.Modeloak.Gailua.Modeloa
+  - StockBaseApp.Modeloak.Gailua.Kokalekua
+  - StockBaseApp.Modeloak.Gailua.Egoera
+  - StockBaseApp.Modeloak.Gailua.ErosketaData
+  - StockBaseApp.Modeloak.Gailua.IdMintegia
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: StockBaseApp.Modeloak.Inprimagailua.#ctor(System.Int32,System.String,System.String,System.String,System.DateTime,System.Boolean)
+  commentId: M:StockBaseApp.Modeloak.Inprimagailua.#ctor(System.Int32,System.String,System.String,System.String,System.DateTime,System.Boolean)
+  id: '#ctor(System.Int32,System.String,System.String,System.String,System.DateTime,System.Boolean)'
+  parent: StockBaseApp.Modeloak.Inprimagailua
+  langs:
+  - csharp
+  - vb
+  name: Inprimagailua(int, string, string, string, DateTime, bool)
+  nameWithType: Inprimagailua.Inprimagailua(int, string, string, string, DateTime, bool)
+  fullName: StockBaseApp.Modeloak.Inprimagailua.Inprimagailua(int, string, string, string, System.DateTime, bool)
+  type: Constructor
+  source:
+    remote:
+      path: StockBaseApp/Modeloak/Inprimagailuak.cs
+      branch: master
+      repo: https://github.com/Nora0205/Inventarioa---Erronka.git
+    id: .ctor
+    path: ../StockBaseApp/Modeloak/Inprimagailuak.cs
+    startLine: 4
+  assemblies:
+  - StockBaseApp
+  namespace: StockBaseApp.Modeloak
+  syntax:
+    content: public Inprimagailua(int id, string marka, string kokalekua, string egoera, DateTime erosketaData, bool koloretakoa)
+    parameters:
+    - id: id
+      type: System.Int32
+    - id: marka
+      type: System.String
+    - id: kokalekua
+      type: System.String
+    - id: egoera
+      type: System.String
+    - id: erosketaData
+      type: System.DateTime
+    - id: koloretakoa
+      type: System.Boolean
+    content.vb: Public Sub New(id As Integer, marka As String, kokalekua As String, egoera As String, erosketaData As Date, koloretakoa As Boolean)
+  overload: StockBaseApp.Modeloak.Inprimagailua.#ctor*
+  nameWithType.vb: Inprimagailua.New(Integer, String, String, String, Date, Boolean)
+  fullName.vb: StockBaseApp.Modeloak.Inprimagailua.New(Integer, String, String, String, Date, Boolean)
+  name.vb: New(Integer, String, String, String, Date, Boolean)
+- uid: StockBaseApp.Modeloak.Inprimagailua.Koloretakoa
+  commentId: P:StockBaseApp.Modeloak.Inprimagailua.Koloretakoa
+  id: Koloretakoa
+  parent: StockBaseApp.Modeloak.Inprimagailua
+  langs:
+  - csharp
+  - vb
+  name: Koloretakoa
+  nameWithType: Inprimagailua.Koloretakoa
+  fullName: StockBaseApp.Modeloak.Inprimagailua.Koloretakoa
+  type: Property
+  source:
+    remote:
+      path: StockBaseApp/Modeloak/Inprimagailuak.cs
+      branch: master
+      repo: https://github.com/Nora0205/Inventarioa---Erronka.git
+    id: Koloretakoa
+    path: ../StockBaseApp/Modeloak/Inprimagailuak.cs
+    startLine: 7
+  assemblies:
+  - StockBaseApp
+  namespace: StockBaseApp.Modeloak
+  syntax:
+    content: public bool Koloretakoa { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property Koloretakoa As Boolean
+  overload: StockBaseApp.Modeloak.Inprimagailua.Koloretakoa*
+- uid: StockBaseApp.Modeloak.Inprimagailua.LortuInformazioa
+  commentId: M:StockBaseApp.Modeloak.Inprimagailua.LortuInformazioa
+  id: LortuInformazioa
+  parent: StockBaseApp.Modeloak.Inprimagailua
+  langs:
+  - csharp
+  - vb
+  name: LortuInformazioa()
+  nameWithType: Inprimagailua.LortuInformazioa()
+  fullName: StockBaseApp.Modeloak.Inprimagailua.LortuInformazioa()
+  type: Method
+  source:
+    remote:
+      path: StockBaseApp/Modeloak/Inprimagailuak.cs
+      branch: master
+      repo: https://github.com/Nora0205/Inventarioa---Erronka.git
+    id: LortuInformazioa
+    path: ../StockBaseApp/Modeloak/Inprimagailuak.cs
+    startLine: 9
+  assemblies:
+  - StockBaseApp
+  namespace: StockBaseApp.Modeloak
+  example: []
+  syntax:
+    content: public override string LortuInformazioa()
+    return:
+      type: System.String
+    content.vb: Public Overrides Function LortuInformazioa() As String
+  overridden: StockBaseApp.Modeloak.Gailua.LortuInformazioa
+  overload: StockBaseApp.Modeloak.Inprimagailua.LortuInformazioa*
+references:
+- uid: StockBaseApp.Modeloak
+  commentId: N:StockBaseApp.Modeloak
+  href: StockBaseApp.html
+  name: StockBaseApp.Modeloak
+  nameWithType: StockBaseApp.Modeloak
+  fullName: StockBaseApp.Modeloak
+  spec.csharp:
+  - uid: StockBaseApp
+    name: StockBaseApp
+    href: StockBaseApp.html
+  - name: .
+  - uid: StockBaseApp.Modeloak
+    name: Modeloak
+    href: StockBaseApp.Modeloak.html
+  spec.vb:
+  - uid: StockBaseApp
+    name: StockBaseApp
+    href: StockBaseApp.html
+  - name: .
+  - uid: StockBaseApp.Modeloak
+    name: Modeloak
+    href: StockBaseApp.Modeloak.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: StockBaseApp.Modeloak.Gailua
+  commentId: T:StockBaseApp.Modeloak.Gailua
+  parent: StockBaseApp.Modeloak
+  href: StockBaseApp.Modeloak.Gailua.html
+  name: Gailua
+  nameWithType: Gailua
+  fullName: StockBaseApp.Modeloak.Gailua
+- uid: StockBaseApp.Modeloak.Gailua.IdGailua
+  commentId: P:StockBaseApp.Modeloak.Gailua.IdGailua
+  parent: StockBaseApp.Modeloak.Gailua
+  href: StockBaseApp.Modeloak.Gailua.html#StockBaseApp_Modeloak_Gailua_IdGailua
+  name: IdGailua
+  nameWithType: Gailua.IdGailua
+  fullName: StockBaseApp.Modeloak.Gailua.IdGailua
+- uid: StockBaseApp.Modeloak.Gailua.Marka
+  commentId: P:StockBaseApp.Modeloak.Gailua.Marka
+  parent: StockBaseApp.Modeloak.Gailua
+  href: StockBaseApp.Modeloak.Gailua.html#StockBaseApp_Modeloak_Gailua_Marka
+  name: Marka
+  nameWithType: Gailua.Marka
+  fullName: StockBaseApp.Modeloak.Gailua.Marka
+- uid: StockBaseApp.Modeloak.Gailua.Modeloa
+  commentId: P:StockBaseApp.Modeloak.Gailua.Modeloa
+  parent: StockBaseApp.Modeloak.Gailua
+  href: StockBaseApp.Modeloak.Gailua.html#StockBaseApp_Modeloak_Gailua_Modeloa
+  name: Modeloa
+  nameWithType: Gailua.Modeloa
+  fullName: StockBaseApp.Modeloak.Gailua.Modeloa
+- uid: StockBaseApp.Modeloak.Gailua.Kokalekua
+  commentId: P:StockBaseApp.Modeloak.Gailua.Kokalekua
+  parent: StockBaseApp.Modeloak.Gailua
+  href: StockBaseApp.Modeloak.Gailua.html#StockBaseApp_Modeloak_Gailua_Kokalekua
+  name: Kokalekua
+  nameWithType: Gailua.Kokalekua
+  fullName: StockBaseApp.Modeloak.Gailua.Kokalekua
+- uid: StockBaseApp.Modeloak.Gailua.Egoera
+  commentId: P:StockBaseApp.Modeloak.Gailua.Egoera
+  parent: StockBaseApp.Modeloak.Gailua
+  href: StockBaseApp.Modeloak.Gailua.html#StockBaseApp_Modeloak_Gailua_Egoera
+  name: Egoera
+  nameWithType: Gailua.Egoera
+  fullName: StockBaseApp.Modeloak.Gailua.Egoera
+- uid: StockBaseApp.Modeloak.Gailua.ErosketaData
+  commentId: P:StockBaseApp.Modeloak.Gailua.ErosketaData
+  parent: StockBaseApp.Modeloak.Gailua
+  href: StockBaseApp.Modeloak.Gailua.html#StockBaseApp_Modeloak_Gailua_ErosketaData
+  name: ErosketaData
+  nameWithType: Gailua.ErosketaData
+  fullName: StockBaseApp.Modeloak.Gailua.ErosketaData
+- uid: StockBaseApp.Modeloak.Gailua.IdMintegia
+  commentId: P:StockBaseApp.Modeloak.Gailua.IdMintegia
+  parent: StockBaseApp.Modeloak.Gailua
+  href: StockBaseApp.Modeloak.Gailua.html#StockBaseApp_Modeloak_Gailua_IdMintegia
+  name: IdMintegia
+  nameWithType: Gailua.IdMintegia
+  fullName: StockBaseApp.Modeloak.Gailua.IdMintegia
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: StockBaseApp.Modeloak.Inprimagailua.#ctor*
+  commentId: Overload:StockBaseApp.Modeloak.Inprimagailua.#ctor
+  href: StockBaseApp.Modeloak.Inprimagailua.html#StockBaseApp_Modeloak_Inprimagailua__ctor_System_Int32_System_String_System_String_System_String_System_DateTime_System_Boolean_
+  name: Inprimagailua
+  nameWithType: Inprimagailua.Inprimagailua
+  fullName: StockBaseApp.Modeloak.Inprimagailua.Inprimagailua
+  nameWithType.vb: Inprimagailua.New
+  fullName.vb: StockBaseApp.Modeloak.Inprimagailua.New
+  name.vb: New
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+  nameWithType.vb: Date
+  fullName.vb: Date
+  name.vb: Date
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: StockBaseApp.Modeloak.Inprimagailua.Koloretakoa*
+  commentId: Overload:StockBaseApp.Modeloak.Inprimagailua.Koloretakoa
+  href: StockBaseApp.Modeloak.Inprimagailua.html#StockBaseApp_Modeloak_Inprimagailua_Koloretakoa
+  name: Koloretakoa
+  nameWithType: Inprimagailua.Koloretakoa
+  fullName: StockBaseApp.Modeloak.Inprimagailua.Koloretakoa
+- uid: StockBaseApp.Modeloak.Gailua.LortuInformazioa
+  commentId: M:StockBaseApp.Modeloak.Gailua.LortuInformazioa
+  parent: StockBaseApp.Modeloak.Gailua
+  href: StockBaseApp.Modeloak.Gailua.html#StockBaseApp_Modeloak_Gailua_LortuInformazioa
+  name: LortuInformazioa()
+  nameWithType: Gailua.LortuInformazioa()
+  fullName: StockBaseApp.Modeloak.Gailua.LortuInformazioa()
+  spec.csharp:
+  - uid: StockBaseApp.Modeloak.Gailua.LortuInformazioa
+    name: LortuInformazioa
+    href: StockBaseApp.Modeloak.Gailua.html#StockBaseApp_Modeloak_Gailua_LortuInformazioa
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: StockBaseApp.Modeloak.Gailua.LortuInformazioa
+    name: LortuInformazioa
+    href: StockBaseApp.Modeloak.Gailua.html#StockBaseApp_Modeloak_Gailua_LortuInformazioa
+  - name: (
+  - name: )
+- uid: StockBaseApp.Modeloak.Inprimagailua.LortuInformazioa*
+  commentId: Overload:StockBaseApp.Modeloak.Inprimagailua.LortuInformazioa
+  href: StockBaseApp.Modeloak.Inprimagailua.html#StockBaseApp_Modeloak_Inprimagailua_LortuInformazioa
+  name: LortuInformazioa
+  nameWithType: Inprimagailua.LortuInformazioa
+  fullName: StockBaseApp.Modeloak.Inprimagailua.LortuInformazioa

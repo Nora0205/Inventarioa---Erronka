@@ -7,9 +7,15 @@ using StockBaseApp.Modeloak;
 
 namespace StockBaseApp
 {
+    /// <summary>
+    /// Sisteman saioa hasteko inprimakia.
+    /// </summary>
     public partial class LoginForm : Form
     {
         private readonly InbentarioSistema kudeatzailea;
+        /// <summary>
+        /// Saioa hasi duen erabiltzailea. Null da saioa hasi ez bada.
+        /// </summary>
         public Erabiltzailea? LoggedUser { get; private set; }
         private Color primaryColor = Color.FromArgb(45, 52, 54);
 
@@ -18,6 +24,9 @@ namespace StockBaseApp
         [DllImport("user32.dll")]
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
 
+        /// <summary>
+        /// LoginForm klasearen instantzia berria sortzen du.
+        /// </summary>
         public LoginForm()
         {
             this.FormBorderStyle = FormBorderStyle.None;
@@ -26,6 +35,9 @@ namespace StockBaseApp
             InitModernUI();
         }
 
+        /// <summary>
+        /// Inprimakiaren interfaze grafiko modernoa hasieratzen du.
+        /// </summary>
         private void InitModernUI()
         {
             this.Size = new Size(400, 500);

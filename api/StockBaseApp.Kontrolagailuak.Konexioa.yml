@@ -1,0 +1,422 @@
+### YamlMime:ManagedReference
+items:
+- uid: StockBaseApp.Kontrolagailuak.Konexioa
+  commentId: T:StockBaseApp.Kontrolagailuak.Konexioa
+  id: Konexioa
+  parent: StockBaseApp.Kontrolagailuak
+  children:
+  - StockBaseApp.Kontrolagailuak.Konexioa.#ctor
+  - StockBaseApp.Kontrolagailuak.Konexioa.LortuKonexioa
+  langs:
+  - csharp
+  - vb
+  name: Konexioa
+  nameWithType: Konexioa
+  fullName: StockBaseApp.Kontrolagailuak.Konexioa
+  type: Class
+  source:
+    remote:
+      path: StockBaseApp/Kontrolagailuak/Konexioa.cs
+      branch: master
+      repo: https://github.com/Nora0205/Inventarioa---Erronka.git
+    id: Konexioa
+    path: StockBaseApp/Kontrolagailuak/Konexioa.cs
+    startLine: 8
+  assemblies:
+  - StockBaseApp
+  namespace: StockBaseApp.Kontrolagailuak
+  summary: >-
+    MySQL datu-basearekiko konexioa kudeatzen duen klasea.
+
+    Zerbitzariaren helbidea 'config.txt' fitxategitik irakurtzen du konfigurazioa dinamikoa izan dadin.
+  example: []
+  syntax:
+    content: public class Konexioa
+    content.vb: Public Class Konexioa
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: StockBaseApp.Kontrolagailuak.Konexioa.#ctor
+  commentId: M:StockBaseApp.Kontrolagailuak.Konexioa.#ctor
+  id: '#ctor'
+  parent: StockBaseApp.Kontrolagailuak.Konexioa
+  langs:
+  - csharp
+  - vb
+  name: Konexioa()
+  nameWithType: Konexioa.Konexioa()
+  fullName: StockBaseApp.Kontrolagailuak.Konexioa.Konexioa()
+  type: Constructor
+  source:
+    remote:
+      path: StockBaseApp/Kontrolagailuak/Konexioa.cs
+      branch: master
+      repo: https://github.com/Nora0205/Inventarioa---Erronka.git
+    id: .ctor
+    path: StockBaseApp/Kontrolagailuak/Konexioa.cs
+    startLine: 19
+  assemblies:
+  - StockBaseApp
+  namespace: StockBaseApp.Kontrolagailuak
+  summary: >-
+    Konexioa klasearen eraikitzailea.
+
+    Exekuzio bidean 'config.txt' fitxategia badago, zerbitzariaren helbidea bertatik kargatzen du.
+  example: []
+  syntax:
+    content: public Konexioa()
+    content.vb: Public Sub New()
+  overload: StockBaseApp.Kontrolagailuak.Konexioa.#ctor*
+  nameWithType.vb: Konexioa.New()
+  fullName.vb: StockBaseApp.Kontrolagailuak.Konexioa.New()
+  name.vb: New()
+- uid: StockBaseApp.Kontrolagailuak.Konexioa.LortuKonexioa
+  commentId: M:StockBaseApp.Kontrolagailuak.Konexioa.LortuKonexioa
+  id: LortuKonexioa
+  parent: StockBaseApp.Kontrolagailuak.Konexioa
+  langs:
+  - csharp
+  - vb
+  name: LortuKonexioa()
+  nameWithType: Konexioa.LortuKonexioa()
+  fullName: StockBaseApp.Kontrolagailuak.Konexioa.LortuKonexioa()
+  type: Method
+  source:
+    remote:
+      path: StockBaseApp/Kontrolagailuak/Konexioa.cs
+      branch: master
+      repo: https://github.com/Nora0205/Inventarioa---Erronka.git
+    id: LortuKonexioa
+    path: StockBaseApp/Kontrolagailuak/Konexioa.cs
+    startLine: 38
+  assemblies:
+  - StockBaseApp
+  namespace: StockBaseApp.Kontrolagailuak
+  summary: MySQL-ra konektatzeko objektu berri bat sortu eta itzultzen du.
+  example: []
+  syntax:
+    content: public MySqlConnection LortuKonexioa()
+    return:
+      type: MySql.Data.MySqlClient.MySqlConnection
+      description: <xref href="MySql.Data.MySqlClient.MySqlConnection" data-throw-if-not-resolved="false"></xref> objektu bat konfigurazio-katearekin.
+    content.vb: Public Function LortuKonexioa() As MySqlConnection
+  overload: StockBaseApp.Kontrolagailuak.Konexioa.LortuKonexioa*
+references:
+- uid: StockBaseApp.Kontrolagailuak
+  commentId: N:StockBaseApp.Kontrolagailuak
+  href: StockBaseApp.html
+  name: StockBaseApp.Kontrolagailuak
+  nameWithType: StockBaseApp.Kontrolagailuak
+  fullName: StockBaseApp.Kontrolagailuak
+  spec.csharp:
+  - uid: StockBaseApp
+    name: StockBaseApp
+    href: StockBaseApp.html
+  - name: .
+  - uid: StockBaseApp.Kontrolagailuak
+    name: Kontrolagailuak
+    href: StockBaseApp.Kontrolagailuak.html
+  spec.vb:
+  - uid: StockBaseApp
+    name: StockBaseApp
+    href: StockBaseApp.html
+  - name: .
+  - uid: StockBaseApp.Kontrolagailuak
+    name: Kontrolagailuak
+    href: StockBaseApp.Kontrolagailuak.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: StockBaseApp.Kontrolagailuak.Konexioa.#ctor*
+  commentId: Overload:StockBaseApp.Kontrolagailuak.Konexioa.#ctor
+  href: StockBaseApp.Kontrolagailuak.Konexioa.html#StockBaseApp_Kontrolagailuak_Konexioa__ctor
+  name: Konexioa
+  nameWithType: Konexioa.Konexioa
+  fullName: StockBaseApp.Kontrolagailuak.Konexioa.Konexioa
+  nameWithType.vb: Konexioa.New
+  fullName.vb: StockBaseApp.Kontrolagailuak.Konexioa.New
+  name.vb: New
+- uid: MySql.Data.MySqlClient.MySqlConnection
+  commentId: T:MySql.Data.MySqlClient.MySqlConnection
+  parent: MySql.Data.MySqlClient
+  isExternal: true
+  name: MySqlConnection
+  nameWithType: MySqlConnection
+  fullName: MySql.Data.MySqlClient.MySqlConnection
+- uid: StockBaseApp.Kontrolagailuak.Konexioa.LortuKonexioa*
+  commentId: Overload:StockBaseApp.Kontrolagailuak.Konexioa.LortuKonexioa
+  href: StockBaseApp.Kontrolagailuak.Konexioa.html#StockBaseApp_Kontrolagailuak_Konexioa_LortuKonexioa
+  name: LortuKonexioa
+  nameWithType: Konexioa.LortuKonexioa
+  fullName: StockBaseApp.Kontrolagailuak.Konexioa.LortuKonexioa
+- uid: MySql.Data.MySqlClient
+  commentId: N:MySql.Data.MySqlClient
+  isExternal: true
+  name: MySql.Data.MySqlClient
+  nameWithType: MySql.Data.MySqlClient
+  fullName: MySql.Data.MySqlClient
+  spec.csharp:
+  - uid: MySql
+    name: MySql
+    isExternal: true
+  - name: .
+  - uid: MySql.Data
+    name: Data
+    isExternal: true
+  - name: .
+  - uid: MySql.Data.MySqlClient
+    name: MySqlClient
+    isExternal: true
+  spec.vb:
+  - uid: MySql
+    name: MySql
+    isExternal: true
+  - name: .
+  - uid: MySql.Data
+    name: Data
+    isExternal: true
+  - name: .
+  - uid: MySql.Data.MySqlClient
+    name: MySqlClient
+    isExternal: true

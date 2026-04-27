@@ -1,12 +1,13 @@
 using System;
 using System.Windows.Forms;
+using StockBaseApp.Kontrolagailuak;
 
 namespace StockBaseApp
 {
     internal static class Program
     {
         [STAThread]
-        static void Main()
+        static void Main(string[] args)
         {
             ApplicationConfiguration.Initialize();
 

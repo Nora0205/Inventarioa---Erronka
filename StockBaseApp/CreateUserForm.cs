@@ -8,6 +8,9 @@ using StockBaseApp.Modeloak;
 
 namespace StockBaseApp
 {
+    /// <summary>
+    /// Erabiltzaile berriak sisteman sortzeko inprimakia.
+    /// </summary>
     public class CreateUserForm : Form
     {
         private InbentarioSistema kudeatzailea;
@@ -21,6 +24,10 @@ namespace StockBaseApp
         [DllImport("user32.dll")]
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
 
+        /// <summary>
+        /// CreateUserForm klasearen instantzia berria sortzen du.
+        /// </summary>
+        /// <param name="creator">Erabiltzailea sortzen ari den administratzailea edo arduraduna.</param>
         public CreateUserForm(Erabiltzailea creator)
         {
             this.creator = creator;
@@ -29,6 +36,9 @@ namespace StockBaseApp
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Inprimakiaren interfaze grafikoa eta kontrolak hasieratzen ditu.
+        /// </summary>
         private void InitializeComponent()
         {
             this.Size = new Size(450, 580);
@@ -111,6 +121,9 @@ namespace StockBaseApp
         private TextBox CreateTextBox(int top, bool isPass = false) => new TextBox { Location = new Point(50, top), Size = new Size(350, 30), Font = new Font("Segoe UI", 11), PasswordChar = isPass ? '*' : '\0' };
         private ComboBox CreateComboBox(int top) => new ComboBox { Location = new Point(50, top), Size = new Size(350, 30), DropDownStyle = ComboBoxStyle.DropDownList, Font = new Font("Segoe UI", 11) };
 
+        /// <summary>
+        /// Mintegi guztiak datu-basetik kargatzen ditu eta ComboBox-ean bistaratzen ditu.
+        /// </summary>
         private void CargarMintegiak()
         {
             if (cmbMintegia == null) return;
@@ -120,6 +133,10 @@ namespace StockBaseApp
             if (cmbMintegia.Items.Count > 0) cmbMintegia.SelectedIndex = 0;
         }
 
+        /// <summary>
+        /// ComboBox-ean mintegi zehatz bat hautatzen du bere ID-aren arabera.
+        /// </summary>
+        /// <param name="id">Hautatu nahi den mintegiaren ID-a.</param>
         private void SetMintegia(int id)
         {
             if (cmbMintegia == null) return;
@@ -128,6 +145,11 @@ namespace StockBaseApp
             }
         }
 
+        /// <summary>
+        /// Gorde botoia sakatzean exekutatzen da. Erabiltzaile berria datu-basean gordetzen du.
+        /// </summary>
+        /// <param name="sender">Gertaera sortu duen objektua.</param>
+        /// <param name="e">Gertaeraren datuak.</param>
         private void btnGorde_Click(object? sender, EventArgs e)
         {
             try {
@@ -140,7 +162,7 @@ namespace StockBaseApp
                 string rola = cmbRola.SelectedItem?.ToString() ?? "Irakaslea";
                 int idMintegia = (cmbMintegia.SelectedItem is KeyValuePair<int, string> selectedItem) ? selectedItem.Key : 1;
 
-                kudeatzailea.ErabiltzaileaGehitu(txtIzena.Text, txtEmail.Text, txtPass.Text, rola, idMintegia);
+                kudeatzailea.ErabiltzaileaGehitu(txtIzena.Text, txtEmail.Text, txtPass.Text, rola, idMintegia, creator.IdErabiltzailea);
                 MessageBox.Show("Erabiltzailea ondo gorde da!"); this.Close();
             }
             catch (Exception ex) { MessageBox.Show("Errorea: " + ex.Message); }

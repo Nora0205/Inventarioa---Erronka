@@ -7,6 +7,9 @@ using StockBaseApp.Kontrolagailuak;
 
 namespace StockBaseApp
 {
+    /// <summary>
+    /// Ordenagailu berriak sisteman gehitzeko erabiltzen den inprimakia.
+    /// </summary>
     public class AddComputerForm : Form
     {
         private InbentarioSistema kudeatzailea;
@@ -16,6 +19,10 @@ namespace StockBaseApp
         private NumericUpDown? nmRAM;
         private DateTimePicker? dtData;
 
+        /// <summary>
+        /// AddComputerForm klasearen instantzia berria sortzen du.
+        /// </summary>
+        /// <param name="user">Inprimakia erabiltzen ari den erabiltzailea.</param>
         public AddComputerForm(Erabiltzailea user)
         {
             this.erabiltzailea = user;
@@ -23,6 +30,9 @@ namespace StockBaseApp
             InterfazeaHasieratu();
         }
 
+        /// <summary>
+        /// Inprimakiaren interfaze grafikoa eta kontrolak hasten ditu.
+        /// </summary>
         private void InterfazeaHasieratu()
         {
             this.Text = "Ordenagailu Berria";
@@ -58,14 +68,14 @@ namespace StockBaseApp
 
                 if (nuevoMintegi.HasValue) {
                     for (int i = 0; i < cbMintegia.Items.Count; i++) {
-                        if (((KeyValuePair<int, string>)cbMintegia.Items[i]).Key == nuevoMintegi.Value) {
+                        if (cbMintegia.Items[i] is KeyValuePair<int, string> item && item.Key == nuevoMintegi.Value) {
                             cbMintegia.SelectedIndex = i;
-                            cbMintegia.Enabled = false; // Bloqueado porque es obligatorio para esa gela
+                            cbMintegia.Enabled = false; 
                             break;
                         }
                     }
                 } else {
-                    // Irakasle Gela o IKT Tailerra: Permitir elegir
+                  
                     cbMintegia.Enabled = true;
                 }
             };
@@ -88,16 +98,19 @@ namespace StockBaseApp
             DatuakKargatu();
         }
 
+        /// <summary>
+        /// Mintegi eta kokaleku datuak datu-basetik kargatzen ditu eta ComboBox-etan bistaratzen ditu.
+        /// </summary>
         private void DatuakKargatu()
         {
-            // Mintegiak kargatu
+  
             var mintegiak = kudeatzailea.LortuMintegiak();
             cbMintegia!.DisplayMember = "Value";
             cbMintegia.ValueMember = "Key";
             foreach (var m in mintegiak) cbMintegia.Items.Add(m);
             if (cbMintegia.Items.Count > 0) cbMintegia.SelectedIndex = 0;
 
-            // Kokalekuak kargatu
+
             var kokalekuak = kudeatzailea.LortuKokalekuak();
             bool informatikakoaEdoAdmin = (erabiltzailea.Rola == "IKT arduraduna" || (erabiltzailea.MintegiJabea?.IdMintegia ?? 0) == 1);
             
@@ -111,6 +124,11 @@ namespace StockBaseApp
             if (cbKoka.Items.Count > 0) cbKoka.SelectedIndex = 0;
         }
 
+        /// <summary>
+        /// Gorde botoia sakatzean exekutatzen da. Sartutako datuak balidatzen ditu eta ordenagailu berria datu-basean gordetzen du.
+        /// </summary>
+        /// <param name="sender">Gertaera sortu duen objektua.</param>
+        /// <param name="e">Gertaeraren datuak.</param>
         private void btGorde_Click(object? sender, EventArgs e)
         {
             try
@@ -131,7 +149,7 @@ namespace StockBaseApp
                     IdMintegia = idMintegia, 
                     Modeloa = txModeloa.Text 
                 };
-                kudeatzailea.GailuaGehitu(pc, kokalekua);
+                kudeatzailea.GailuaGehitu(pc, kokalekua, erabiltzailea.IdErabiltzailea);
                 MessageBox.Show("Ondo gorde da!");
                 this.Close();
             }

@@ -6,6 +6,10 @@ using StockBaseApp.Modeloak;
 
 namespace StockBaseApp
 {
+    /// <summary>
+    /// Erabiltzaileen kudeaketa orokorra egiteko menuko formularioa.
+    /// Hemendik erabiltzaileak ikusi, sortu edo ezabatzeko formularioetara sartzen da.
+    /// </summary>
     public class ManageUsersForm : Form
     {
         private Erabiltzailea erabiltzailea;
@@ -16,6 +20,10 @@ namespace StockBaseApp
         [DllImport("user32.dll")]
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
 
+        /// <summary>
+        /// ManageUsersForm-en instantzia berri bat sortzen du.
+        /// </summary>
+        /// <param name="user">Unean saioa hasita duen erabiltzailea (baimenak egiaztatzeko).</param>
         public ManageUsersForm(Erabiltzailea user)
         {
             this.erabiltzailea = user;
@@ -23,6 +31,9 @@ namespace StockBaseApp
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Formularioaren interfaze grafikoa eta botoien ekintzak inizializatzen ditu.
+        /// </summary>
         private void InitializeComponent()
         {
             this.Size = new Size(400, 420);
@@ -53,7 +64,7 @@ namespace StockBaseApp
 
             btnView.Click += (s, e) => new ViewUsersForm().ShowDialog();
             btnCreate.Click += (s, e) => new CreateUserForm(erabiltzailea).ShowDialog();
-            btnDelete.Click += (s, e) => new DeleteUserForm().ShowDialog();
+            btnDelete.Click += (s, e) => new DeleteUserForm(erabiltzailea).ShowDialog();
             btnClose.Click += (s, e) => this.Close();
 
             if (erabiltzailea.Rola == "Irakaslea") btnDelete.Enabled = false;
@@ -61,6 +72,14 @@ namespace StockBaseApp
             this.Controls.AddRange(new Control[] { headerPanel, btnView, btnCreate, btnDelete, btnClose });
         }
 
+        /// <summary>
+        /// Estilo uniformea duten botoiak sortzeko laguntza-metodoa.
+        /// </summary>
+        /// <param name="text">Botoiaren testua.</param>
+        /// <param name="top">Goiko margenaren posizioa.</param>
+        /// <param name="baseColor">Botoiaren atzeko kolorea.</param>
+        /// <param name="isSmall">Tamaina txikia (40px) edo handia (60px) den.</param>
+        /// <returns>Konfiguratutako <see cref="Button"/> objektua.</returns>
         private Button CreateStyledButton(string text, int top, Color baseColor, bool isSmall = false)
         {
             Button btn = new Button {

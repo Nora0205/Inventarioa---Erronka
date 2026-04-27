@@ -1,0 +1,593 @@
+### YamlMime:ManagedReference
+items:
+- uid: StockBaseApp.Modeloak.Erabiltzailea
+  commentId: T:StockBaseApp.Modeloak.Erabiltzailea
+  id: Erabiltzailea
+  parent: StockBaseApp.Modeloak
+  children:
+  - StockBaseApp.Modeloak.Erabiltzailea.#ctor(System.Int32,System.String,System.String,System.String,System.String)
+  - StockBaseApp.Modeloak.Erabiltzailea.Email
+  - StockBaseApp.Modeloak.Erabiltzailea.IdErabiltzailea
+  - StockBaseApp.Modeloak.Erabiltzailea.Izena
+  - StockBaseApp.Modeloak.Erabiltzailea.MintegiJabea
+  - StockBaseApp.Modeloak.Erabiltzailea.Pasahitza
+  - StockBaseApp.Modeloak.Erabiltzailea.Rola
+  langs:
+  - csharp
+  - vb
+  name: Erabiltzailea
+  nameWithType: Erabiltzailea
+  fullName: StockBaseApp.Modeloak.Erabiltzailea
+  type: Class
+  source:
+    remote:
+      path: StockBaseApp/Modeloak/Erabiltzailea.cs
+      branch: master
+      repo: https://github.com/Nora0205/Inventarioa---Erronka.git
+    id: Erabiltzailea
+    path: ../StockBaseApp/Modeloak/Erabiltzailea.cs
+    startLine: 4
+  assemblies:
+  - StockBaseApp
+  namespace: StockBaseApp.Modeloak
+  syntax:
+    content: public class Erabiltzailea
+    content.vb: Public Class Erabiltzailea
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: StockBaseApp.Modeloak.Erabiltzailea.#ctor(System.Int32,System.String,System.String,System.String,System.String)
+  commentId: M:StockBaseApp.Modeloak.Erabiltzailea.#ctor(System.Int32,System.String,System.String,System.String,System.String)
+  id: '#ctor(System.Int32,System.String,System.String,System.String,System.String)'
+  parent: StockBaseApp.Modeloak.Erabiltzailea
+  langs:
+  - csharp
+  - vb
+  name: Erabiltzailea(int, string, string, string, string)
+  nameWithType: Erabiltzailea.Erabiltzailea(int, string, string, string, string)
+  fullName: StockBaseApp.Modeloak.Erabiltzailea.Erabiltzailea(int, string, string, string, string)
+  type: Constructor
+  source:
+    remote:
+      path: StockBaseApp/Modeloak/Erabiltzailea.cs
+      branch: master
+      repo: https://github.com/Nora0205/Inventarioa---Erronka.git
+    id: .ctor
+    path: ../StockBaseApp/Modeloak/Erabiltzailea.cs
+    startLine: 4
+  assemblies:
+  - StockBaseApp
+  namespace: StockBaseApp.Modeloak
+  syntax:
+    content: public Erabiltzailea(int id, string izena, string email, string rola, string pasahitza = "")
+    parameters:
+    - id: id
+      type: System.Int32
+    - id: izena
+      type: System.String
+    - id: email
+      type: System.String
+    - id: rola
+      type: System.String
+    - id: pasahitza
+      type: System.String
+    content.vb: Public Sub New(id As Integer, izena As String, email As String, rola As String, pasahitza As String = "")
+  overload: StockBaseApp.Modeloak.Erabiltzailea.#ctor*
+  nameWithType.vb: Erabiltzailea.New(Integer, String, String, String, String)
+  fullName.vb: StockBaseApp.Modeloak.Erabiltzailea.New(Integer, String, String, String, String)
+  name.vb: New(Integer, String, String, String, String)
+- uid: StockBaseApp.Modeloak.Erabiltzailea.IdErabiltzailea
+  commentId: P:StockBaseApp.Modeloak.Erabiltzailea.IdErabiltzailea
+  id: IdErabiltzailea
+  parent: StockBaseApp.Modeloak.Erabiltzailea
+  langs:
+  - csharp
+  - vb
+  name: IdErabiltzailea
+  nameWithType: Erabiltzailea.IdErabiltzailea
+  fullName: StockBaseApp.Modeloak.Erabiltzailea.IdErabiltzailea
+  type: Property
+  source:
+    remote:
+      path: StockBaseApp/Modeloak/Erabiltzailea.cs
+      branch: master
+      repo: https://github.com/Nora0205/Inventarioa---Erronka.git
+    id: IdErabiltzailea
+    path: ../StockBaseApp/Modeloak/Erabiltzailea.cs
+    startLine: 6
+  assemblies:
+  - StockBaseApp
+  namespace: StockBaseApp.Modeloak
+  syntax:
+    content: public int IdErabiltzailea { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property IdErabiltzailea As Integer
+  overload: StockBaseApp.Modeloak.Erabiltzailea.IdErabiltzailea*
+- uid: StockBaseApp.Modeloak.Erabiltzailea.Izena
+  commentId: P:StockBaseApp.Modeloak.Erabiltzailea.Izena
+  id: Izena
+  parent: StockBaseApp.Modeloak.Erabiltzailea
+  langs:
+  - csharp
+  - vb
+  name: Izena
+  nameWithType: Erabiltzailea.Izena
+  fullName: StockBaseApp.Modeloak.Erabiltzailea.Izena
+  type: Property
+  source:
+    remote:
+      path: StockBaseApp/Modeloak/Erabiltzailea.cs
+      branch: master
+      repo: https://github.com/Nora0205/Inventarioa---Erronka.git
+    id: Izena
+    path: ../StockBaseApp/Modeloak/Erabiltzailea.cs
+    startLine: 7
+  assemblies:
+  - StockBaseApp
+  namespace: StockBaseApp.Modeloak
+  syntax:
+    content: public string Izena { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Izena As String
+  overload: StockBaseApp.Modeloak.Erabiltzailea.Izena*
+- uid: StockBaseApp.Modeloak.Erabiltzailea.Email
+  commentId: P:StockBaseApp.Modeloak.Erabiltzailea.Email
+  id: Email
+  parent: StockBaseApp.Modeloak.Erabiltzailea
+  langs:
+  - csharp
+  - vb
+  name: Email
+  nameWithType: Erabiltzailea.Email
+  fullName: StockBaseApp.Modeloak.Erabiltzailea.Email
+  type: Property
+  source:
+    remote:
+      path: StockBaseApp/Modeloak/Erabiltzailea.cs
+      branch: master
+      repo: https://github.com/Nora0205/Inventarioa---Erronka.git
+    id: Email
+    path: ../StockBaseApp/Modeloak/Erabiltzailea.cs
+    startLine: 8
+  assemblies:
+  - StockBaseApp
+  namespace: StockBaseApp.Modeloak
+  syntax:
+    content: public string Email { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Email As String
+  overload: StockBaseApp.Modeloak.Erabiltzailea.Email*
+- uid: StockBaseApp.Modeloak.Erabiltzailea.Pasahitza
+  commentId: P:StockBaseApp.Modeloak.Erabiltzailea.Pasahitza
+  id: Pasahitza
+  parent: StockBaseApp.Modeloak.Erabiltzailea
+  langs:
+  - csharp
+  - vb
+  name: Pasahitza
+  nameWithType: Erabiltzailea.Pasahitza
+  fullName: StockBaseApp.Modeloak.Erabiltzailea.Pasahitza
+  type: Property
+  source:
+    remote:
+      path: StockBaseApp/Modeloak/Erabiltzailea.cs
+      branch: master
+      repo: https://github.com/Nora0205/Inventarioa---Erronka.git
+    id: Pasahitza
+    path: ../StockBaseApp/Modeloak/Erabiltzailea.cs
+    startLine: 9
+  assemblies:
+  - StockBaseApp
+  namespace: StockBaseApp.Modeloak
+  syntax:
+    content: public string Pasahitza { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Pasahitza As String
+  overload: StockBaseApp.Modeloak.Erabiltzailea.Pasahitza*
+- uid: StockBaseApp.Modeloak.Erabiltzailea.Rola
+  commentId: P:StockBaseApp.Modeloak.Erabiltzailea.Rola
+  id: Rola
+  parent: StockBaseApp.Modeloak.Erabiltzailea
+  langs:
+  - csharp
+  - vb
+  name: Rola
+  nameWithType: Erabiltzailea.Rola
+  fullName: StockBaseApp.Modeloak.Erabiltzailea.Rola
+  type: Property
+  source:
+    remote:
+      path: StockBaseApp/Modeloak/Erabiltzailea.cs
+      branch: master
+      repo: https://github.com/Nora0205/Inventarioa---Erronka.git
+    id: Rola
+    path: ../StockBaseApp/Modeloak/Erabiltzailea.cs
+    startLine: 10
+  assemblies:
+  - StockBaseApp
+  namespace: StockBaseApp.Modeloak
+  syntax:
+    content: public string Rola { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Rola As String
+  overload: StockBaseApp.Modeloak.Erabiltzailea.Rola*
+- uid: StockBaseApp.Modeloak.Erabiltzailea.MintegiJabea
+  commentId: P:StockBaseApp.Modeloak.Erabiltzailea.MintegiJabea
+  id: MintegiJabea
+  parent: StockBaseApp.Modeloak.Erabiltzailea
+  langs:
+  - csharp
+  - vb
+  name: MintegiJabea
+  nameWithType: Erabiltzailea.MintegiJabea
+  fullName: StockBaseApp.Modeloak.Erabiltzailea.MintegiJabea
+  type: Property
+  source:
+    remote:
+      path: StockBaseApp/Modeloak/Erabiltzailea.cs
+      branch: master
+      repo: https://github.com/Nora0205/Inventarioa---Erronka.git
+    id: MintegiJabea
+    path: ../StockBaseApp/Modeloak/Erabiltzailea.cs
+    startLine: 11
+  assemblies:
+  - StockBaseApp
+  namespace: StockBaseApp.Modeloak
+  syntax:
+    content: public Mintegia? MintegiJabea { get; set; }
+    parameters: []
+    return:
+      type: StockBaseApp.Modeloak.Mintegia
+    content.vb: Public Property MintegiJabea As Mintegia
+  overload: StockBaseApp.Modeloak.Erabiltzailea.MintegiJabea*
+references:
+- uid: StockBaseApp.Modeloak
+  commentId: N:StockBaseApp.Modeloak
+  href: StockBaseApp.html
+  name: StockBaseApp.Modeloak
+  nameWithType: StockBaseApp.Modeloak
+  fullName: StockBaseApp.Modeloak
+  spec.csharp:
+  - uid: StockBaseApp
+    name: StockBaseApp
+    href: StockBaseApp.html
+  - name: .
+  - uid: StockBaseApp.Modeloak
+    name: Modeloak
+    href: StockBaseApp.Modeloak.html
+  spec.vb:
+  - uid: StockBaseApp
+    name: StockBaseApp
+    href: StockBaseApp.html
+  - name: .
+  - uid: StockBaseApp.Modeloak
+    name: Modeloak
+    href: StockBaseApp.Modeloak.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: StockBaseApp.Modeloak.Erabiltzailea.#ctor*
+  commentId: Overload:StockBaseApp.Modeloak.Erabiltzailea.#ctor
+  href: StockBaseApp.Modeloak.Erabiltzailea.html#StockBaseApp_Modeloak_Erabiltzailea__ctor_System_Int32_System_String_System_String_System_String_System_String_
+  name: Erabiltzailea
+  nameWithType: Erabiltzailea.Erabiltzailea
+  fullName: StockBaseApp.Modeloak.Erabiltzailea.Erabiltzailea
+  nameWithType.vb: Erabiltzailea.New
+  fullName.vb: StockBaseApp.Modeloak.Erabiltzailea.New
+  name.vb: New
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: StockBaseApp.Modeloak.Erabiltzailea.IdErabiltzailea*
+  commentId: Overload:StockBaseApp.Modeloak.Erabiltzailea.IdErabiltzailea
+  href: StockBaseApp.Modeloak.Erabiltzailea.html#StockBaseApp_Modeloak_Erabiltzailea_IdErabiltzailea
+  name: IdErabiltzailea
+  nameWithType: Erabiltzailea.IdErabiltzailea
+  fullName: StockBaseApp.Modeloak.Erabiltzailea.IdErabiltzailea
+- uid: StockBaseApp.Modeloak.Erabiltzailea.Izena*
+  commentId: Overload:StockBaseApp.Modeloak.Erabiltzailea.Izena
+  href: StockBaseApp.Modeloak.Erabiltzailea.html#StockBaseApp_Modeloak_Erabiltzailea_Izena
+  name: Izena
+  nameWithType: Erabiltzailea.Izena
+  fullName: StockBaseApp.Modeloak.Erabiltzailea.Izena
+- uid: StockBaseApp.Modeloak.Erabiltzailea.Email*
+  commentId: Overload:StockBaseApp.Modeloak.Erabiltzailea.Email
+  href: StockBaseApp.Modeloak.Erabiltzailea.html#StockBaseApp_Modeloak_Erabiltzailea_Email
+  name: Email
+  nameWithType: Erabiltzailea.Email
+  fullName: StockBaseApp.Modeloak.Erabiltzailea.Email
+- uid: StockBaseApp.Modeloak.Erabiltzailea.Pasahitza*
+  commentId: Overload:StockBaseApp.Modeloak.Erabiltzailea.Pasahitza
+  href: StockBaseApp.Modeloak.Erabiltzailea.html#StockBaseApp_Modeloak_Erabiltzailea_Pasahitza
+  name: Pasahitza
+  nameWithType: Erabiltzailea.Pasahitza
+  fullName: StockBaseApp.Modeloak.Erabiltzailea.Pasahitza
+- uid: StockBaseApp.Modeloak.Erabiltzailea.Rola*
+  commentId: Overload:StockBaseApp.Modeloak.Erabiltzailea.Rola
+  href: StockBaseApp.Modeloak.Erabiltzailea.html#StockBaseApp_Modeloak_Erabiltzailea_Rola
+  name: Rola
+  nameWithType: Erabiltzailea.Rola
+  fullName: StockBaseApp.Modeloak.Erabiltzailea.Rola
+- uid: StockBaseApp.Modeloak.Erabiltzailea.MintegiJabea*
+  commentId: Overload:StockBaseApp.Modeloak.Erabiltzailea.MintegiJabea
+  href: StockBaseApp.Modeloak.Erabiltzailea.html#StockBaseApp_Modeloak_Erabiltzailea_MintegiJabea
+  name: MintegiJabea
+  nameWithType: Erabiltzailea.MintegiJabea
+  fullName: StockBaseApp.Modeloak.Erabiltzailea.MintegiJabea
+- uid: StockBaseApp.Modeloak.Mintegia
+  commentId: T:StockBaseApp.Modeloak.Mintegia
+  parent: StockBaseApp.Modeloak
+  href: StockBaseApp.Modeloak.Mintegia.html
+  name: Mintegia
+  nameWithType: Mintegia
+  fullName: StockBaseApp.Modeloak.Mintegia

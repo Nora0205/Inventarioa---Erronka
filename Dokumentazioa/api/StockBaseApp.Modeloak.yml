@@ -1,0 +1,83 @@
+### YamlMime:ManagedReference
+items:
+- uid: StockBaseApp.Modeloak
+  commentId: N:StockBaseApp.Modeloak
+  id: StockBaseApp.Modeloak
+  children:
+  - StockBaseApp.Modeloak.Erabiltzailea
+  - StockBaseApp.Modeloak.EzabatutakoGailua
+  - StockBaseApp.Modeloak.Gailua
+  - StockBaseApp.Modeloak.Inprimagailua
+  - StockBaseApp.Modeloak.Mintegia
+  - StockBaseApp.Modeloak.Ordenagailua
+  langs:
+  - csharp
+  - vb
+  name: StockBaseApp.Modeloak
+  nameWithType: StockBaseApp.Modeloak
+  fullName: StockBaseApp.Modeloak
+  type: Namespace
+  assemblies:
+  - StockBaseApp
+references:
+- uid: StockBaseApp.Modeloak.Erabiltzailea
+  commentId: T:StockBaseApp.Modeloak.Erabiltzailea
+  parent: StockBaseApp.Modeloak
+  href: StockBaseApp.Modeloak.Erabiltzailea.html
+  name: Erabiltzailea
+  nameWithType: Erabiltzailea
+  fullName: StockBaseApp.Modeloak.Erabiltzailea
+- uid: StockBaseApp.Modeloak.EzabatutakoGailua
+  commentId: T:StockBaseApp.Modeloak.EzabatutakoGailua
+  href: StockBaseApp.Modeloak.EzabatutakoGailua.html
+  name: EzabatutakoGailua
+  nameWithType: EzabatutakoGailua
+  fullName: StockBaseApp.Modeloak.EzabatutakoGailua
+- uid: StockBaseApp.Modeloak.Gailua
+  commentId: T:StockBaseApp.Modeloak.Gailua
+  parent: StockBaseApp.Modeloak
+  href: StockBaseApp.Modeloak.Gailua.html
+  name: Gailua
+  nameWithType: Gailua
+  fullName: StockBaseApp.Modeloak.Gailua
+- uid: StockBaseApp.Modeloak.Inprimagailua
+  commentId: T:StockBaseApp.Modeloak.Inprimagailua
+  href: StockBaseApp.Modeloak.Inprimagailua.html
+  name: Inprimagailua
+  nameWithType: Inprimagailua
+  fullName: StockBaseApp.Modeloak.Inprimagailua
+- uid: StockBaseApp.Modeloak.Mintegia
+  commentId: T:StockBaseApp.Modeloak.Mintegia
+  parent: StockBaseApp.Modeloak
+  href: StockBaseApp.Modeloak.Mintegia.html
+  name: Mintegia
+  nameWithType: Mintegia
+  fullName: StockBaseApp.Modeloak.Mintegia
+- uid: StockBaseApp.Modeloak.Ordenagailua
+  commentId: T:StockBaseApp.Modeloak.Ordenagailua
+  href: StockBaseApp.Modeloak.Ordenagailua.html
+  name: Ordenagailua
+  nameWithType: Ordenagailua
+  fullName: StockBaseApp.Modeloak.Ordenagailua
+- uid: StockBaseApp.Modeloak
+  commentId: N:StockBaseApp.Modeloak
+  href: StockBaseApp.html
+  name: StockBaseApp.Modeloak
+  nameWithType: StockBaseApp.Modeloak
+  fullName: StockBaseApp.Modeloak
+  spec.csharp:
+  - uid: StockBaseApp
+    name: StockBaseApp
+    href: StockBaseApp.html
+  - name: .
+  - uid: StockBaseApp.Modeloak
+    name: Modeloak
+    href: StockBaseApp.Modeloak.html
+  spec.vb:
+  - uid: StockBaseApp
+    name: StockBaseApp
+    href: StockBaseApp.html
+  - name: .
+  - uid: StockBaseApp.Modeloak
+    name: Modeloak
+    href: StockBaseApp.Modeloak.html

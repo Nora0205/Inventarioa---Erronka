@@ -6,18 +6,30 @@ using StockBaseApp.Modeloak;
 
 namespace StockBaseApp
 {
+    /// <summary>
+    /// Erabiltzaileak sistematik ezabatzeko inprimakia.
+    /// </summary>
     public class DeleteUserForm : Form
     {
         private InbentarioSistema kudeatzailea;
+        private Erabiltzailea admin;
         private DataGridView? dgErabiltzaileak;
 
-        public DeleteUserForm()
+        /// <summary>
+        /// DeleteUserForm klasearen instantzia berria sortzen du.
+        /// </summary>
+        /// <param name="admin">Ekintza burutzen ari den administratzailea.</param>
+        public DeleteUserForm(Erabiltzailea admin)
         {
+            this.admin = admin;
             this.kudeatzailea = new InbentarioSistema();
             InterfazeaHasieratu();
             EguneratuTaula();
         }
 
+        /// <summary>
+        /// Inprimakiaren interfaze grafikoa eta kontrolak hasieratzen ditu.
+        /// </summary>
         private void InterfazeaHasieratu()
         {
             this.Text = "Erabiltzailea Ezabatu";
@@ -47,12 +59,20 @@ namespace StockBaseApp
             this.Controls.Add(btEzabatu);
         }
 
+        /// <summary>
+        /// Erabiltzaileen taula datu-baseko informazioarekin eguneratzen du.
+        /// </summary>
         private void EguneratuTaula()
         {
             if (dgErabiltzaileak != null)
                 dgErabiltzaileak.DataSource = kudeatzailea.ErabiltzaileGuztiakLortu();
         }
 
+        /// <summary>
+        /// Ezabatu botoia sakatzean exekutatzen da. Hautatutako erabiltzailea sistematik ezabatzen du.
+        /// </summary>
+        /// <param name="igorlea">Gertaera sortu duen objektua.</param>
+        /// <param name="e">Gertaeraren datuak.</param>
         private void btEzabatu_Click(object? igorlea, EventArgs e)
         {
             if (dgErabiltzaileak != null && dgErabiltzaileak.SelectedRows.Count > 0)
@@ -64,7 +84,7 @@ namespace StockBaseApp
                 if (MessageBox.Show($"{izena} ezabatu nahi duzu?", "Baieztatu", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     try {
-                        kudeatzailea.ErabiltzaileaEzabatu(id, izena);
+                        kudeatzailea.ErabiltzaileaEzabatu(id, izena, admin.IdErabiltzailea);
                         MessageBox.Show("Erabiltzailea ezabatua.");
                         EguneratuTaula();
                     }

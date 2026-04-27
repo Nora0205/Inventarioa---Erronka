@@ -7,6 +7,9 @@ using StockBaseApp.Kontrolagailuak;
 
 namespace StockBaseApp
 {
+    /// <summary>
+    /// Inprimagailu berriak sisteman gehitzeko erabiltzen den inprimakia.
+    /// </summary>
     public class AddPrinterForm : Form
     {
         private InbentarioSistema kudeatzailea;
@@ -16,6 +19,10 @@ namespace StockBaseApp
         private ComboBox? cbMintegia, cbKoka;
         private DateTimePicker? dtData;
 
+        /// <summary>
+        /// AddPrinterForm klasearen instantzia berria sortzen du.
+        /// </summary>
+        /// <param name="user">Inprimakia erabiltzen ari den erabiltzailea.</param>
         public AddPrinterForm(Erabiltzailea user)
         {
             this.erabiltzailea = user;
@@ -23,6 +30,9 @@ namespace StockBaseApp
             InterfazeaHasieratu();
         }
 
+        /// <summary>
+        /// Inprimakiaren interfaze grafikoa eta kontrolak hasieratzen ditu.
+        /// </summary>
         private void InterfazeaHasieratu()
         {
             this.Text = "Inprimagailu Berria";
@@ -52,7 +62,7 @@ namespace StockBaseApp
 
                 if (nuevoMintegi.HasValue) {
                     for (int i = 0; i < cbMintegia.Items.Count; i++) {
-                        if (((KeyValuePair<int, string>)cbMintegia.Items[i]).Key == nuevoMintegi.Value) {
+                        if (cbMintegia.Items[i] is KeyValuePair<int, string> item && item.Key == nuevoMintegi.Value) {
                             cbMintegia.SelectedIndex = i;
                             cbMintegia.Enabled = false;
                             break;
@@ -82,6 +92,9 @@ namespace StockBaseApp
             DatuakKargatu();
         }
 
+        /// <summary>
+        /// Mintegi eta kokaleku datuak datu-basetik kargatzen ditu eta ComboBox-etan bistaratzen ditu.
+        /// </summary>
         private void DatuakKargatu()
         {
             var mintegiak = kudeatzailea.LortuMintegiak();
@@ -103,6 +116,11 @@ namespace StockBaseApp
             if (cbKoka.Items.Count > 0) cbKoka.SelectedIndex = 0;
         }
 
+        /// <summary>
+        /// Gorde botoia sakatzean exekutatzen da. Sartutako datuak balidatzen ditu eta inprimagailu berria datu-basean gordetzen du.
+        /// </summary>
+        /// <param name="sender">Gertaera sortu duen objektua.</param>
+        /// <param name="e">Gertaeraren datuak.</param>
         private void btGorde_Click(object? sender, EventArgs e)
         {
             try
@@ -117,7 +135,7 @@ namespace StockBaseApp
                     IdMintegia = idMintegia, 
                     Modeloa = txModeloa.Text 
                 };
-                kudeatzailea.GailuaGehitu(printer, kokalekua);
+                kudeatzailea.GailuaGehitu(printer, kokalekua, erabiltzailea.IdErabiltzailea);
                 MessageBox.Show("Inprimagailua ondo gorde da!");
                 this.Close();
             }

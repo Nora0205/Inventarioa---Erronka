@@ -1,0 +1,54 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/docfx/main/schemas/docfx.schema.json",
+  "metadata": [
+    {
+      "src": [
+        {
+          "files": [
+            "StockBaseApp/*.csproj"
+          ],
+          "src": "."
+        }
+      ],
+      "dest": "api"
+    }
+  ],
+  "build": {
+    "content": [
+      {
+        "files": [
+          "api/**.yml",
+          "api/index.md",
+          "Dokumentazioa/docs/**",
+          "Dokumentazioa/index.md",
+          "Dokumentazioa/toc.yml",
+          "toc.yml",
+          "*.md"
+        ],
+        "exclude": [
+          "**/obj/**",
+          "**/_site/**",
+          "Dokumentazioa/api/**"
+        ]
+      }
+    ],
+    "resource": [
+      {
+        "files": [
+          "images/**"
+        ]
+      }
+    ],
+    "dest": "_site",
+    "template": [
+      "default",
+      "modern"
+    ],
+    "globalMetadata": {
+      "_appName": "StockBase",
+      "_appTitle": "StockBaseApp - Gestión de Inventario",
+      "_enableSearch": true,
+      "pdf": false
+    }
+  }
+}

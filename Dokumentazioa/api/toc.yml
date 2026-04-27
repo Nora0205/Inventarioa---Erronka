@@ -1,0 +1,69 @@
+### YamlMime:TableOfContent
+items:
+- uid: StockBaseApp
+  name: StockBaseApp
+  type: Namespace
+  items:
+  - uid: StockBaseApp.AddComputerForm
+    name: AddComputerForm
+    type: Class
+  - uid: StockBaseApp.AddPrinterForm
+    name: AddPrinterForm
+    type: Class
+  - uid: StockBaseApp.CreateUserForm
+    name: CreateUserForm
+    type: Class
+  - uid: StockBaseApp.DeleteUserForm
+    name: DeleteUserForm
+    type: Class
+  - uid: StockBaseApp.EzabatuakForm
+    name: EzabatuakForm
+    type: Class
+  - uid: StockBaseApp.LoginForm
+    name: LoginForm
+    type: Class
+  - uid: StockBaseApp.MainForm
+    name: MainForm
+    type: Class
+  - uid: StockBaseApp.ManageUsersForm
+    name: ManageUsersForm
+    type: Class
+  - uid: StockBaseApp.ViewDevicesForm
+    name: ViewDevicesForm
+    type: Class
+  - uid: StockBaseApp.ViewUsersForm
+    name: ViewUsersForm
+    type: Class
+- uid: StockBaseApp.Kontrolagailuak
+  name: StockBaseApp.Kontrolagailuak
+  type: Namespace
+  items:
+  - uid: StockBaseApp.Kontrolagailuak.InbentarioSistema
+    name: InbentarioSistema
+    type: Class
+  - uid: StockBaseApp.Kontrolagailuak.Konexioa
+    name: Konexioa
+    type: Class
+- uid: StockBaseApp.Modeloak
+  name: StockBaseApp.Modeloak
+  type: Namespace
+  items:
+  - uid: StockBaseApp.Modeloak.Erabiltzailea
+    name: Erabiltzailea
+    type: Class
+  - uid: StockBaseApp.Modeloak.EzabatutakoGailua
+    name: EzabatutakoGailua
+    type: Class
+  - uid: StockBaseApp.Modeloak.Gailua
+    name: Gailua
+    type: Class
+  - uid: StockBaseApp.Modeloak.Inprimagailua
+    name: Inprimagailua
+    type: Class
+  - uid: StockBaseApp.Modeloak.Mintegia
+    name: Mintegia
+    type: Class
+  - uid: StockBaseApp.Modeloak.Ordenagailua
+    name: Ordenagailua
+    type: Class
+memberLayout: SamePage

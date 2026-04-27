@@ -1,0 +1,1359 @@
+### YamlMime:ManagedReference
+items:
+- uid: StockBaseApp.Kontrolagailuak.InbentarioSistema
+  commentId: T:StockBaseApp.Kontrolagailuak.InbentarioSistema
+  id: InbentarioSistema
+  parent: StockBaseApp.Kontrolagailuak
+  children:
+  - StockBaseApp.Kontrolagailuak.InbentarioSistema.#ctor
+  - StockBaseApp.Kontrolagailuak.InbentarioSistema.ErabiltzaileGuztiakLortu
+  - StockBaseApp.Kontrolagailuak.InbentarioSistema.ErabiltzaileKopuruaLortu(System.String,System.Nullable{System.Int32})
+  - StockBaseApp.Kontrolagailuak.InbentarioSistema.ErabiltzaileaEzabatu(System.Int32,System.String,System.Int32)
+  - StockBaseApp.Kontrolagailuak.InbentarioSistema.ErabiltzaileaGehitu(System.String,System.String,System.String,System.String,System.Int32,System.Int32)
+  - StockBaseApp.Kontrolagailuak.InbentarioSistema.GailuaEgoeraAldatu(System.Int32,System.String,System.Int32)
+  - StockBaseApp.Kontrolagailuak.InbentarioSistema.GailuaEzabatu(StockBaseApp.Modeloak.Gailua,System.Int32)
+  - StockBaseApp.Kontrolagailuak.InbentarioSistema.GailuaGehitu(StockBaseApp.Modeloak.Gailua,System.String,System.Int32)
+  - StockBaseApp.Kontrolagailuak.InbentarioSistema.GailuaKokalekuaAldatu(System.Int32,System.String,System.Int32)
+  - StockBaseApp.Kontrolagailuak.InbentarioSistema.LogGorde(System.Int32,System.String,System.String,System.Int32,System.String)
+  - StockBaseApp.Kontrolagailuak.InbentarioSistema.Lortu10GailuZaharrenak
+  - StockBaseApp.Kontrolagailuak.InbentarioSistema.LortuBajaEtaMantentzeSistema
+  - StockBaseApp.Kontrolagailuak.InbentarioSistema.LortuGailuakGuztiak(System.Nullable{System.Int32})
+  - StockBaseApp.Kontrolagailuak.InbentarioSistema.LortuKokalekuak
+  - StockBaseApp.Kontrolagailuak.InbentarioSistema.LortuMintegiak
+  - StockBaseApp.Kontrolagailuak.InbentarioSistema.MintegiaEzabatu(System.Int32,System.Int32)
+  - StockBaseApp.Kontrolagailuak.InbentarioSistema.MintegiaGehitu(System.String,System.Int32)
+  - StockBaseApp.Kontrolagailuak.InbentarioSistema.SaioaHasi(System.String,System.String)
+  langs:
+  - csharp
+  - vb
+  name: InbentarioSistema
+  nameWithType: InbentarioSistema
+  fullName: StockBaseApp.Kontrolagailuak.InbentarioSistema
+  type: Class
+  source:
+    remote:
+      path: StockBaseApp/Kontrolagailuak/InbentarioSistema.cs
+      branch: master
+      repo: https://github.com/Nora0205/Inventarioa---Erronka.git
+    id: InbentarioSistema
+    path: StockBaseApp/Kontrolagailuak/InbentarioSistema.cs
+    startLine: 12
+  assemblies:
+  - StockBaseApp
+  namespace: StockBaseApp.Kontrolagailuak
+  summary: >-
+    Inbentarioaren kudeaketarako kontrolagailu nagusia.
+
+    Datu-basearekiko operazio guztiak (CRUD) eta log-en kudeaketa zentralizatzen ditu.
+  example: []
+  syntax:
+    content: public class InbentarioSistema
+    content.vb: Public Class InbentarioSistema
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: StockBaseApp.Kontrolagailuak.InbentarioSistema.#ctor
+  commentId: M:StockBaseApp.Kontrolagailuak.InbentarioSistema.#ctor
+  id: '#ctor'
+  parent: StockBaseApp.Kontrolagailuak.InbentarioSistema
+  langs:
+  - csharp
+  - vb
+  name: InbentarioSistema()
+  nameWithType: InbentarioSistema.InbentarioSistema()
+  fullName: StockBaseApp.Kontrolagailuak.InbentarioSistema.InbentarioSistema()
+  type: Constructor
+  source:
+    remote:
+      path: StockBaseApp/Kontrolagailuak/InbentarioSistema.cs
+      branch: master
+      repo: https://github.com/Nora0205/Inventarioa---Erronka.git
+    id: .ctor
+    path: StockBaseApp/Kontrolagailuak/InbentarioSistema.cs
+    startLine: 19
+  assemblies:
+  - StockBaseApp
+  namespace: StockBaseApp.Kontrolagailuak
+  summary: InbentarioSistema klasearen instantzia berri bat sortzen du.
+  example: []
+  syntax:
+    content: public InbentarioSistema()
+    content.vb: Public Sub New()
+  overload: StockBaseApp.Kontrolagailuak.InbentarioSistema.#ctor*
+  nameWithType.vb: InbentarioSistema.New()
+  fullName.vb: StockBaseApp.Kontrolagailuak.InbentarioSistema.New()
+  name.vb: New()
+- uid: StockBaseApp.Kontrolagailuak.InbentarioSistema.LogGorde(System.Int32,System.String,System.String,System.Int32,System.String)
+  commentId: M:StockBaseApp.Kontrolagailuak.InbentarioSistema.LogGorde(System.Int32,System.String,System.String,System.Int32,System.String)
+  id: LogGorde(System.Int32,System.String,System.String,System.Int32,System.String)
+  parent: StockBaseApp.Kontrolagailuak.InbentarioSistema
+  langs:
+  - csharp
+  - vb
+  name: LogGorde(int, string, string, int, string)
+  nameWithType: InbentarioSistema.LogGorde(int, string, string, int, string)
+  fullName: StockBaseApp.Kontrolagailuak.InbentarioSistema.LogGorde(int, string, string, int, string)
+  type: Method
+  source:
+    remote:
+      path: StockBaseApp/Kontrolagailuak/InbentarioSistema.cs
+      branch: master
+      repo: https://github.com/Nora0205/Inventarioa---Erronka.git
+    id: LogGorde
+    path: StockBaseApp/Kontrolagailuak/InbentarioSistema.cs
+    startLine: 32
+  assemblies:
+  - StockBaseApp
+  namespace: StockBaseApp.Kontrolagailuak
+  summary: Sisteman gertatzen diren ekintza garrantzitsuak 'Log' taulan gordetzen ditu.
+  example: []
+  syntax:
+    content: public void LogGorde(int idErabiltzailea, string ekintza, string taula, int idErregistroa, string xehetasuna)
+    parameters:
+    - id: idErabiltzailea
+      type: System.Int32
+      description: Ekintza burutu duen erabiltzailearen ID-a.
+    - id: ekintza
+      type: System.String
+      description: Burututako ekintza mota (INSERT, UPDATE, DELETE, LOGIN...).
+    - id: taula
+      type: System.String
+      description: Aldatutako datu-baseko taularen izena.
+    - id: idErregistroa
+      type: System.Int32
+      description: Aldatutako erregistroaren ID-a.
+    - id: xehetasuna
+      type: System.String
+      description: Ekintzaren azalpen testual bat.
+    content.vb: Public Sub LogGorde(idErabiltzailea As Integer, ekintza As String, taula As String, idErregistroa As Integer, xehetasuna As String)
+  overload: StockBaseApp.Kontrolagailuak.InbentarioSistema.LogGorde*
+  nameWithType.vb: InbentarioSistema.LogGorde(Integer, String, String, Integer, String)
+  fullName.vb: StockBaseApp.Kontrolagailuak.InbentarioSistema.LogGorde(Integer, String, String, Integer, String)
+  name.vb: LogGorde(Integer, String, String, Integer, String)
+- uid: StockBaseApp.Kontrolagailuak.InbentarioSistema.SaioaHasi(System.String,System.String)
+  commentId: M:StockBaseApp.Kontrolagailuak.InbentarioSistema.SaioaHasi(System.String,System.String)
+  id: SaioaHasi(System.String,System.String)
+  parent: StockBaseApp.Kontrolagailuak.InbentarioSistema
+  langs:
+  - csharp
+  - vb
+  name: SaioaHasi(string, string)
+  nameWithType: InbentarioSistema.SaioaHasi(string, string)
+  fullName: StockBaseApp.Kontrolagailuak.InbentarioSistema.SaioaHasi(string, string)
+  type: Method
+  source:
+    remote:
+      path: StockBaseApp/Kontrolagailuak/InbentarioSistema.cs
+      branch: master
+      repo: https://github.com/Nora0205/Inventarioa---Erronka.git
+    id: SaioaHasi
+    path: StockBaseApp/Kontrolagailuak/InbentarioSistema.cs
+    startLine: 53
+  assemblies:
+  - StockBaseApp
+  namespace: StockBaseApp.Kontrolagailuak
+  summary: Erabiltzailearen kredentzialak egiaztatzen ditu sisteman sartzeko.
+  example: []
+  syntax:
+    content: public Erabiltzailea? SaioaHasi(string izena, string pasahitza)
+    parameters:
+    - id: izena
+      type: System.String
+      description: Erabiltzaile izena.
+    - id: pasahitza
+      type: System.String
+      description: Pasahitza (testu arrunta).
+    return:
+      type: StockBaseApp.Modeloak.Erabiltzailea
+      description: Erabiltzailea objektua kredentzialak zuzenak badira; null bestela.
+    content.vb: Public Function SaioaHasi(izena As String, pasahitza As String) As Erabiltzailea
+  overload: StockBaseApp.Kontrolagailuak.InbentarioSistema.SaioaHasi*
+  nameWithType.vb: InbentarioSistema.SaioaHasi(String, String)
+  fullName.vb: StockBaseApp.Kontrolagailuak.InbentarioSistema.SaioaHasi(String, String)
+  name.vb: SaioaHasi(String, String)
+- uid: StockBaseApp.Kontrolagailuak.InbentarioSistema.GailuaGehitu(StockBaseApp.Modeloak.Gailua,System.String,System.Int32)
+  commentId: M:StockBaseApp.Kontrolagailuak.InbentarioSistema.GailuaGehitu(StockBaseApp.Modeloak.Gailua,System.String,System.Int32)
+  id: GailuaGehitu(StockBaseApp.Modeloak.Gailua,System.String,System.Int32)
+  parent: StockBaseApp.Kontrolagailuak.InbentarioSistema
+  langs:
+  - csharp
+  - vb
+  name: GailuaGehitu(Gailua, string, int)
+  nameWithType: InbentarioSistema.GailuaGehitu(Gailua, string, int)
+  fullName: StockBaseApp.Kontrolagailuak.InbentarioSistema.GailuaGehitu(StockBaseApp.Modeloak.Gailua, string, int)
+  type: Method
+  source:
+    remote:
+      path: StockBaseApp/Kontrolagailuak/InbentarioSistema.cs
+      branch: master
+      repo: https://github.com/Nora0205/Inventarioa---Erronka.git
+    id: GailuaGehitu
+    path: StockBaseApp/Kontrolagailuak/InbentarioSistema.cs
+    startLine: 94
+  assemblies:
+  - StockBaseApp
+  namespace: StockBaseApp.Kontrolagailuak
+  summary: Gailu berri bat gehitzen du inbentarioan, bere datu espezifikoekin (PC edo Inprimagailua).
+  example: []
+  syntax:
+    content: public void GailuaGehitu(Gailua gailua, string kokalekua, int idErabiltzailea)
+    parameters:
+    - id: gailua
+      type: StockBaseApp.Modeloak.Gailua
+      description: Gailu objektua (Ordenagailua edo Inprimagailua).
+    - id: kokalekua
+      type: System.String
+      description: Gailuaren kokapen fisikoa (gela).
+    - id: idErabiltzailea
+      type: System.Int32
+      description: Ekintza burutzen duen administratzailearen ID-a.
+    content.vb: Public Sub GailuaGehitu(gailua As Gailua, kokalekua As String, idErabiltzailea As Integer)
+  overload: StockBaseApp.Kontrolagailuak.InbentarioSistema.GailuaGehitu*
+  nameWithType.vb: InbentarioSistema.GailuaGehitu(Gailua, String, Integer)
+  fullName.vb: StockBaseApp.Kontrolagailuak.InbentarioSistema.GailuaGehitu(StockBaseApp.Modeloak.Gailua, String, Integer)
+  name.vb: GailuaGehitu(Gailua, String, Integer)
+- uid: StockBaseApp.Kontrolagailuak.InbentarioSistema.LortuGailuakGuztiak(System.Nullable{System.Int32})
+  commentId: M:StockBaseApp.Kontrolagailuak.InbentarioSistema.LortuGailuakGuztiak(System.Nullable{System.Int32})
+  id: LortuGailuakGuztiak(System.Nullable{System.Int32})
+  parent: StockBaseApp.Kontrolagailuak.InbentarioSistema
+  langs:
+  - csharp
+  - vb
+  name: LortuGailuakGuztiak(int?)
+  nameWithType: InbentarioSistema.LortuGailuakGuztiak(int?)
+  fullName: StockBaseApp.Kontrolagailuak.InbentarioSistema.LortuGailuakGuztiak(int?)
+  type: Method
+  source:
+    remote:
+      path: StockBaseApp/Kontrolagailuak/InbentarioSistema.cs
+      branch: master
+      repo: https://github.com/Nora0205/Inventarioa---Erronka.git
+    id: LortuGailuakGuztiak
+    path: StockBaseApp/Kontrolagailuak/InbentarioSistema.cs
+    startLine: 145
+  assemblies:
+  - StockBaseApp
+  namespace: StockBaseApp.Kontrolagailuak
+  summary: Aktibo dauden gailu guztien zerrenda lortzen du, mintegi baten arabera iragazi daitekeena.
+  example: []
+  syntax:
+    content: public DataTable LortuGailuakGuztiak(int? idMintegia = null)
+    parameters:
+    - id: idMintegia
+      type: System.Nullable{System.Int32}
+      description: Aukerakoa. Mintegi baten ID-a gailuak iragazteko.
+    return:
+      type: System.Data.DataTable
+      description: Gailuen datuekin osatutako DataTable bat.
+    content.vb: Public Function LortuGailuakGuztiak(idMintegia As Integer? = Nothing) As DataTable
+  overload: StockBaseApp.Kontrolagailuak.InbentarioSistema.LortuGailuakGuztiak*
+  nameWithType.vb: InbentarioSistema.LortuGailuakGuztiak(Integer?)
+  fullName.vb: StockBaseApp.Kontrolagailuak.InbentarioSistema.LortuGailuakGuztiak(Integer?)
+  name.vb: LortuGailuakGuztiak(Integer?)
+- uid: StockBaseApp.Kontrolagailuak.InbentarioSistema.LortuBajaEtaMantentzeSistema
+  commentId: M:StockBaseApp.Kontrolagailuak.InbentarioSistema.LortuBajaEtaMantentzeSistema
+  id: LortuBajaEtaMantentzeSistema
+  parent: StockBaseApp.Kontrolagailuak.InbentarioSistema
+  langs:
+  - csharp
+  - vb
+  name: LortuBajaEtaMantentzeSistema()
+  nameWithType: InbentarioSistema.LortuBajaEtaMantentzeSistema()
+  fullName: StockBaseApp.Kontrolagailuak.InbentarioSistema.LortuBajaEtaMantentzeSistema()
+  type: Method
+  source:
+    remote:
+      path: StockBaseApp/Kontrolagailuak/InbentarioSistema.cs
+      branch: master
+      repo: https://github.com/Nora0205/Inventarioa---Erronka.git
+    id: LortuBajaEtaMantentzeSistema
+    path: StockBaseApp/Kontrolagailuak/InbentarioSistema.cs
+    startLine: 179
+  assemblies:
+  - StockBaseApp
+  namespace: StockBaseApp.Kontrolagailuak
+  summary: Mantentze-lanetan, hautsita edo ezabatuta dauden gailuen zerrenda konbinatua lortzen du.
+  example: []
+  syntax:
+    content: public DataTable LortuBajaEtaMantentzeSistema()
+    return:
+      type: System.Data.DataTable
+      description: Baja eta mantentze sistemaren datuekin osatutako DataTable bat.
+    content.vb: Public Function LortuBajaEtaMantentzeSistema() As DataTable
+  overload: StockBaseApp.Kontrolagailuak.InbentarioSistema.LortuBajaEtaMantentzeSistema*
+- uid: StockBaseApp.Kontrolagailuak.InbentarioSistema.LortuMintegiak
+  commentId: M:StockBaseApp.Kontrolagailuak.InbentarioSistema.LortuMintegiak
+  id: LortuMintegiak
+  parent: StockBaseApp.Kontrolagailuak.InbentarioSistema
+  langs:
+  - csharp
+  - vb
+  name: LortuMintegiak()
+  nameWithType: InbentarioSistema.LortuMintegiak()
+  fullName: StockBaseApp.Kontrolagailuak.InbentarioSistema.LortuMintegiak()
+  type: Method
+  source:
+    remote:
+      path: StockBaseApp/Kontrolagailuak/InbentarioSistema.cs
+      branch: master
+      repo: https://github.com/Nora0205/Inventarioa---Erronka.git
+    id: LortuMintegiak
+    path: StockBaseApp/Kontrolagailuak/InbentarioSistema.cs
+    startLine: 203
+  assemblies:
+  - StockBaseApp
+  namespace: StockBaseApp.Kontrolagailuak
+  summary: Sisteman erregistratuta dauden mintegi guztiak lortzen ditu.
+  example: []
+  syntax:
+    content: public List<KeyValuePair<int, string>> LortuMintegiak()
+    return:
+      type: System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{System.Int32,System.String}}
+      description: ID eta Izena bikoteen zerrenda bat.
+    content.vb: Public Function LortuMintegiak() As List(Of KeyValuePair(Of Integer, String))
+  overload: StockBaseApp.Kontrolagailuak.InbentarioSistema.LortuMintegiak*
+- uid: StockBaseApp.Kontrolagailuak.InbentarioSistema.LortuKokalekuak
+  commentId: M:StockBaseApp.Kontrolagailuak.InbentarioSistema.LortuKokalekuak
+  id: LortuKokalekuak
+  parent: StockBaseApp.Kontrolagailuak.InbentarioSistema
+  langs:
+  - csharp
+  - vb
+  name: LortuKokalekuak()
+  nameWithType: InbentarioSistema.LortuKokalekuak()
+  fullName: StockBaseApp.Kontrolagailuak.InbentarioSistema.LortuKokalekuak()
+  type: Method
+  source:
+    remote:
+      path: StockBaseApp/Kontrolagailuak/InbentarioSistema.cs
+      branch: master
+      repo: https://github.com/Nora0205/Inventarioa---Erronka.git
+    id: LortuKokalekuak
+    path: StockBaseApp/Kontrolagailuak/InbentarioSistema.cs
+    startLine: 220
+  assemblies:
+  - StockBaseApp
+  namespace: StockBaseApp.Kontrolagailuak
+  summary: Sisteman erregistratuta dauden kokaleku (gela) guztiak lortzen ditu.
+  example: []
+  syntax:
+    content: public List<KeyValuePair<int, string>> LortuKokalekuak()
+    return:
+      type: System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{System.Int32,System.String}}
+      description: ID eta Izena bikoteen zerrenda bat.
+    content.vb: Public Function LortuKokalekuak() As List(Of KeyValuePair(Of Integer, String))
+  overload: StockBaseApp.Kontrolagailuak.InbentarioSistema.LortuKokalekuak*
+- uid: StockBaseApp.Kontrolagailuak.InbentarioSistema.GailuaEzabatu(StockBaseApp.Modeloak.Gailua,System.Int32)
+  commentId: M:StockBaseApp.Kontrolagailuak.InbentarioSistema.GailuaEzabatu(StockBaseApp.Modeloak.Gailua,System.Int32)
+  id: GailuaEzabatu(StockBaseApp.Modeloak.Gailua,System.Int32)
+  parent: StockBaseApp.Kontrolagailuak.InbentarioSistema
+  langs:
+  - csharp
+  - vb
+  name: GailuaEzabatu(Gailua, int)
+  nameWithType: InbentarioSistema.GailuaEzabatu(Gailua, int)
+  fullName: StockBaseApp.Kontrolagailuak.InbentarioSistema.GailuaEzabatu(StockBaseApp.Modeloak.Gailua, int)
+  type: Method
+  source:
+    remote:
+      path: StockBaseApp/Kontrolagailuak/InbentarioSistema.cs
+      branch: master
+      repo: https://github.com/Nora0205/Inventarioa---Erronka.git
+    id: GailuaEzabatu
+    path: StockBaseApp/Kontrolagailuak/InbentarioSistema.cs
+    startLine: 239
+  assemblies:
+  - StockBaseApp
+  namespace: StockBaseApp.Kontrolagailuak
+  summary: >-
+    Gailu bat inbentariotik guztiz ezabatzen du. 
+
+    MySQL-ko TRIGGER batek automatikoki gordeko du gailua 'EzabatutakoGailua' taulan.
+  example: []
+  syntax:
+    content: public void GailuaEzabatu(Gailua gailua, int idErabiltzailea)
+    parameters:
+    - id: gailua
+      type: StockBaseApp.Modeloak.Gailua
+      description: Ezabatu nahi den gailu objektua.
+    - id: idErabiltzailea
+      type: System.Int32
+      description: Ekintza burutzen duen administratzailearen ID-a.
+    content.vb: Public Sub GailuaEzabatu(gailua As Gailua, idErabiltzailea As Integer)
+  overload: StockBaseApp.Kontrolagailuak.InbentarioSistema.GailuaEzabatu*
+  nameWithType.vb: InbentarioSistema.GailuaEzabatu(Gailua, Integer)
+  fullName.vb: StockBaseApp.Kontrolagailuak.InbentarioSistema.GailuaEzabatu(StockBaseApp.Modeloak.Gailua, Integer)
+  name.vb: GailuaEzabatu(Gailua, Integer)
+- uid: StockBaseApp.Kontrolagailuak.InbentarioSistema.Lortu10GailuZaharrenak
+  commentId: M:StockBaseApp.Kontrolagailuak.InbentarioSistema.Lortu10GailuZaharrenak
+  id: Lortu10GailuZaharrenak
+  parent: StockBaseApp.Kontrolagailuak.InbentarioSistema
+  langs:
+  - csharp
+  - vb
+  name: Lortu10GailuZaharrenak()
+  nameWithType: InbentarioSistema.Lortu10GailuZaharrenak()
+  fullName: StockBaseApp.Kontrolagailuak.InbentarioSistema.Lortu10GailuZaharrenak()
+  type: Method
+  source:
+    remote:
+      path: StockBaseApp/Kontrolagailuak/InbentarioSistema.cs
+      branch: master
+      repo: https://github.com/Nora0205/Inventarioa---Erronka.git
+    id: Lortu10GailuZaharrenak
+    path: StockBaseApp/Kontrolagailuak/InbentarioSistema.cs
+    startLine: 275
+  assemblies:
+  - StockBaseApp
+  namespace: StockBaseApp.Kontrolagailuak
+  summary: Biltegiratutako prozedura bat deitzen du (Stored Procedure), 10 gailu zaharrenak lortzeko.
+  example: []
+  syntax:
+    content: public DataTable Lortu10GailuZaharrenak()
+    return:
+      type: System.Data.DataTable
+      description: 10 gailu zaharrenen datuekin osatutako DataTable bat.
+    content.vb: Public Function Lortu10GailuZaharrenak() As DataTable
+  overload: StockBaseApp.Kontrolagailuak.InbentarioSistema.Lortu10GailuZaharrenak*
+- uid: StockBaseApp.Kontrolagailuak.InbentarioSistema.ErabiltzaileaGehitu(System.String,System.String,System.String,System.String,System.Int32,System.Int32)
+  commentId: M:StockBaseApp.Kontrolagailuak.InbentarioSistema.ErabiltzaileaGehitu(System.String,System.String,System.String,System.String,System.Int32,System.Int32)
+  id: ErabiltzaileaGehitu(System.String,System.String,System.String,System.String,System.Int32,System.Int32)
+  parent: StockBaseApp.Kontrolagailuak.InbentarioSistema
+  langs:
+  - csharp
+  - vb
+  name: ErabiltzaileaGehitu(string, string, string, string, int, int)
+  nameWithType: InbentarioSistema.ErabiltzaileaGehitu(string, string, string, string, int, int)
+  fullName: StockBaseApp.Kontrolagailuak.InbentarioSistema.ErabiltzaileaGehitu(string, string, string, string, int, int)
+  type: Method
+  source:
+    remote:
+      path: StockBaseApp/Kontrolagailuak/InbentarioSistema.cs
+      branch: master
+      repo: https://github.com/Nora0205/Inventarioa---Erronka.git
+    id: ErabiltzaileaGehitu
+    path: StockBaseApp/Kontrolagailuak/InbentarioSistema.cs
+    startLine: 299
+  assemblies:
+  - StockBaseApp
+  namespace: StockBaseApp.Kontrolagailuak
+  summary: Erabiltzaile berri bat sortzen du sisteman.
+  example: []
+  syntax:
+    content: public void ErabiltzaileaGehitu(string izena, string email, string pasahitza, string rola, int idMintegia, int idAdmin)
+    parameters:
+    - id: izena
+      type: System.String
+      description: Erabiltzaile izen osoa.
+    - id: email
+      type: System.String
+      description: Posta elektronikoa.
+    - id: pasahitza
+      type: System.String
+      description: Sarbide pasahitza.
+    - id: rola
+      type: System.String
+      description: Sistema rola (IKT, Irakaslea, Administratzailea...).
+    - id: idMintegia
+      type: System.Int32
+      description: Erabiltzailea zein mintegikoa den.
+    - id: idAdmin
+      type: System.Int32
+      description: Ekintza burutzen duen administratzailearen ID-a.
+    content.vb: Public Sub ErabiltzaileaGehitu(izena As String, email As String, pasahitza As String, rola As String, idMintegia As Integer, idAdmin As Integer)
+  overload: StockBaseApp.Kontrolagailuak.InbentarioSistema.ErabiltzaileaGehitu*
+  nameWithType.vb: InbentarioSistema.ErabiltzaileaGehitu(String, String, String, String, Integer, Integer)
+  fullName.vb: StockBaseApp.Kontrolagailuak.InbentarioSistema.ErabiltzaileaGehitu(String, String, String, String, Integer, Integer)
+  name.vb: ErabiltzaileaGehitu(String, String, String, String, Integer, Integer)
+- uid: StockBaseApp.Kontrolagailuak.InbentarioSistema.ErabiltzaileaEzabatu(System.Int32,System.String,System.Int32)
+  commentId: M:StockBaseApp.Kontrolagailuak.InbentarioSistema.ErabiltzaileaEzabatu(System.Int32,System.String,System.Int32)
+  id: ErabiltzaileaEzabatu(System.Int32,System.String,System.Int32)
+  parent: StockBaseApp.Kontrolagailuak.InbentarioSistema
+  langs:
+  - csharp
+  - vb
+  name: ErabiltzaileaEzabatu(int, string, int)
+  nameWithType: InbentarioSistema.ErabiltzaileaEzabatu(int, string, int)
+  fullName: StockBaseApp.Kontrolagailuak.InbentarioSistema.ErabiltzaileaEzabatu(int, string, int)
+  type: Method
+  source:
+    remote:
+      path: StockBaseApp/Kontrolagailuak/InbentarioSistema.cs
+      branch: master
+      repo: https://github.com/Nora0205/Inventarioa---Erronka.git
+    id: ErabiltzaileaEzabatu
+    path: StockBaseApp/Kontrolagailuak/InbentarioSistema.cs
+    startLine: 315
+  assemblies:
+  - StockBaseApp
+  namespace: StockBaseApp.Kontrolagailuak
+  syntax:
+    content: public void ErabiltzaileaEzabatu(int id, string izena, int idAdmin)
+    parameters:
+    - id: id
+      type: System.Int32
+    - id: izena
+      type: System.String
+    - id: idAdmin
+      type: System.Int32
+    content.vb: Public Sub ErabiltzaileaEzabatu(id As Integer, izena As String, idAdmin As Integer)
+  overload: StockBaseApp.Kontrolagailuak.InbentarioSistema.ErabiltzaileaEzabatu*
+  nameWithType.vb: InbentarioSistema.ErabiltzaileaEzabatu(Integer, String, Integer)
+  fullName.vb: StockBaseApp.Kontrolagailuak.InbentarioSistema.ErabiltzaileaEzabatu(Integer, String, Integer)
+  name.vb: ErabiltzaileaEzabatu(Integer, String, Integer)
+- uid: StockBaseApp.Kontrolagailuak.InbentarioSistema.ErabiltzaileGuztiakLortu
+  commentId: M:StockBaseApp.Kontrolagailuak.InbentarioSistema.ErabiltzaileGuztiakLortu
+  id: ErabiltzaileGuztiakLortu
+  parent: StockBaseApp.Kontrolagailuak.InbentarioSistema
+  langs:
+  - csharp
+  - vb
+  name: ErabiltzaileGuztiakLortu()
+  nameWithType: InbentarioSistema.ErabiltzaileGuztiakLortu()
+  fullName: StockBaseApp.Kontrolagailuak.InbentarioSistema.ErabiltzaileGuztiakLortu()
+  type: Method
+  source:
+    remote:
+      path: StockBaseApp/Kontrolagailuak/InbentarioSistema.cs
+      branch: master
+      repo: https://github.com/Nora0205/Inventarioa---Erronka.git
+    id: ErabiltzaileGuztiakLortu
+    path: StockBaseApp/Kontrolagailuak/InbentarioSistema.cs
+    startLine: 331
+  assemblies:
+  - StockBaseApp
+  namespace: StockBaseApp.Kontrolagailuak
+  syntax:
+    content: public DataTable ErabiltzaileGuztiakLortu()
+    return:
+      type: System.Data.DataTable
+    content.vb: Public Function ErabiltzaileGuztiakLortu() As DataTable
+  overload: StockBaseApp.Kontrolagailuak.InbentarioSistema.ErabiltzaileGuztiakLortu*
+- uid: StockBaseApp.Kontrolagailuak.InbentarioSistema.ErabiltzaileKopuruaLortu(System.String,System.Nullable{System.Int32})
+  commentId: M:StockBaseApp.Kontrolagailuak.InbentarioSistema.ErabiltzaileKopuruaLortu(System.String,System.Nullable{System.Int32})
+  id: ErabiltzaileKopuruaLortu(System.String,System.Nullable{System.Int32})
+  parent: StockBaseApp.Kontrolagailuak.InbentarioSistema
+  langs:
+  - csharp
+  - vb
+  name: ErabiltzaileKopuruaLortu(string, int?)
+  nameWithType: InbentarioSistema.ErabiltzaileKopuruaLortu(string, int?)
+  fullName: StockBaseApp.Kontrolagailuak.InbentarioSistema.ErabiltzaileKopuruaLortu(string, int?)
+  type: Method
+  source:
+    remote:
+      path: StockBaseApp/Kontrolagailuak/InbentarioSistema.cs
+      branch: master
+      repo: https://github.com/Nora0205/Inventarioa---Erronka.git
+    id: ErabiltzaileKopuruaLortu
+    path: StockBaseApp/Kontrolagailuak/InbentarioSistema.cs
+    startLine: 347
+  assemblies:
+  - StockBaseApp
+  namespace: StockBaseApp.Kontrolagailuak
+  syntax:
+    content: public int ErabiltzaileKopuruaLortu(string rola, int? idMintegia = null)
+    parameters:
+    - id: rola
+      type: System.String
+    - id: idMintegia
+      type: System.Nullable{System.Int32}
+    return:
+      type: System.Int32
+    content.vb: Public Function ErabiltzaileKopuruaLortu(rola As String, idMintegia As Integer? = Nothing) As Integer
+  overload: StockBaseApp.Kontrolagailuak.InbentarioSistema.ErabiltzaileKopuruaLortu*
+  nameWithType.vb: InbentarioSistema.ErabiltzaileKopuruaLortu(String, Integer?)
+  fullName.vb: StockBaseApp.Kontrolagailuak.InbentarioSistema.ErabiltzaileKopuruaLortu(String, Integer?)
+  name.vb: ErabiltzaileKopuruaLortu(String, Integer?)
+- uid: StockBaseApp.Kontrolagailuak.InbentarioSistema.GailuaEgoeraAldatu(System.Int32,System.String,System.Int32)
+  commentId: M:StockBaseApp.Kontrolagailuak.InbentarioSistema.GailuaEgoeraAldatu(System.Int32,System.String,System.Int32)
+  id: GailuaEgoeraAldatu(System.Int32,System.String,System.Int32)
+  parent: StockBaseApp.Kontrolagailuak.InbentarioSistema
+  langs:
+  - csharp
+  - vb
+  name: GailuaEgoeraAldatu(int, string, int)
+  nameWithType: InbentarioSistema.GailuaEgoeraAldatu(int, string, int)
+  fullName: StockBaseApp.Kontrolagailuak.InbentarioSistema.GailuaEgoeraAldatu(int, string, int)
+  type: Method
+  source:
+    remote:
+      path: StockBaseApp/Kontrolagailuak/InbentarioSistema.cs
+      branch: master
+      repo: https://github.com/Nora0205/Inventarioa---Erronka.git
+    id: GailuaEgoeraAldatu
+    path: StockBaseApp/Kontrolagailuak/InbentarioSistema.cs
+    startLine: 361
+  assemblies:
+  - StockBaseApp
+  namespace: StockBaseApp.Kontrolagailuak
+  syntax:
+    content: public void GailuaEgoeraAldatu(int id, string egoeraBerria, int idErabiltzailea)
+    parameters:
+    - id: id
+      type: System.Int32
+    - id: egoeraBerria
+      type: System.String
+    - id: idErabiltzailea
+      type: System.Int32
+    content.vb: Public Sub GailuaEgoeraAldatu(id As Integer, egoeraBerria As String, idErabiltzailea As Integer)
+  overload: StockBaseApp.Kontrolagailuak.InbentarioSistema.GailuaEgoeraAldatu*
+  nameWithType.vb: InbentarioSistema.GailuaEgoeraAldatu(Integer, String, Integer)
+  fullName.vb: StockBaseApp.Kontrolagailuak.InbentarioSistema.GailuaEgoeraAldatu(Integer, String, Integer)
+  name.vb: GailuaEgoeraAldatu(Integer, String, Integer)
+- uid: StockBaseApp.Kontrolagailuak.InbentarioSistema.GailuaKokalekuaAldatu(System.Int32,System.String,System.Int32)
+  commentId: M:StockBaseApp.Kontrolagailuak.InbentarioSistema.GailuaKokalekuaAldatu(System.Int32,System.String,System.Int32)
+  id: GailuaKokalekuaAldatu(System.Int32,System.String,System.Int32)
+  parent: StockBaseApp.Kontrolagailuak.InbentarioSistema
+  langs:
+  - csharp
+  - vb
+  name: GailuaKokalekuaAldatu(int, string, int)
+  nameWithType: InbentarioSistema.GailuaKokalekuaAldatu(int, string, int)
+  fullName: StockBaseApp.Kontrolagailuak.InbentarioSistema.GailuaKokalekuaAldatu(int, string, int)
+  type: Method
+  source:
+    remote:
+      path: StockBaseApp/Kontrolagailuak/InbentarioSistema.cs
+      branch: master
+      repo: https://github.com/Nora0205/Inventarioa---Erronka.git
+    id: GailuaKokalekuaAldatu
+    path: StockBaseApp/Kontrolagailuak/InbentarioSistema.cs
+    startLine: 380
+  assemblies:
+  - StockBaseApp
+  namespace: StockBaseApp.Kontrolagailuak
+  syntax:
+    content: public void GailuaKokalekuaAldatu(int id, string kokalekua, int idErabiltzailea)
+    parameters:
+    - id: id
+      type: System.Int32
+    - id: kokalekua
+      type: System.String
+    - id: idErabiltzailea
+      type: System.Int32
+    content.vb: Public Sub GailuaKokalekuaAldatu(id As Integer, kokalekua As String, idErabiltzailea As Integer)
+  overload: StockBaseApp.Kontrolagailuak.InbentarioSistema.GailuaKokalekuaAldatu*
+  nameWithType.vb: InbentarioSistema.GailuaKokalekuaAldatu(Integer, String, Integer)
+  fullName.vb: StockBaseApp.Kontrolagailuak.InbentarioSistema.GailuaKokalekuaAldatu(Integer, String, Integer)
+  name.vb: GailuaKokalekuaAldatu(Integer, String, Integer)
+- uid: StockBaseApp.Kontrolagailuak.InbentarioSistema.MintegiaEzabatu(System.Int32,System.Int32)
+  commentId: M:StockBaseApp.Kontrolagailuak.InbentarioSistema.MintegiaEzabatu(System.Int32,System.Int32)
+  id: MintegiaEzabatu(System.Int32,System.Int32)
+  parent: StockBaseApp.Kontrolagailuak.InbentarioSistema
+  langs:
+  - csharp
+  - vb
+  name: MintegiaEzabatu(int, int)
+  nameWithType: InbentarioSistema.MintegiaEzabatu(int, int)
+  fullName: StockBaseApp.Kontrolagailuak.InbentarioSistema.MintegiaEzabatu(int, int)
+  type: Method
+  source:
+    remote:
+      path: StockBaseApp/Kontrolagailuak/InbentarioSistema.cs
+      branch: master
+      repo: https://github.com/Nora0205/Inventarioa---Erronka.git
+    id: MintegiaEzabatu
+    path: StockBaseApp/Kontrolagailuak/InbentarioSistema.cs
+    startLine: 392
+  assemblies:
+  - StockBaseApp
+  namespace: StockBaseApp.Kontrolagailuak
+  syntax:
+    content: public void MintegiaEzabatu(int idMintegia, int idAdmin)
+    parameters:
+    - id: idMintegia
+      type: System.Int32
+    - id: idAdmin
+      type: System.Int32
+    content.vb: Public Sub MintegiaEzabatu(idMintegia As Integer, idAdmin As Integer)
+  overload: StockBaseApp.Kontrolagailuak.InbentarioSistema.MintegiaEzabatu*
+  nameWithType.vb: InbentarioSistema.MintegiaEzabatu(Integer, Integer)
+  fullName.vb: StockBaseApp.Kontrolagailuak.InbentarioSistema.MintegiaEzabatu(Integer, Integer)
+  name.vb: MintegiaEzabatu(Integer, Integer)
+- uid: StockBaseApp.Kontrolagailuak.InbentarioSistema.MintegiaGehitu(System.String,System.Int32)
+  commentId: M:StockBaseApp.Kontrolagailuak.InbentarioSistema.MintegiaGehitu(System.String,System.Int32)
+  id: MintegiaGehitu(System.String,System.Int32)
+  parent: StockBaseApp.Kontrolagailuak.InbentarioSistema
+  langs:
+  - csharp
+  - vb
+  name: MintegiaGehitu(string, int)
+  nameWithType: InbentarioSistema.MintegiaGehitu(string, int)
+  fullName: StockBaseApp.Kontrolagailuak.InbentarioSistema.MintegiaGehitu(string, int)
+  type: Method
+  source:
+    remote:
+      path: StockBaseApp/Kontrolagailuak/InbentarioSistema.cs
+      branch: master
+      repo: https://github.com/Nora0205/Inventarioa---Erronka.git
+    id: MintegiaGehitu
+    path: StockBaseApp/Kontrolagailuak/InbentarioSistema.cs
+    startLine: 441
+  assemblies:
+  - StockBaseApp
+  namespace: StockBaseApp.Kontrolagailuak
+  summary: Mintegi berri bat gehitzen du sisteman.
+  example: []
+  syntax:
+    content: public void MintegiaGehitu(string izena, int idAdmin)
+    parameters:
+    - id: izena
+      type: System.String
+      description: Mintegiaren izena.
+    - id: idAdmin
+      type: System.Int32
+      description: Ekintza burutzen duen administratzailearen ID-a.
+    content.vb: Public Sub MintegiaGehitu(izena As String, idAdmin As Integer)
+  overload: StockBaseApp.Kontrolagailuak.InbentarioSistema.MintegiaGehitu*
+  nameWithType.vb: InbentarioSistema.MintegiaGehitu(String, Integer)
+  fullName.vb: StockBaseApp.Kontrolagailuak.InbentarioSistema.MintegiaGehitu(String, Integer)
+  name.vb: MintegiaGehitu(String, Integer)
+references:
+- uid: StockBaseApp.Kontrolagailuak
+  commentId: N:StockBaseApp.Kontrolagailuak
+  href: StockBaseApp.html
+  name: StockBaseApp.Kontrolagailuak
+  nameWithType: StockBaseApp.Kontrolagailuak
+  fullName: StockBaseApp.Kontrolagailuak
+  spec.csharp:
+  - uid: StockBaseApp
+    name: StockBaseApp
+    href: StockBaseApp.html
+  - name: .
+  - uid: StockBaseApp.Kontrolagailuak
+    name: Kontrolagailuak
+    href: StockBaseApp.Kontrolagailuak.html
+  spec.vb:
+  - uid: StockBaseApp
+    name: StockBaseApp
+    href: StockBaseApp.html
+  - name: .
+  - uid: StockBaseApp.Kontrolagailuak
+    name: Kontrolagailuak
+    href: StockBaseApp.Kontrolagailuak.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: StockBaseApp.Kontrolagailuak.InbentarioSistema.#ctor*
+  commentId: Overload:StockBaseApp.Kontrolagailuak.InbentarioSistema.#ctor
+  href: StockBaseApp.Kontrolagailuak.InbentarioSistema.html#StockBaseApp_Kontrolagailuak_InbentarioSistema__ctor
+  name: InbentarioSistema
+  nameWithType: InbentarioSistema.InbentarioSistema
+  fullName: StockBaseApp.Kontrolagailuak.InbentarioSistema.InbentarioSistema
+  nameWithType.vb: InbentarioSistema.New
+  fullName.vb: StockBaseApp.Kontrolagailuak.InbentarioSistema.New
+  name.vb: New
+- uid: StockBaseApp.Kontrolagailuak.InbentarioSistema.LogGorde*
+  commentId: Overload:StockBaseApp.Kontrolagailuak.InbentarioSistema.LogGorde
+  href: StockBaseApp.Kontrolagailuak.InbentarioSistema.html#StockBaseApp_Kontrolagailuak_InbentarioSistema_LogGorde_System_Int32_System_String_System_String_System_Int32_System_String_
+  name: LogGorde
+  nameWithType: InbentarioSistema.LogGorde
+  fullName: StockBaseApp.Kontrolagailuak.InbentarioSistema.LogGorde
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: StockBaseApp.Kontrolagailuak.InbentarioSistema.SaioaHasi*
+  commentId: Overload:StockBaseApp.Kontrolagailuak.InbentarioSistema.SaioaHasi
+  href: StockBaseApp.Kontrolagailuak.InbentarioSistema.html#StockBaseApp_Kontrolagailuak_InbentarioSistema_SaioaHasi_System_String_System_String_
+  name: SaioaHasi
+  nameWithType: InbentarioSistema.SaioaHasi
+  fullName: StockBaseApp.Kontrolagailuak.InbentarioSistema.SaioaHasi
+- uid: StockBaseApp.Modeloak.Erabiltzailea
+  commentId: T:StockBaseApp.Modeloak.Erabiltzailea
+  parent: StockBaseApp.Modeloak
+  href: StockBaseApp.Modeloak.Erabiltzailea.html
+  name: Erabiltzailea
+  nameWithType: Erabiltzailea
+  fullName: StockBaseApp.Modeloak.Erabiltzailea
+- uid: StockBaseApp.Modeloak
+  commentId: N:StockBaseApp.Modeloak
+  href: StockBaseApp.html
+  name: StockBaseApp.Modeloak
+  nameWithType: StockBaseApp.Modeloak
+  fullName: StockBaseApp.Modeloak
+  spec.csharp:
+  - uid: StockBaseApp
+    name: StockBaseApp
+    href: StockBaseApp.html
+  - name: .
+  - uid: StockBaseApp.Modeloak
+    name: Modeloak
+    href: StockBaseApp.Modeloak.html
+  spec.vb:
+  - uid: StockBaseApp
+    name: StockBaseApp
+    href: StockBaseApp.html
+  - name: .
+  - uid: StockBaseApp.Modeloak
+    name: Modeloak
+    href: StockBaseApp.Modeloak.html
+- uid: StockBaseApp.Kontrolagailuak.InbentarioSistema.GailuaGehitu*
+  commentId: Overload:StockBaseApp.Kontrolagailuak.InbentarioSistema.GailuaGehitu
+  href: StockBaseApp.Kontrolagailuak.InbentarioSistema.html#StockBaseApp_Kontrolagailuak_InbentarioSistema_GailuaGehitu_StockBaseApp_Modeloak_Gailua_System_String_System_Int32_
+  name: GailuaGehitu
+  nameWithType: InbentarioSistema.GailuaGehitu
+  fullName: StockBaseApp.Kontrolagailuak.InbentarioSistema.GailuaGehitu
+- uid: StockBaseApp.Modeloak.Gailua
+  commentId: T:StockBaseApp.Modeloak.Gailua
+  parent: StockBaseApp.Modeloak
+  href: StockBaseApp.Modeloak.Gailua.html
+  name: Gailua
+  nameWithType: Gailua
+  fullName: StockBaseApp.Modeloak.Gailua
+- uid: StockBaseApp.Kontrolagailuak.InbentarioSistema.LortuGailuakGuztiak*
+  commentId: Overload:StockBaseApp.Kontrolagailuak.InbentarioSistema.LortuGailuakGuztiak
+  href: StockBaseApp.Kontrolagailuak.InbentarioSistema.html#StockBaseApp_Kontrolagailuak_InbentarioSistema_LortuGailuakGuztiak_System_Nullable_System_Int32__
+  name: LortuGailuakGuztiak
+  nameWithType: InbentarioSistema.LortuGailuakGuztiak
+  fullName: StockBaseApp.Kontrolagailuak.InbentarioSistema.LortuGailuakGuztiak
+- uid: System.Nullable{System.Int32}
+  commentId: T:System.Nullable{System.Int32}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int?
+  nameWithType: int?
+  fullName: int?
+  nameWithType.vb: Integer?
+  fullName.vb: Integer?
+  name.vb: Integer?
+  spec.csharp:
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+  spec.vb:
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+- uid: System.Data.DataTable
+  commentId: T:System.Data.DataTable
+  parent: System.Data
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.data.datatable
+  name: DataTable
+  nameWithType: DataTable
+  fullName: System.Data.DataTable
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Data
+  commentId: N:System.Data
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Data
+  nameWithType: System.Data
+  fullName: System.Data
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Data
+    name: Data
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.data
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Data
+    name: Data
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.data
+- uid: StockBaseApp.Kontrolagailuak.InbentarioSistema.LortuBajaEtaMantentzeSistema*
+  commentId: Overload:StockBaseApp.Kontrolagailuak.InbentarioSistema.LortuBajaEtaMantentzeSistema
+  href: StockBaseApp.Kontrolagailuak.InbentarioSistema.html#StockBaseApp_Kontrolagailuak_InbentarioSistema_LortuBajaEtaMantentzeSistema
+  name: LortuBajaEtaMantentzeSistema
+  nameWithType: InbentarioSistema.LortuBajaEtaMantentzeSistema
+  fullName: StockBaseApp.Kontrolagailuak.InbentarioSistema.LortuBajaEtaMantentzeSistema
+- uid: StockBaseApp.Kontrolagailuak.InbentarioSistema.LortuMintegiak*
+  commentId: Overload:StockBaseApp.Kontrolagailuak.InbentarioSistema.LortuMintegiak
+  href: StockBaseApp.Kontrolagailuak.InbentarioSistema.html#StockBaseApp_Kontrolagailuak_InbentarioSistema_LortuMintegiak
+  name: LortuMintegiak
+  nameWithType: InbentarioSistema.LortuMintegiak
+  fullName: StockBaseApp.Kontrolagailuak.InbentarioSistema.LortuMintegiak
+- uid: System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{System.Int32,System.String}}
+  commentId: T:System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{System.Int32,System.String}}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<KeyValuePair<int, string>>
+  nameWithType: List<KeyValuePair<int, string>>
+  fullName: System.Collections.Generic.List<System.Collections.Generic.KeyValuePair<int, string>>
+  nameWithType.vb: List(Of KeyValuePair(Of Integer, String))
+  fullName.vb: System.Collections.Generic.List(Of System.Collections.Generic.KeyValuePair(Of Integer, String))
+  name.vb: List(Of KeyValuePair(Of Integer, String))
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2
+  - name: <
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: StockBaseApp.Kontrolagailuak.InbentarioSistema.LortuKokalekuak*
+  commentId: Overload:StockBaseApp.Kontrolagailuak.InbentarioSistema.LortuKokalekuak
+  href: StockBaseApp.Kontrolagailuak.InbentarioSistema.html#StockBaseApp_Kontrolagailuak_InbentarioSistema_LortuKokalekuak
+  name: LortuKokalekuak
+  nameWithType: InbentarioSistema.LortuKokalekuak
+  fullName: StockBaseApp.Kontrolagailuak.InbentarioSistema.LortuKokalekuak
+- uid: StockBaseApp.Kontrolagailuak.InbentarioSistema.GailuaEzabatu*
+  commentId: Overload:StockBaseApp.Kontrolagailuak.InbentarioSistema.GailuaEzabatu
+  href: StockBaseApp.Kontrolagailuak.InbentarioSistema.html#StockBaseApp_Kontrolagailuak_InbentarioSistema_GailuaEzabatu_StockBaseApp_Modeloak_Gailua_System_Int32_
+  name: GailuaEzabatu
+  nameWithType: InbentarioSistema.GailuaEzabatu
+  fullName: StockBaseApp.Kontrolagailuak.InbentarioSistema.GailuaEzabatu
+- uid: StockBaseApp.Kontrolagailuak.InbentarioSistema.Lortu10GailuZaharrenak*
+  commentId: Overload:StockBaseApp.Kontrolagailuak.InbentarioSistema.Lortu10GailuZaharrenak
+  href: StockBaseApp.Kontrolagailuak.InbentarioSistema.html#StockBaseApp_Kontrolagailuak_InbentarioSistema_Lortu10GailuZaharrenak
+  name: Lortu10GailuZaharrenak
+  nameWithType: InbentarioSistema.Lortu10GailuZaharrenak
+  fullName: StockBaseApp.Kontrolagailuak.InbentarioSistema.Lortu10GailuZaharrenak
+- uid: StockBaseApp.Kontrolagailuak.InbentarioSistema.ErabiltzaileaGehitu*
+  commentId: Overload:StockBaseApp.Kontrolagailuak.InbentarioSistema.ErabiltzaileaGehitu
+  href: StockBaseApp.Kontrolagailuak.InbentarioSistema.html#StockBaseApp_Kontrolagailuak_InbentarioSistema_ErabiltzaileaGehitu_System_String_System_String_System_String_System_String_System_Int32_System_Int32_
+  name: ErabiltzaileaGehitu
+  nameWithType: InbentarioSistema.ErabiltzaileaGehitu
+  fullName: StockBaseApp.Kontrolagailuak.InbentarioSistema.ErabiltzaileaGehitu
+- uid: StockBaseApp.Kontrolagailuak.InbentarioSistema.ErabiltzaileaEzabatu*
+  commentId: Overload:StockBaseApp.Kontrolagailuak.InbentarioSistema.ErabiltzaileaEzabatu
+  href: StockBaseApp.Kontrolagailuak.InbentarioSistema.html#StockBaseApp_Kontrolagailuak_InbentarioSistema_ErabiltzaileaEzabatu_System_Int32_System_String_System_Int32_
+  name: ErabiltzaileaEzabatu
+  nameWithType: InbentarioSistema.ErabiltzaileaEzabatu
+  fullName: StockBaseApp.Kontrolagailuak.InbentarioSistema.ErabiltzaileaEzabatu
+- uid: StockBaseApp.Kontrolagailuak.InbentarioSistema.ErabiltzaileGuztiakLortu*
+  commentId: Overload:StockBaseApp.Kontrolagailuak.InbentarioSistema.ErabiltzaileGuztiakLortu
+  href: StockBaseApp.Kontrolagailuak.InbentarioSistema.html#StockBaseApp_Kontrolagailuak_InbentarioSistema_ErabiltzaileGuztiakLortu
+  name: ErabiltzaileGuztiakLortu
+  nameWithType: InbentarioSistema.ErabiltzaileGuztiakLortu
+  fullName: StockBaseApp.Kontrolagailuak.InbentarioSistema.ErabiltzaileGuztiakLortu
+- uid: StockBaseApp.Kontrolagailuak.InbentarioSistema.ErabiltzaileKopuruaLortu*
+  commentId: Overload:StockBaseApp.Kontrolagailuak.InbentarioSistema.ErabiltzaileKopuruaLortu
+  href: StockBaseApp.Kontrolagailuak.InbentarioSistema.html#StockBaseApp_Kontrolagailuak_InbentarioSistema_ErabiltzaileKopuruaLortu_System_String_System_Nullable_System_Int32__
+  name: ErabiltzaileKopuruaLortu
+  nameWithType: InbentarioSistema.ErabiltzaileKopuruaLortu
+  fullName: StockBaseApp.Kontrolagailuak.InbentarioSistema.ErabiltzaileKopuruaLortu
+- uid: StockBaseApp.Kontrolagailuak.InbentarioSistema.GailuaEgoeraAldatu*
+  commentId: Overload:StockBaseApp.Kontrolagailuak.InbentarioSistema.GailuaEgoeraAldatu
+  href: StockBaseApp.Kontrolagailuak.InbentarioSistema.html#StockBaseApp_Kontrolagailuak_InbentarioSistema_GailuaEgoeraAldatu_System_Int32_System_String_System_Int32_
+  name: GailuaEgoeraAldatu
+  nameWithType: InbentarioSistema.GailuaEgoeraAldatu
+  fullName: StockBaseApp.Kontrolagailuak.InbentarioSistema.GailuaEgoeraAldatu
+- uid: StockBaseApp.Kontrolagailuak.InbentarioSistema.GailuaKokalekuaAldatu*
+  commentId: Overload:StockBaseApp.Kontrolagailuak.InbentarioSistema.GailuaKokalekuaAldatu
+  href: StockBaseApp.Kontrolagailuak.InbentarioSistema.html#StockBaseApp_Kontrolagailuak_InbentarioSistema_GailuaKokalekuaAldatu_System_Int32_System_String_System_Int32_
+  name: GailuaKokalekuaAldatu
+  nameWithType: InbentarioSistema.GailuaKokalekuaAldatu
+  fullName: StockBaseApp.Kontrolagailuak.InbentarioSistema.GailuaKokalekuaAldatu
+- uid: StockBaseApp.Kontrolagailuak.InbentarioSistema.MintegiaEzabatu*
+  commentId: Overload:StockBaseApp.Kontrolagailuak.InbentarioSistema.MintegiaEzabatu
+  href: StockBaseApp.Kontrolagailuak.InbentarioSistema.html#StockBaseApp_Kontrolagailuak_InbentarioSistema_MintegiaEzabatu_System_Int32_System_Int32_
+  name: MintegiaEzabatu
+  nameWithType: InbentarioSistema.MintegiaEzabatu
+  fullName: StockBaseApp.Kontrolagailuak.InbentarioSistema.MintegiaEzabatu
+- uid: StockBaseApp.Kontrolagailuak.InbentarioSistema.MintegiaGehitu*
+  commentId: Overload:StockBaseApp.Kontrolagailuak.InbentarioSistema.MintegiaGehitu
+  href: StockBaseApp.Kontrolagailuak.InbentarioSistema.html#StockBaseApp_Kontrolagailuak_InbentarioSistema_MintegiaGehitu_System_String_System_Int32_
+  name: MintegiaGehitu
+  nameWithType: InbentarioSistema.MintegiaGehitu
+  fullName: StockBaseApp.Kontrolagailuak.InbentarioSistema.MintegiaGehitu

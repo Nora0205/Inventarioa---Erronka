@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Arquitectura y Relaciones de Objetos - StockBaseApp | StockBaseApp - Gesti&#243;n de Inventario </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Arquitectura y Relaciones de Objetos - StockBaseApp | StockBaseApp - Gesti&#243;n de Inventario ">
+      
+      
+      <link rel="icon" href="favicon.ico">
+      <link rel="stylesheet" href="public/docfx.min.css">
+      <link rel="stylesheet" href="public/main.css">
+      <meta name="docfx:navrel" content="toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/Nora0205/Inventarioa---Erronka/blob/master/RELACIONES_Y_ESTRUCTURA.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="index.html">
+            <img id="logo" class="svg" src="logo.svg" alt="StockBase">
+            StockBase
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="arquitectura-y-relaciones-de-objetos---stockbaseapp">Arquitectura y Relaciones de Objetos - StockBaseApp</h1>
+
+<p>Este documento detalla la jerarquía de clases, la responsabilidad de cada objeto y cómo interactúan entre sí dentro del sistema.</p>
+<hr>
+<h2 id="1-jerarquía-de-herencia-dispositivos">1. Jerarquía de Herencia (Dispositivos)</h2>
+<p>El sistema utiliza <strong>herencia</strong> para gestionar los diferentes tipos de hardware, compartiendo atributos comunes en una clase base.</p>
+<h3 id="base-gailua-dispositivo">[Base] <code>Gailua</code> (Dispositivo)</h3>
+<ul>
+<li><strong>Función</strong>: Define el &quot;contrato&quot; básico y las propiedades comunes de cualquier hardware del inventario (ID, Marca, Modelo, Fecha de Compra, Estado, Ubicación).</li>
+<li><strong>Relación</strong>: Es la clase madre. No se suele instanciar directamente si existen tipos específicos.</li>
+<li><strong>Método Virtual</strong>: <code>LortuInformazioa()</code>. Permite que las clases hijas extiendan la descripción del objeto.</li>
+</ul>
+<h3 id="hija-ordenagailua-ordenador">[Hija] <code>Ordenagailua</code> (Ordenador)</h3>
+<ul>
+<li><strong>Herencia</strong>: <code>Ordenagailua : Gailua</code></li>
+<li><strong>Extensión</strong>: Añade propiedades técnicas específicas: <code>Prozesagailua</code> (CPU) y <code>RamGB</code>.</li>
+<li><strong>Relación</strong>: &quot;Es un&quot; <code>Gailua</code>. Sobrescribe <code>LortuInformazioa()</code> para incluir los datos del procesador y la RAM.</li>
+</ul>
+<h3 id="hija-inprimagailua-impresora">[Hija] <code>Inprimagailua</code> (Impresora)</h3>
+<ul>
+<li><strong>Herencia</strong>: <code>Inprimagailua : Gailua</code></li>
+<li><strong>Extensión</strong>: Añade la propiedad booleana <code>Koloretakoa</code> (Color/BN).</li>
+<li><strong>Relación</strong>: &quot;Es un&quot; <code>Gailua</code>. Sobrescribe <code>LortuInformazioa()</code> para indicar si imprime a color.</li>
+</ul>
+<hr>
+<h2 id="2-modelos-de-organización-y-usuarios">2. Modelos de Organización y Usuarios</h2>
+<h3 id="mintegia-departamentotaller"><code>Mintegia</code> (Departamento/Taller)</h3>
+<ul>
+<li><strong>Función</strong>: Agrupación lógica de recursos y personas.</li>
+<li><strong>Relación (Composición)</strong>: Contiene una <code>List&lt;Gailua&gt;</code>. Un taller &quot;posee&quot; múltiples dispositivos.</li>
+<li><strong>Uso</strong>: Sirve como filtro principal en la base de datos para separar el inventario por departamentos (Informática, Mecánica, etc.).</li>
+</ul>
+<h3 id="erabiltzailea-usuario"><code>Erabiltzailea</code> (Usuario)</h3>
+<ul>
+<li><strong>Función</strong>: Representa a la persona física que opera el software.</li>
+<li><strong>Relación (Asociación)</strong>: Tiene un objeto <code>Mintegia</code> asociado (<code>MintegiJabea</code>).</li>
+<li><strong>Impacto</strong>: El <code>Rola</code> (Rol) del usuario y su <code>Mintegia</code> determinan qué botones del <code>MainForm</code> están habilitados y qué datos puede ver en el <code>ViewDevicesForm</code>.</li>
+</ul>
+<h3 id="ezabatutakogailua-dispositivo-eliminado"><code>EzabatutakoGailua</code> (Dispositivo Eliminado)</h3>
+<ul>
+<li><strong>Función</strong>: Objeto de transferencia de datos (DTO) para el historial.</li>
+<li><strong>Relación</strong>: Independiente de la jerarquía <code>Gailua</code>. Se utiliza cuando un objeto es borrado de las tablas activas pero su rastro debe persistir en la base de datos de auditoría.</li>
+</ul>
+<hr>
+<h2 id="3-controladores-y-lógica-de-conexión">3. Controladores y Lógica de Conexión</h2>
+<h3 id="konexioa-gestión-de-conexión"><code>Konexioa</code> (Gestión de Conexión)</h3>
+<ul>
+<li><strong>Responsabilidad</strong>: Única fuente de verdad para los parámetros de red (IP del servidor, BD, credenciales).</li>
+<li><strong>Relación</strong>: Es una <strong>dependencia</strong> de <code>InbentarioSistema</code>. Lee la configuración de un archivo externo <code>config.txt</code>.</li>
+</ul>
+<h3 id="inbentariosistema-orquestador--fachada"><code>InbentarioSistema</code> (Orquestador / Fachada)</h3>
+<ul>
+<li><strong>Responsabilidad</strong>: Es el objeto más complejo. Actúa como mediador entre los modelos de C# y las tablas de MySQL.</li>
+<li><strong>Interacciones Clave</strong>:
+<ul>
+<li><strong>Con <code>Konexioa</code></strong>: Llama a <code>LortuKonexioa()</code> cada vez que necesita ejecutar un comando SQL.</li>
+<li><strong>Con <code>Gailua</code> (Polimorfismo)</strong>: El método <code>GailuaGehitu(Gailua g)</code> recibe cualquier objeto que herede de <code>Gailua</code>. Mediante <em>pattern matching</em> (<code>if g is Ordenagailua</code>), decide en qué tabla específica de la base de datos debe insertar los datos adicionales.</li>
+<li><strong>Con <code>DataTable</code></strong>: Transforma los objetos del dominio en tablas de datos compatibles con los controles <code>DataGridView</code> de la interfaz.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="4-relación-con-la-interfaz-de-usuario-forms">4. Relación con la Interfaz de Usuario (Forms)</h2>
+<p>Los formularios no contienen lógica de base de datos, sino que <strong>delegan</strong> en el controlador.</p>
+<ol>
+<li><strong>Inyección de Dependencia (Manual)</strong>: El <code>MainForm</code> recibe el objeto <code>Erabiltzailea</code> tras el login y lo propaga a todos los demás formularios (<code>AddComputerForm</code>, <code>ViewDevicesForm</code>, etc.) para mantener el contexto de quién está operando.</li>
+<li><strong>Validación Cruzada</strong>: Los formularios de alta (<code>AddComputerForm</code>) consultan a <code>InbentarioSistema</code> para obtener las listas de <code>Mintegia</code> y <code>Kokalekua</code> (Ubicaciones) disponibles, asegurando que el usuario solo elija opciones válidas existentes en la base de datos.</li>
+<li><strong>Lógica de Negocio Automática</strong>:
+<ul>
+<li>Cuando un usuario cambia el estado de un dispositivo a &quot;Roto&quot; en <code>EzabatuakForm</code>, el controlador <code>InbentarioSistema</code> actualiza automáticamente la propiedad <code>Kokalekua</code> a &quot;IKT Tailerra&quot;, reflejando el movimiento físico del objeto en el modelo digital.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="5-resumen-de-relaciones-diagrama-conceptual">5. Resumen de Relaciones (Diagrama Conceptual)</h2>
+<ul>
+<li><code>Ordenagailua</code> ----|&gt; <code>Gailua</code> (Herencia)</li>
+<li><code>Inprimagailua</code> ---|&gt; <code>Gailua</code> (Herencia)</li>
+<li><code>Mintegia</code> *-------o <code>Gailua</code> (Agregación: 1 Mintegia tiene N Gailuak)</li>
+<li><code>Erabiltzailea</code> ---o <code>Mintegia</code> (Asociación: 1 Usuario pertenece a 1 Mintegia)</li>
+<li><code>InbentarioSistema</code> --&gt; <code>Konexioa</code> (Uso/Dependencia)</li>
+<li><code>Forms</code> --&gt; <code>InbentarioSistema</code> (Uso para persistencia)</li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/Nora0205/Inventarioa---Erronka/blob/master/RELACIONES_Y_ESTRUCTURA.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

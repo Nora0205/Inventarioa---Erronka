@@ -6,6 +6,9 @@ using StockBaseApp.Modeloak;
 
 namespace StockBaseApp
 {
+    /// <summary>
+    /// Baja emandako edo mantenimenduan dauden gailuak kudeatzeko inprimakia.
+    /// </summary>
     public partial class EzabatuakForm : Form
     {
         private InbentarioSistema kudeatzailea;
@@ -13,6 +16,10 @@ namespace StockBaseApp
         private DataGridView? dgBajaMantentze;
         private Button? btBerreskuratu, btBehinBetiko, btMantenimendura;
 
+        /// <summary>
+        /// EzabatuakForm klasearen instantzia berria sortzen du.
+        /// </summary>
+        /// <param name="erabiltzailea">Inprimakia erabiltzen ari den erabiltzailea.</param>
         public EzabatuakForm(Erabiltzailea erabiltzailea)
         {
             this.erabiltzailea = erabiltzailea;
@@ -21,6 +28,9 @@ namespace StockBaseApp
             EguneratuTaula();
         }
 
+        /// <summary>
+        /// Inprimakiaren interfaze grafikoa eta kontrolak eskuz hasieratzen ditu.
+        /// </summary>
         private void InterfazeaEskuzHasieratu()
         {
             this.Text = "Bajak eta Mantenimendua";
@@ -86,6 +96,9 @@ namespace StockBaseApp
             this.Controls.Add(lblInfo);
         }
 
+        /// <summary>
+        /// Gailuen taula datu-baseko informazioarekin eguneratzen du (hautsiak edo mantenimenduan daudenak).
+        /// </summary>
         private void EguneratuTaula()
         {
             if (dgBajaMantentze != null)
@@ -93,6 +106,9 @@ namespace StockBaseApp
             EguneratuBotoiak();
         }
 
+        /// <summary>
+        /// Hautatutako gailuaren egoeraren arabera ekintza botoiak gaitzen edo desgaitzen ditu.
+        /// </summary>
         private void EguneratuBotoiak()
         {
             if (dgBajaMantentze?.SelectedRows.Count > 0)
@@ -106,28 +122,43 @@ namespace StockBaseApp
             }
         }
 
+        /// <summary>
+        /// Berreskuratu botoia sakatzean gailua berriro aktiboa izatera pasatzen du.
+        /// </summary>
+        /// <param name="igorlea">Gertaera sortu duen objektua.</param>
+        /// <param name="e">Gertaeraren datuak.</param>
         private void btBerreskuratu_Click(object? igorlea, EventArgs e)
         {
             if (dgBajaMantentze?.SelectedRows.Count > 0)
             {
                 int id = Convert.ToInt32(dgBajaMantentze.SelectedRows[0].Cells["Identifikatzailea"].Value);
-                kudeatzailea.GailuaEgoeraAldatu(id, "Aktiboa");
+                kudeatzailea.GailuaEgoeraAldatu(id, "Aktiboa", erabiltzailea.IdErabiltzailea);
                 MessageBox.Show("Gailua berriro aktibatu da eta inbentario orokorrera itzuli da.");
                 EguneratuTaula();
             }
         }
 
+        /// <summary>
+        /// Mantenimendura botoia sakatzean gailuaren egoera aldatzen du.
+        /// </summary>
+        /// <param name="igorlea">Gertaera sortu duen objektua.</param>
+        /// <param name="e">Gertaeraren datuak.</param>
         private void btMantenimendura_Click(object? igorlea, EventArgs e)
         {
             if (dgBajaMantentze?.SelectedRows.Count > 0)
             {
                 int id = Convert.ToInt32(dgBajaMantentze.SelectedRows[0].Cells["Identifikatzailea"].Value);
-                kudeatzailea.GailuaEgoeraAldatu(id, "Mantentze-lanetan");
+                kudeatzailea.GailuaEgoeraAldatu(id, "Mantentze-lanetan", erabiltzailea.IdErabiltzailea);
                 MessageBox.Show("Gailua mantenimenduan dago orain.");
                 EguneratuTaula();
             }
         }
 
+        /// <summary>
+        /// Behin betiko ezabatu botoia sakatzean gailua sistematik guztiz ezabatzen du.
+        /// </summary>
+        /// <param name="igorlea">Gertaera sortu duen objektua.</param>
+        /// <param name="e">Gertaeraren datuak.</param>
         private void btBehinBetiko_Click(object? igorlea, EventArgs e)
         {
             if (dgBajaMantentze?.SelectedRows.Count > 0)
@@ -141,7 +172,7 @@ namespace StockBaseApp
                 if (MessageBox.Show($"{izena} BEHIN-BETIKO ezabatu nahi duzu?", "ADI", MessageBoxButtons.YesNo, MessageBoxIcon.Stop) == DialogResult.Yes)
                 {
                     Gailua g = new Ordenagailua(id, izena, koka, "Ezabatua", data, "", 0); 
-                    kudeatzailea.GailuaEzabatu(g);
+                    kudeatzailea.GailuaEzabatu(g, erabiltzailea.IdErabiltzailea);
                     EguneratuTaula();
                 }
             }

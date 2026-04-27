@@ -1,0 +1,30 @@
+### YamlMime:ManagedReference
+items:
+- uid: StockBaseApp.Kontrolagailuak
+  commentId: N:StockBaseApp.Kontrolagailuak
+  id: StockBaseApp.Kontrolagailuak
+  children:
+  - StockBaseApp.Kontrolagailuak.InbentarioSistema
+  - StockBaseApp.Kontrolagailuak.Konexioa
+  langs:
+  - csharp
+  - vb
+  name: StockBaseApp.Kontrolagailuak
+  nameWithType: StockBaseApp.Kontrolagailuak
+  fullName: StockBaseApp.Kontrolagailuak
+  type: Namespace
+  assemblies:
+  - StockBaseApp
+references:
+- uid: StockBaseApp.Kontrolagailuak.InbentarioSistema
+  commentId: T:StockBaseApp.Kontrolagailuak.InbentarioSistema
+  href: StockBaseApp.Kontrolagailuak.InbentarioSistema.html
+  name: InbentarioSistema
+  nameWithType: InbentarioSistema
+  fullName: StockBaseApp.Kontrolagailuak.InbentarioSistema
+- uid: StockBaseApp.Kontrolagailuak.Konexioa
+  commentId: T:StockBaseApp.Kontrolagailuak.Konexioa
+  href: StockBaseApp.Kontrolagailuak.Konexioa.html
+  name: Konexioa
+  nameWithType: Konexioa
+  fullName: StockBaseApp.Kontrolagailuak.Konexioa

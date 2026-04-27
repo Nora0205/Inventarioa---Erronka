@@ -6,20 +6,61 @@ using StockBaseApp.Modeloak;
 
 namespace StockBaseApp.Kontrolagailuak
 {
+    /// <summary>
+    /// Inbentarioaren kudeaketarako kontrolagailu nagusia.
+    /// Datu-basearekiko operazio guztiak (CRUD) eta log-en kudeaketa zentralizatzen ditu.
+    /// </summary>
     public class InbentarioSistema
     {
         private readonly Konexioa konexioa;
 
+        /// <summary>
+        /// InbentarioSistema klasearen instantzia berri bat sortzen du.
+        /// </summary>
         public InbentarioSistema()
         {
             konexioa = new Konexioa();
         }
 
+        /// <summary>
+        /// Sisteman gertatzen diren ekintza garrantzitsuak 'Log' taulan gordetzen ditu.
+        /// </summary>
+        /// <param name="idErabiltzailea">Ekintza burutu duen erabiltzailearen ID-a.</param>
+        /// <param name="ekintza">Burututako ekintza mota (INSERT, UPDATE, DELETE, LOGIN...).</param>
+        /// <param name="taula">Aldatutako datu-baseko taularen izena.</param>
+        /// <param name="idErregistroa">Aldatutako erregistroaren ID-a.</param>
+        /// <param name="xehetasuna">Ekintzaren azalpen testual bat.</param>
+        public void LogGorde(int idErabiltzailea, string ekintza, string taula, int idErregistroa, string xehetasuna)
+        {
+            using var kon = konexioa.LortuKonexioa();
+            kon.Open();
+            string sqlKatea = "INSERT INTO Log (id_erabiltzailea, ekintza, taula, id_erregistroa, xehetasuna) " +
+                               "VALUES (@userId, @ekintza, @taula, @regId, @details)";
+            using var komandoa = new MySqlCommand(sqlKatea, kon);
+            komandoa.Parameters.AddWithValue("@userId", idErabiltzailea);
+            komandoa.Parameters.AddWithValue("@ekintza", ekintza);
+            komandoa.Parameters.AddWithValue("@taula", taula);
+            komandoa.Parameters.AddWithValue("@regId", idErregistroa);
+            komandoa.Parameters.AddWithValue("@details", xehetasuna);
+            komandoa.ExecuteNonQuery();
+        }
+
+        /// <summary>
+        /// Erabiltzailearen kredentzialak egiaztatzen ditu sisteman sartzeko.
+        /// </summary>
+        /// <param name="izena">Erabiltzaile izena.</param>
+        /// <param name="pasahitza">Pasahitza (testu arrunta).</param>
+        /// <returns>Erabiltzailea objektua kredentzialak zuzenak badira; null bestela.</returns>
         public Erabiltzailea? SaioaHasi(string izena, string pasahitza)
         {
             using var kon = konexioa.LortuKonexioa();
             kon.Open();
-            string sqlKatea = "SELECT id_erabiltzailea, izena, email, rola, id_mintegia FROM Erabiltzailea WHERE izena = @izena AND pasahitza = @pass";
+            string sqlKatea = @"
+                SELECT e.id_erabiltzailea, e.izena, e.email, e.rola, e.id_mintegia, m.izena as mintegia_izena 
+                FROM Erabiltzailea e 
+                LEFT JOIN Mintegia m ON e.id_mintegia = m.id_mintegia 
+                WHERE e.izena = @izena AND e.pasahitza = @pass";
+            
             using var komandoa = new MySqlCommand(sqlKatea, kon);
             komandoa.Parameters.AddWithValue("@izena", izena);
             komandoa.Parameters.AddWithValue("@pass", pasahitza);
@@ -33,14 +74,25 @@ namespace StockBaseApp.Kontrolagailuak
                     irakurlea["rola"].ToString() ?? ""
                 )
                 {
-                    MintegiJabea = new Mintegia(Convert.IsDBNull(irakurlea["id_mintegia"]) ? 1 : Convert.ToInt32(irakurlea["id_mintegia"]), "")
+                    MintegiJabea = new Mintegia(
+                        Convert.IsDBNull(irakurlea["id_mintegia"]) ? 1 : Convert.ToInt32(irakurlea["id_mintegia"]), 
+                        irakurlea["mintegia_izena"]?.ToString() ?? ""
+                    )
                 };
+                irakurlea.Close();
+                LogGorde(erabiltzailea.IdErabiltzailea, "LOGIN", "Erabiltzailea", erabiltzailea.IdErabiltzailea, "Saioa hasi da sistema barruan.");
                 return erabiltzailea;
             }
             return null;
         }
 
-        public void GailuaGehitu(Gailua gailua, string kokalekua)
+        /// <summary>
+        /// Gailu berri bat gehitzen du inbentarioan, bere datu espezifikoekin (PC edo Inprimagailua).
+        /// </summary>
+        /// <param name="gailua">Gailu objektua (Ordenagailua edo Inprimagailua).</param>
+        /// <param name="kokalekua">Gailuaren kokapen fisikoa (gela).</param>
+        /// <param name="idErabiltzailea">Ekintza burutzen duen administratzailearen ID-a.</param>
+        public void GailuaGehitu(Gailua gailua, string kokalekua, int idErabiltzailea)
         {
             using var kon = konexioa.LortuKonexioa();
             kon.Open();
@@ -79,11 +131,18 @@ namespace StockBaseApp.Kontrolagailuak
                     komandoa.Parameters.AddWithValue("@color", inprimagailua.Koloretakoa);
                     komandoa.ExecuteNonQuery();
                 }
+
                 transakzioa.Commit();
+                LogGorde(idErabiltzailea, "INSERT", "Gailua", sortutakoIda, $"Gailu berria gehitu da: {gailua.Marka} {gailua.Modeloa} ({kokalekua} gelan)");
             }
             catch (Exception) { transakzioa.Rollback(); throw; }
         }
 
+        /// <summary>
+        /// Aktibo dauden gailu guztien zerrenda lortzen du, mintegi baten arabera iragazi daitekeena.
+        /// </summary>
+        /// <param name="idMintegia">Aukerakoa. Mintegi baten ID-a gailuak iragazteko.</param>
+        /// <returns>Gailuen datuekin osatutako DataTable bat.</returns>
         public DataTable LortuGailuakGuztiak(int? idMintegia = null)
         {
             DataTable datuTaula = new();
@@ -114,6 +173,10 @@ namespace StockBaseApp.Kontrolagailuak
             return datuTaula;
         }
 
+        /// <summary>
+        /// Mantentze-lanetan, hautsita edo ezabatuta dauden gailuen zerrenda konbinatua lortzen du.
+        /// </summary>
+        /// <returns>Baja eta mantentze sistemaren datuekin osatutako DataTable bat.</returns>
         public DataTable LortuBajaEtaMantentzeSistema()
         {
             DataTable datuTaula = new();
@@ -127,13 +190,17 @@ namespace StockBaseApp.Kontrolagailuak
                 SELECT id_gailua as Identifikatzailea, marka as Marka, kokalekua as Kokalekua, 'EZABATUA' as Egoera, erosketa_data as 'Erosketa Data', ezabatze_data as 'Ezabatze Data'
                 FROM EzabatutakoGailua
                 ORDER BY Egoera DESC";
-            
+
             using var komandoa = new MySqlCommand(sqlKatea, kon);
             using var egokitzailea = new MySqlDataAdapter(komandoa);
             egokitzailea.Fill(datuTaula);
             return datuTaula;
         }
 
+        /// <summary>
+        /// Sisteman erregistratuta dauden mintegi guztiak lortzen ditu.
+        /// </summary>
+        /// <returns>ID eta Izena bikoteen zerrenda bat.</returns>
         public List<KeyValuePair<int, string>> LortuMintegiak()
         {
             var zerrenda = new List<KeyValuePair<int, string>>();
@@ -142,11 +209,15 @@ namespace StockBaseApp.Kontrolagailuak
             string sqlKatea = "SELECT id_mintegia, izena FROM Mintegia";
             using var komandoa = new MySqlCommand(sqlKatea, kon);
             using var irakurlea = komandoa.ExecuteReader();
-            while (irakurlea.Read()) 
+            while (irakurlea.Read())
                 zerrenda.Add(new(Convert.ToInt32(irakurlea["id_mintegia"]), irakurlea["izena"].ToString() ?? ""));
             return zerrenda;
         }
 
+        /// <summary>
+        /// Sisteman erregistratuta dauden kokaleku (gela) guztiak lortzen ditu.
+        /// </summary>
+        /// <returns>ID eta Izena bikoteen zerrenda bat.</returns>
         public List<KeyValuePair<int, string>> LortuKokalekuak()
         {
             var zerrenda = new List<KeyValuePair<int, string>>();
@@ -155,45 +226,78 @@ namespace StockBaseApp.Kontrolagailuak
             string sqlKatea = "SELECT id_kokalekua, izena FROM Kokalekua";
             using var komandoa = new MySqlCommand(sqlKatea, kon);
             using var irakurlea = komandoa.ExecuteReader();
-            while (irakurlea.Read()) 
+            while (irakurlea.Read())
                 zerrenda.Add(new(Convert.ToInt32(irakurlea["id_kokalekua"]), irakurlea["izena"].ToString() ?? ""));
             return zerrenda;
         }
 
-        public void GailuaEzabatu(Gailua gailua)
+        /// <summary>
+        /// Gailu bat inbentariotik guztiz ezabatzen du. 
+        /// MySQL-ko TRIGGER batek automatikoki gordeko du gailua 'EzabatutakoGailua' taulan.
+        /// </summary>
+        /// <param name="gailua">Ezabatu nahi den gailu objektua.</param>
+        /// <param name="idErabiltzailea">Ekintza burutzen duen administratzailearen ID-a.</param>
+        public void GailuaEzabatu(Gailua gailua, int idErabiltzailea)
         {
             using var kon = konexioa.LortuKonexioa();
             kon.Open();
             using var transakzioa = kon.BeginTransaction();
             try
             {
-                string sqlHist = "INSERT INTO EzabatutakoGailua (id_gailua, marka, erosketa_data, kokalekua) VALUES (@id, @marka, @data, @kokalekua)";
-                using (var komandoa = new MySqlCommand(sqlHist, kon, transakzioa))
-                {
-                    komandoa.Parameters.AddWithValue("@id", gailua.IdGailua);
-                    komandoa.Parameters.AddWithValue("@marka", gailua.Marka);
-                    komandoa.Parameters.AddWithValue("@data", gailua.ErosketaData);
-                    komandoa.Parameters.AddWithValue("@kokalekua", gailua.Kokalekua);
-                    komandoa.ExecuteNonQuery();
-                }
+                // Lehen, hemen 'EzabatutakoGailua' taulan txertatzen genuen eskuz.
+                // Orain, MySQL-ko TRIGGER-ak (HistorialBorrados_Trigger) automatikoki egiten du.
+
+                // Ezabatu datu espezifikoak (Ordenagailua edo Inprimagailua)
                 string sqlDelSpec = gailua is Ordenagailua ? "DELETE FROM Ordenagailua WHERE gailua_id = @id" : "DELETE FROM Inprimagailua WHERE gailua_id = @id";
                 using (var komandoa = new MySqlCommand(sqlDelSpec, kon, transakzioa))
                 {
                     komandoa.Parameters.AddWithValue("@id", gailua.IdGailua);
                     komandoa.ExecuteNonQuery();
                 }
+
+                // Ezabatu gailu nagusia. Honek 'HistorialBorrados_Trigger' aktibatuko du.
                 string sqlDelBase = "DELETE FROM Gailua WHERE id_gailua = @id";
                 using (var komandoa = new MySqlCommand(sqlDelBase, kon, transakzioa))
                 {
                     komandoa.Parameters.AddWithValue("@id", gailua.IdGailua);
                     komandoa.ExecuteNonQuery();
                 }
+
                 transakzioa.Commit();
+                LogGorde(idErabiltzailea, "DELETE", "Gailua", gailua.IdGailua, $"Gailua guztiz ezabatu da: {gailua.Marka} {gailua.Modeloa}.");
             }
             catch (Exception) { transakzioa.Rollback(); throw; }
         }
 
-        public void ErabiltzaileaGehitu(string izena, string email, string pasahitza, string rola, int idMintegia)
+        /// <summary>
+        /// Biltegiratutako prozedura bat deitzen du (Stored Procedure), 10 gailu zaharrenak lortzeko.
+        /// </summary>
+        /// <returns>10 gailu zaharrenen datuekin osatutako DataTable bat.</returns>
+        public DataTable Lortu10GailuZaharrenak()
+        {
+            DataTable datuTaula = new();
+            using var kon = konexioa.LortuKonexioa();
+            kon.Open();
+            
+            // Biltegiratutako prozedura deitzen dugu
+            using var komandoa = new MySqlCommand("Lortu10Zaharrenak", kon);
+            komandoa.CommandType = CommandType.StoredProcedure;
+            
+            using var egokitzailea = new MySqlDataAdapter(komandoa);
+            egokitzailea.Fill(datuTaula);
+            return datuTaula;
+        }
+
+        /// <summary>
+        /// Erabiltzaile berri bat sortzen du sisteman.
+        /// </summary>
+        /// <param name="izena">Erabiltzaile izen osoa.</param>
+        /// <param name="email">Posta elektronikoa.</param>
+        /// <param name="pasahitza">Sarbide pasahitza.</param>
+        /// <param name="rola">Sistema rola (IKT, Irakaslea, Administratzailea...).</param>
+        /// <param name="idMintegia">Erabiltzailea zein mintegikoa den.</param>
+        /// <param name="idAdmin">Ekintza burutzen duen administratzailearen ID-a.</param>
+        public void ErabiltzaileaGehitu(string izena, string email, string pasahitza, string rola, int idMintegia, int idAdmin)
         {
             using var kon = konexioa.LortuKonexioa();
             kon.Open();
@@ -205,9 +309,11 @@ namespace StockBaseApp.Kontrolagailuak
             komandoa.Parameters.AddWithValue("@rola", rola);
             komandoa.Parameters.AddWithValue("@mintegia", idMintegia);
             komandoa.ExecuteNonQuery();
+            int nuevoId = (int)komandoa.LastInsertedId;
+            LogGorde(idAdmin, "INSERT", "Erabiltzailea", nuevoId, $"Erabiltzaile berria sortu da: {izena} ({rola})");
         }
 
-        public void ErabiltzaileaEzabatu(int id, string izena)
+        public void ErabiltzaileaEzabatu(int id, string izena, int idAdmin)
         {
             if (izena.Equals("Jon Agirretxe", StringComparison.OrdinalIgnoreCase))
             {
@@ -220,6 +326,7 @@ namespace StockBaseApp.Kontrolagailuak
             using var komandoa = new MySqlCommand(sqlKatea, kon);
             komandoa.Parameters.AddWithValue("@id", id);
             komandoa.ExecuteNonQuery();
+            LogGorde(idAdmin, "DELETE", "Erabiltzailea", id, $"Erabiltzailea ezabatu da: {izena}");
         }
 
         public DataTable ErabiltzaileGuztiakLortu()
@@ -244,35 +351,34 @@ namespace StockBaseApp.Kontrolagailuak
             kon.Open();
             string sqlKatea = "SELECT COUNT(*) FROM Erabiltzailea WHERE rola = @rola";
             if (idMintegia.HasValue) sqlKatea += " AND id_mintegia = @mintegia";
-            
+
             using var komandoa = new MySqlCommand(sqlKatea, kon);
             komandoa.Parameters.AddWithValue("@rola", rola);
             if (idMintegia.HasValue) komandoa.Parameters.AddWithValue("@mintegia", idMintegia.Value);
-            
+
             return Convert.ToInt32(komandoa.ExecuteScalar());
         }
 
-        public void GailuaEgoeraAldatu(int id, string egoeraBerria)
+        public void GailuaEgoeraAldatu(int id, string egoeraBerria, int idErabiltzailea)
         {
             using var kon = konexioa.LortuKonexioa();
             kon.Open();
-            
-            // Hautsia bada, IKT Tailerrera mugitu automatikoki
+
             string kokalekuaBerria = "";
             if (egoeraBerria == "Mantentze-lanetan" || egoeraBerria == "Hautsia")
             {
                 kokalekuaBerria = ", kokalekua = 'IKT Tailerra'";
             }
-            // Aktibatu bada (berreskuratu), EZ dugu kokalekua aldatuko, IKT Tailerretan utziko dugu
 
             string sqlKatea = $"UPDATE Gailua SET egoera = @egoera {kokalekuaBerria} WHERE id_gailua = @id";
             using var komandoa = new MySqlCommand(sqlKatea, kon);
             komandoa.Parameters.AddWithValue("@egoera", egoeraBerria);
             komandoa.Parameters.AddWithValue("@id", id);
             komandoa.ExecuteNonQuery();
+            LogGorde(idErabiltzailea, "UPDATE", "Gailua", id, $"Egoera aldatu da: {egoeraBerria}.");
         }
 
-        public void GailuaKokalekuaAldatu(int id, string kokalekua)
+        public void GailuaKokalekuaAldatu(int id, string kokalekua, int idErabiltzailea)
         {
             using var kon = konexioa.LortuKonexioa();
             kon.Open();
@@ -281,6 +387,78 @@ namespace StockBaseApp.Kontrolagailuak
             komandoa.Parameters.AddWithValue("@kokalekua", kokalekua);
             komandoa.Parameters.AddWithValue("@id", id);
             komandoa.ExecuteNonQuery();
+            LogGorde(idErabiltzailea, "UPDATE", "Gailua", id, $"Kokalekua aldatu da: {kokalekua}.");
+        }
+
+        public void MintegiaEzabatu(int idMintegia, int idAdmin)
+        {
+            if (idMintegia == 1 || idMintegia == 99)
+                throw new Exception("Ezin da mintegi sistema hau ezabatu.");
+
+            int irakasleKopurua = ErabiltzaileKopuruaLortu("Irakaslea", idMintegia);
+            if (irakasleKopurua > 0)
+                throw new Exception("Ezin da mintegia ezabatu irakasleren bat duelako.");
+
+            using var kon = konexioa.LortuKonexioa();
+            kon.Open();
+            using var transakzioa = kon.BeginTransaction();
+            try
+            {
+                // Gailuak "Birbanatu" (99) mintegira mugitu
+                string sqlGailuak = "UPDATE Gailua SET id_mintegia = 99 WHERE id_mintegia = @id";
+                using (var komandoa = new MySqlCommand(sqlGailuak, kon, transakzioa))
+                {
+                    komandoa.Parameters.AddWithValue("@id", idMintegia);
+                    komandoa.ExecuteNonQuery();
+                }
+
+                // Erabiltzaileak "Informatika" (1) mintegira mugitu
+                string sqlErabiltzaileak = "UPDATE Erabiltzailea SET id_mintegia = 1 WHERE id_mintegia = @id";
+                using (var komandoa = new MySqlCommand(sqlErabiltzaileak, kon, transakzioa))
+                {
+                    komandoa.Parameters.AddWithValue("@id", idMintegia);
+                    komandoa.ExecuteNonQuery();
+                }
+
+                // Mintegia ezabatu
+                string sqlMintegia = "DELETE FROM Mintegia WHERE id_mintegia = @id";
+                using (var komandoa = new MySqlCommand(sqlMintegia, kon, transakzioa))
+                {
+                    komandoa.Parameters.AddWithValue("@id", idMintegia);
+                    komandoa.ExecuteNonQuery();
+                }
+
+                transakzioa.Commit();
+                LogGorde(idAdmin, "DELETE", "Mintegia", idMintegia, "Mintegia ezabatu da eta gailuak birbanatu dira.");
+            }
+            catch (Exception) { transakzioa.Rollback(); throw; }
+        }
+
+        /// <summary>
+        /// Mintegi berri bat gehitzen du sisteman.
+        /// </summary>
+        /// <param name="izena">Mintegiaren izena.</param>
+        /// <param name="idAdmin">Ekintza burutzen duen administratzailearen ID-a.</param>
+        public void MintegiaGehitu(string izena, int idAdmin)
+        {
+            if (string.IsNullOrWhiteSpace(izena))
+                throw new Exception("Izena ezin da hutsik egon.");
+
+            using var kon = konexioa.LortuKonexioa();
+            kon.Open();
+
+            // Hurrengo ID-a eskuz lortu, ez baita auto-inkrementala
+            string sqlMaxId = "SELECT IFNULL(MAX(id_mintegia), 0) + 1 FROM Mintegia WHERE id_mintegia < 99";
+            using var cmdId = new MySqlCommand(sqlMaxId, kon);
+            int nuevoId = Convert.ToInt32(cmdId.ExecuteScalar());
+
+            string sqlInsert = "INSERT INTO Mintegia (id_mintegia, izena) VALUES (@id, @izena)";
+            using var komandoa = new MySqlCommand(sqlInsert, kon);
+            komandoa.Parameters.AddWithValue("@id", nuevoId);
+            komandoa.Parameters.AddWithValue("@izena", izena);
+            komandoa.ExecuteNonQuery();
+
+            LogGorde(idAdmin, "INSERT", "Mintegia", nuevoId, $"Mintegi berria sortu da: {izena}");
         }
     }
 }
