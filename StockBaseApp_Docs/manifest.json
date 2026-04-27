@@ -1,0 +1,439 @@
+{
+  "source_base_path": "C:/Users/MDX/source/repos/StockBaseApp",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "DOCUMENTACION_DETALLADA.md",
+      "output": {
+        ".html": {
+          "relative_path": "DOCUMENTACION_DETALLADA.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Dokumentazioa/docs/getting-started.md",
+      "output": {
+        ".html": {
+          "relative_path": "Dokumentazioa/docs/getting-started.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Dokumentazioa/docs/introduction.md",
+      "output": {
+        ".html": {
+          "relative_path": "Dokumentazioa/docs/introduction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "Dokumentazioa/docs/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Dokumentazioa/docs/toc.html"
+        },
+        ".json": {
+          "relative_path": "Dokumentazioa/docs/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Dokumentazioa/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "Dokumentazioa/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "Dokumentazioa/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Dokumentazioa/toc.html"
+        },
+        ".json": {
+          "relative_path": "Dokumentazioa/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "RELACIONES_Y_ESTRUCTURA.md",
+      "output": {
+        ".html": {
+          "relative_path": "RELACIONES_Y_ESTRUCTURA.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StockBaseApp.AddComputerForm.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StockBaseApp.AddComputerForm.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StockBaseApp.AddComputerForm",
+      "Summary": "<p sourcefile=\"api/StockBaseApp.AddComputerForm.yml\" sourcestartlinenumber=\"1\">Ordenagailu berriak sisteman gehitzeko erabiltzen den inprimakia.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StockBaseApp.AddPrinterForm.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StockBaseApp.AddPrinterForm.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StockBaseApp.AddPrinterForm",
+      "Summary": "<p sourcefile=\"api/StockBaseApp.AddPrinterForm.yml\" sourcestartlinenumber=\"1\">Inprimagailu berriak sisteman gehitzeko erabiltzen den inprimakia.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StockBaseApp.CreateUserForm.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StockBaseApp.CreateUserForm.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StockBaseApp.CreateUserForm",
+      "Summary": "<p sourcefile=\"api/StockBaseApp.CreateUserForm.yml\" sourcestartlinenumber=\"1\">Erabiltzaile berriak sisteman sortzeko inprimakia.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StockBaseApp.DeleteUserForm.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StockBaseApp.DeleteUserForm.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StockBaseApp.DeleteUserForm",
+      "Summary": "<p sourcefile=\"api/StockBaseApp.DeleteUserForm.yml\" sourcestartlinenumber=\"1\">Erabiltzaileak sistematik ezabatzeko inprimakia.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StockBaseApp.EzabatuakForm.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StockBaseApp.EzabatuakForm.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StockBaseApp.EzabatuakForm",
+      "Summary": "<p sourcefile=\"api/StockBaseApp.EzabatuakForm.yml\" sourcestartlinenumber=\"1\">Baja emandako edo mantenimenduan dauden gailuak kudeatzeko inprimakia.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StockBaseApp.Kontrolagailuak.InbentarioSistema.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StockBaseApp.Kontrolagailuak.InbentarioSistema.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StockBaseApp.Kontrolagailuak.InbentarioSistema",
+      "Summary": "<p sourcefile=\"api/StockBaseApp.Kontrolagailuak.InbentarioSistema.yml\" sourcestartlinenumber=\"1\">Inbentarioaren kudeaketarako kontrolagailu nagusia.\nDatu-basearekiko operazio guztiak (CRUD) eta log-en kudeaketa zentralizatzen ditu.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StockBaseApp.Kontrolagailuak.Konexioa.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StockBaseApp.Kontrolagailuak.Konexioa.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StockBaseApp.Kontrolagailuak.Konexioa",
+      "Summary": "<p sourcefile=\"api/StockBaseApp.Kontrolagailuak.Konexioa.yml\" sourcestartlinenumber=\"1\">MySQL datu-basearekiko konexioa kudeatzen duen klasea.\nZerbitzariaren helbidea 'config.txt' fitxategitik irakurtzen du konfigurazioa dinamikoa izan dadin.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StockBaseApp.Kontrolagailuak.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StockBaseApp.Kontrolagailuak.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StockBaseApp.Kontrolagailuak",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StockBaseApp.LoginForm.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StockBaseApp.LoginForm.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StockBaseApp.LoginForm",
+      "Summary": "<p sourcefile=\"api/StockBaseApp.LoginForm.yml\" sourcestartlinenumber=\"1\">Sisteman saioa hasteko inprimakia.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StockBaseApp.MainForm.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StockBaseApp.MainForm.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StockBaseApp.MainForm",
+      "Summary": "<p sourcefile=\"api/StockBaseApp.MainForm.yml\" sourcestartlinenumber=\"1\">Aplikazioaren inprimaki nagusia. Hemendik gainerako aukera guztietara sar daiteke.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StockBaseApp.ManageMintegiakForm.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StockBaseApp.ManageMintegiakForm.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StockBaseApp.ManageMintegiakForm",
+      "Summary": "<p sourcefile=\"api/StockBaseApp.ManageMintegiakForm.yml\" sourcestartlinenumber=\"1\">Mintegiak (departamentuak) kudeatzeko formularioa.\nAdministratzaileei mintegi berriak sortzeko eta daudenak ezabatzeko aukera ematen die.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StockBaseApp.ManageUsersForm.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StockBaseApp.ManageUsersForm.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StockBaseApp.ManageUsersForm",
+      "Summary": "<p sourcefile=\"api/StockBaseApp.ManageUsersForm.yml\" sourcestartlinenumber=\"1\">Erabiltzaileen kudeaketa orokorra egiteko menuko formularioa.\nHemendik erabiltzaileak ikusi, sortu edo ezabatzeko formularioetara sartzen da.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StockBaseApp.Modeloak.Erabiltzailea.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StockBaseApp.Modeloak.Erabiltzailea.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StockBaseApp.Modeloak.Erabiltzailea",
+      "Summary": "<p sourcefile=\"api/StockBaseApp.Modeloak.Erabiltzailea.yml\" sourcestartlinenumber=\"1\">Sistemako erabiltzaile baten informazioa eta baimenak kudeatzen dituen klasea.\nErabiltzaile bakoitza mintegi (departamentu) bati lotuta dago eta rol bat du.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StockBaseApp.Modeloak.EzabatutakoGailua.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StockBaseApp.Modeloak.EzabatutakoGailua.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StockBaseApp.Modeloak.EzabatutakoGailua",
+      "Summary": "<p sourcefile=\"api/StockBaseApp.Modeloak.EzabatutakoGailua.yml\" sourcestartlinenumber=\"1\">Inbentariotik ezabatu diren gailuen informazio historikoa gordetzeko modeloa.\nMySQL-ko TRIGGER-ak taula honetan txertatzen ditu datuak automatikoki gailu bat ezabatzean.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StockBaseApp.Modeloak.Gailua.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StockBaseApp.Modeloak.Gailua.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StockBaseApp.Modeloak.Gailua",
+      "Summary": "<p sourcefile=\"api/StockBaseApp.Modeloak.Gailua.yml\" sourcestartlinenumber=\"1\">Inbentarioko gailu guztien oinarrizko klasea.\nKlase honek gailu guztiek komunean dituzten atributuak eta portaerak definitzen ditu.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StockBaseApp.Modeloak.Inprimagailua.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StockBaseApp.Modeloak.Inprimagailua.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StockBaseApp.Modeloak.Inprimagailua",
+      "Summary": "<p sourcefile=\"api/StockBaseApp.Modeloak.Inprimagailua.yml\" sourcestartlinenumber=\"1\"><xref href=\"StockBaseApp.Modeloak.Gailua\" data-throw-if-not-resolved=\"false\"></xref> klasearen kumea, inprimagailuen datu espezifikoak kudeatzeko.\nKlase honek koloretako inprimaketa-aukera gehitzen du.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StockBaseApp.Modeloak.Mintegia.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StockBaseApp.Modeloak.Mintegia.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StockBaseApp.Modeloak.Mintegia",
+      "Summary": "<p sourcefile=\"api/StockBaseApp.Modeloak.Mintegia.yml\" sourcestartlinenumber=\"1\">Ikastetxeko mintegi edo departamentu bat ordezkatzen duen klasea.\nMintegi bakoitzak bere gailu inbentario propioa kudeatzen du.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StockBaseApp.Modeloak.Ordenagailua.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StockBaseApp.Modeloak.Ordenagailua.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StockBaseApp.Modeloak.Ordenagailua",
+      "Summary": "<p sourcefile=\"api/StockBaseApp.Modeloak.Ordenagailua.yml\" sourcestartlinenumber=\"1\"><xref href=\"StockBaseApp.Modeloak.Gailua\" data-throw-if-not-resolved=\"false\"></xref> klasearen kumea, ordenagailuen datu espezifikoak kudeatzeko.\nKlase honek prozesagailuaren eta RAM memoriaren informazioa gehitzen du.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StockBaseApp.Modeloak.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StockBaseApp.Modeloak.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StockBaseApp.Modeloak",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StockBaseApp.ViewDevicesForm.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StockBaseApp.ViewDevicesForm.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StockBaseApp.ViewDevicesForm",
+      "Summary": "<p sourcefile=\"api/StockBaseApp.ViewDevicesForm.yml\" sourcestartlinenumber=\"1\">Inbentario aktiboan dauden gailu guztiak erakusten dituen formularioa.\nGailuen zerrenda osoa bistaratzen du eta matxurak jakinarazteko edo kokalekua aldatzeko aukera ematen du.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StockBaseApp.ViewUsersForm.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StockBaseApp.ViewUsersForm.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StockBaseApp.ViewUsersForm",
+      "Summary": "<p sourcefile=\"api/StockBaseApp.ViewUsersForm.yml\" sourcestartlinenumber=\"1\">Sisteman erregistratuta dauden erabiltzaile guztien zerrenda erakusten duen formularioa.\nAdministratzaileei erabiltzaileen datuak (izena, emaila, rola, mintegia) modu grafikoan ikusteko aukera ematen die.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StockBaseApp.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StockBaseApp.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StockBaseApp",
+      "Summary": null
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

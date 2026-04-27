@@ -39,7 +39,7 @@
         ]
       }
     ],
-    "dest": "_site",
+    "dest": "docs",
     "template": [
       "default",
       "modern"
@@ -48,6 +48,7 @@
       "_appName": "StockBase",
       "_appTitle": "StockBaseApp - Gestión de Inventario",
       "_enableSearch": true,
+      "disableInheritedMembers": true,
       "pdf": false
     }
   }

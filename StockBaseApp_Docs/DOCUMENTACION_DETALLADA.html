@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Documentacion Detallada de StockBaseApp | StockBaseApp - Gesti&#243;n de Inventario </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Documentacion Detallada de StockBaseApp | StockBaseApp - Gesti&#243;n de Inventario ">
+      
+      
+      <link rel="icon" href="favicon.ico">
+      <link rel="stylesheet" href="public/docfx.min.css">
+      <link rel="stylesheet" href="public/main.css">
+      <meta name="docfx:navrel" content="toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/Nora0205/Inventarioa---Erronka/blob/master/DOCUMENTACION_DETALLADA.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="index.html">
+            <img id="logo" class="svg" src="logo.svg" alt="StockBase">
+            StockBase
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="documentacion-detallada-de-stockbaseapp">Documentacion Detallada de StockBaseApp</h1>
+
+<p>Esta documentacion describe la estructura, clases y metodos del proyecto <strong>StockBaseApp</strong>, una aplicacion de gestion de inventario desarrollada en C# con Windows Forms y MySQL.</p>
+<hr>
+<h2 id="1-capa-de-modelos-namespace-stockbaseappmodeloak">1. Capa de Modelos (Namespace: StockBaseApp.Modeloak)</h2>
+<p>Los modelos representan las entidades de datos del sistema.</p>
+<h3 id="clase-gailua-dispositivo">Clase: <code>Gailua</code> (Dispositivo)</h3>
+<p>Clase base para todos los dispositivos del inventario.</p>
+<ul>
+<li><strong>Propiedades:</strong>
+<ul>
+<li><code>IdGailua</code>: Identificador unico.</li>
+<li><code>Marka</code>: Marca del dispositivo.</li>
+<li><code>Modeloa</code>: Modelo especifico.</li>
+<li><code>Kokalekua</code>: Ubicacion fisica (aula o sala).</li>
+<li><code>Egoera</code>: Estado actual (Activo, Mantenimiento, Roto, etc.).</li>
+<li><code>ErosketaData</code>: Fecha de compra.</li>
+<li><code>IdMintegia</code>: ID del taller/departamento al que pertenece.</li>
+</ul>
+</li>
+<li><strong>Metodos:</strong>
+<ul>
+<li><code>LortuInformazioa()</code>: Retorna una cadena con la informacion basica del dispositivo.</li>
+</ul>
+</li>
+</ul>
+<h3 id="clase-ordenagailua-ordenador">Clase: <code>Ordenagailua</code> (Ordenador)</h3>
+<p>Hereda de <code>Gailua</code>. Añade caracteristicas especificas de PC.</p>
+<ul>
+<li><strong>Propiedades:</strong>
+<ul>
+<li><code>Prozesagailua</code>: Modelo de CPU.</li>
+<li><code>RamGB</code>: Memoria RAM en GB.</li>
+</ul>
+</li>
+<li><strong>Metodos:</strong>
+<ul>
+<li><code>LortuInformazioa()</code>: Sobrescribe el metodo base para incluir CPU y RAM.</li>
+</ul>
+</li>
+</ul>
+<h3 id="clase-inprimagailua-impresora">Clase: <code>Inprimagailua</code> (Impresora)</h3>
+<p>Hereda de <code>Gailua</code>.</p>
+<ul>
+<li><strong>Propiedades:</strong>
+<ul>
+<li><code>Koloretakoa</code>: Booleano que indica si es a color.</li>
+</ul>
+</li>
+<li><strong>Metodos:</strong>
+<ul>
+<li><code>LortuInformazioa()</code>: Sobrescribe el metodo base para incluir si es a color.</li>
+</ul>
+</li>
+</ul>
+<h3 id="clase-erabiltzailea-usuario">Clase: <code>Erabiltzailea</code> (Usuario)</h3>
+<p>Representa a los usuarios del sistema.</p>
+<ul>
+<li><strong>Propiedades:</strong>
+<ul>
+<li><code>IdErabiltzailea</code>, <code>Izena</code>, <code>Email</code>, <code>Rola</code>, <code>Pasahitza</code>.</li>
+<li><code>MintegiJabea</code>: Taller al que pertenece el usuario.</li>
+</ul>
+</li>
+</ul>
+<h3 id="clase-mintegia-tallerdepartamento">Clase: <code>Mintegia</code> (Taller/Departamento)</h3>
+<ul>
+<li><strong>Propiedades:</strong>
+<ul>
+<li><code>IdMintegia</code>, <code>Izena</code>.</li>
+<li><code>Gailuak</code>: Lista de dispositivos asociados.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="2-capa-de-controladores-namespace-stockbaseappkontrolagailuak">2. Capa de Controladores (Namespace: StockBaseApp.Kontrolagailuak)</h2>
+<p>Contiene la logica de negocio y acceso a datos.</p>
+<h3 id="clase-konexioa-conexion">Clase: <code>Konexioa</code> (Conexion)</h3>
+<p>Gestiona la conexion a la base de datos MySQL.</p>
+<ul>
+<li><strong>Metodos:</strong>
+<ul>
+<li><code>LortuKonexioa()</code>: Crea y retorna un objeto <code>MySqlConnection</code> usando los parametros configurados (servidor, BD, usuario, password). Intenta leer el servidor desde un archivo <code>config.txt</code>.</li>
+</ul>
+</li>
+</ul>
+<h3 id="clase-inbentariosistema-sistema-de-inventario">Clase: <code>InbentarioSistema</code> (Sistema de Inventario)</h3>
+<p>Es el corazon de la logica de la aplicacion.</p>
+<ul>
+<li><strong>Metodos principales:</strong>
+<ul>
+<li><code>SaioaHasi(izena, pasahitza)</code>: Valida credenciales y retorna un objeto <code>Erabiltzailea</code> si es correcto.</li>
+<li><code>GailuaGehitu(gailua, kokalekua)</code>: Inserta un dispositivo en la base de datos. Usa transacciones para insertar tanto en la tabla base <code>Gailua</code> como en las tablas especificas (<code>Ordenagailua</code> o <code>Inprimagailua</code>).</li>
+<li><code>LortuGailuakGuztiak(idMintegia?)</code>: Retorna un <code>DataTable</code> con todos los dispositivos activos, uniendo tablas mediante <code>UNION ALL</code>.</li>
+<li><code>GailuaEzabatu(gailua)</code>: Mueve el dispositivo a la tabla de historico <code>EzabatutakoGailua</code> y lo borra de las tablas activas.</li>
+<li><code>GailuaEgoeraAldatu(id, egoeraBerria)</code>: Actualiza el estado de un dispositivo. Si el estado es 'Hautsia' (Roto) o 'Mantentze-lanetan' (Mantenimiento), lo mueve automaticamente al 'IKT Tailerra'.</li>
+<li><code>ErabiltzaileaGehitu(...)</code>, <code>ErabiltzaileaEzabatu(...)</code>, <code>ErabiltzaileGuztiakLortu()</code>: CRUD de usuarios.</li>
+<li><code>LortuMintegiak()</code>, <code>LortuKokalekuak()</code>: Obtienen listas de referencia para los desplegables de la UI.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="3-capa-de-interfaz-forms">3. Capa de Interfaz (Forms)</h2>
+<h3 id="loginformcs"><code>LoginForm.cs</code></h3>
+<ul>
+<li>Pantalla de inicio de sesion.</li>
+<li>Gestiona la entrada de usuario y contraseña.</li>
+<li>Llama a <code>InbentarioSistema.SaioaHasi</code>.</li>
+</ul>
+<h3 id="mainformcs"><code>MainForm.cs</code></h3>
+<ul>
+<li>Menu principal de la aplicacion.</li>
+<li>Muestra opciones segun el rol del usuario (IKT Arduraduna, Mintegi burua, Irakaslea).</li>
+<li>Permite navegar a la adicion de dispositivos, visualizacion de inventario y gestion de usuarios.</li>
+</ul>
+<h3 id="addcomputerformcs-y-addprinterformcs"><code>AddComputerForm.cs</code> y <code>AddPrinterForm.cs</code></h3>
+<ul>
+<li>Formularios para registrar nuevos dispositivos.</li>
+<li>Incluyen logica para asignar automaticamente el taller (<code>Mintegia</code>) basandose en el nombre del aula (<code>Kokalekua</code>).</li>
+</ul>
+<h3 id="viewdevicesformcs"><code>ViewDevicesForm.cs</code></h3>
+<ul>
+<li>Muestra una rejilla (<code>DataGridView</code>) con el inventario actual.</li>
+<li>Permite filtrar por taller si el usuario tiene permisos.</li>
+</ul>
+<h3 id="manageusersformcs-createuserformcs-deleteuserformcs"><code>ManageUsersForm.cs</code>, <code>CreateUserForm.cs</code>, <code>DeleteUserForm.cs</code></h3>
+<ul>
+<li>Conjunto de formularios para administrar las cuentas de usuario.</li>
+<li>Restringen acciones segun el nivel de privilegio (ej. un profesor no puede borrar usuarios).</li>
+</ul>
+<h3 id="ezabatuakformcs-bajas-y-mantenimiento"><code>EzabatuakForm.cs</code> (Bajas y Mantenimiento)</h3>
+<ul>
+<li>Panel centralizado para gestionar dispositivos que no estan operativos.</li>
+<li><strong>Funcionalidades:</strong>
+<ul>
+<li><strong>Activar</strong>: Marca un dispositivo como reparado y lo devuelve al inventario general.</li>
+<li><strong>Mantenimiento</strong>: Cambia el estado a mantenimiento.</li>
+<li><strong>Borrado Definitivo</strong>: Elimina el dispositivo de las tablas activas y guarda su registro en el historico.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="4-flujos-especiales">4. Flujos Especiales</h2>
+<ol>
+<li><strong>Asignacion de Taller Automatica</strong>: Al elegir una ubicacion que empieza por prefijos especificos (ej. 'PAAG', 'Mekanika'), el sistema pre-selecciona el taller correspondiente y bloquea el selector para asegurar la integridad de los datos.</li>
+<li><strong>Gestion de Estados</strong>: El sistema diferencia entre dispositivos en uso, dispositivos rotos y dispositivos que han sido eliminados permanentemente del stock fisico pero cuyo registro se conserva por trazabilidad.</li>
+</ol>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/Nora0205/Inventarioa---Erronka/blob/master/DOCUMENTACION_DETALLADA.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
