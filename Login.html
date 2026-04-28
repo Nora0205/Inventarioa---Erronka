@@ -260,7 +260,7 @@ Aplikazioak baliabideen kudeaketa errazten du eta ingurumenarekiko errespetua su
         <h3>📦 Instaladorea</h3>
         <p>Egin klik beheko botoian programa deskargatzeko eta instalatzeko:</p>
 
-        <a class="btn btn-success btn-lg mt-3" href="https://github.com/Nora0205/Inventarioa---Erronka/releases/download/StockBaseApp/StockBaseApp.zip">
+        <a class="btn btn-success btn-lg mt-3" href="https://github.com/Nora0205/Inventarioa---Erronka/releases/download/StockBaseApp/StockBaseApp.zip" download>
             ⬇️ Deskargatu Instaladorea
         </a>
     </div>
@@ -282,10 +282,97 @@ Aplikazioak baliabideen kudeaketa errazten du eta ingurumenarekiko errespetua su
 </div>
 
 <div id="gida" class="sectionBox card p-3 container mt-3">
-<h3>Gida Azkarra</h3>
+  <h3>Gida Azkarra / Quick Guide</h3>
 
-<p>  </p>
+  <!-- Hizkuntza botoiak -->
+  <div class="mb-3">
+    <button class="btn btn-primary me-2" onclick="showLang('eu')">Euskara</button>
+    <button class="btn btn-secondary" onclick="showLang('en')">English</button>
+  </div>
 
+  <!-- EUSKARA -->
+  <div id="eu" class="lang-section">
+    <h4># StockBaseApp - Instalazio Gida Azkarra</h4>
+    <p>Dokumentu honek aplikazioa modu egokian instalatzeko eta abiarazteko urratsak azaltzen ditu.</p>
+
+    <h5>Instalazio Urratsak</h5>
+
+    <ol>
+      <li>
+        <strong>Deskarga:</strong> Sartu administratzaile gisa webgunean, joan goiko eskuineko <b>"Instaladorea"</b> botoira eta egin klik <b>"Deskargatu instaladorea"</b> aukeran.
+        <br><img src="Deskargatu instaladorea.png" class="img-fluid mt-2">
+      </li>
+
+      <li>
+        <strong>Segurtasuna (Garrantzitsua):</strong> Fitxategia deskargatu ondoren, joan <code>.zip</code> fitxategira, egin klik eskuineko botoiarekin eta hautatu <b>Propietateak</b>. "Orokorra" fitxan, markatu <b>"Desblokeatu"</b> laukia eta sakatu Ados.
+        <br><img src="zip argazkia.png" class="img-fluid mt-2">
+      </li>
+
+      <li>
+        <strong>Deskonprimitu:</strong> Atera ZIP fitxategiko edukia nahi duzun karpeta batean. Gomendagarria da <b>"Deskonprimitu StockBaseApp/"</b> aukera erabiltzea.
+        <br><img src="winrar argazkia.png" class="img-fluid mt-2">
+      </li>
+
+      <li>
+        <strong>Exekuzioa:</strong> Sartu karpetan, ondoren “win-x64” karpetan eta egin klik bikoitza <b>StockBaseApp.exe</b> fitxategian.
+        <br><img src="Karpeta argazkia.png" class="img-fluid mt-2">
+      </li>
+    </ol>
+
+    <h5>Ohar Garrantzitsuak</h5>
+    <ul>
+      <li><b>Sare Konexioa:</b> Ziurtatu zure gailua <b>"praktikak"</b> sarera konektatuta dagoela. Pasahitza: <b>izarpark</b>.</li>
+      <li><b>Konfigurazioa:</b> Ez da aparteko konfiguraziorik behar.</li>
+      <br><img src="Praktikak wifi.png" class="img-fluid mt-2">
+    </ul>
+  </div>
+
+  <!-- ENGLISH -->
+  <div id="en" class="lang-section" style="display:none;">
+    <h4># StockBaseApp - Quick Installation Guide</h4>
+    <p>This document explains the steps to correctly install and launch the application.</p>
+
+    <h5>Installation Steps</h5>
+
+    <ol>
+      <li>
+        <strong>Download:</strong> Log in as an administrator, go to the top-right <b>"Instaladorea"</b> button and click <b>"Deskargatu instaladorea"</b>.
+        <br><img src="Deskargatu instaladorea.png" class="img-fluid mt-2">
+      </li>
+
+      <li>
+        <strong>Security (Important):</strong> After downloading, right-click the <code>.zip</code> file, select <b>Properties</b>, check <b>"Unblock"</b> and click OK.
+        <br><img src="zip argazkia.png" class="img-fluid mt-2">
+      </li>
+
+      <li>
+        <strong>Unzip:</strong> Extract the ZIP contents into your desired folder. Recommended: <b>"Extract to StockBaseApp/"</b>.
+        <br><img src="winrar argazkia.png" class="img-fluid mt-2">
+      </li>
+
+      <li>
+        <strong>Execution:</strong> Open the folder, go into “win-x64” and double-click <b>StockBaseApp.exe</b>.
+        <br><img src="Karpeta argazkia.png" class="img-fluid mt-2">
+      </li>
+    </ol>
+
+    <h5>Important Notes</h5>
+    <ul>
+      <li><b>Network Connection:</b> You must be connected to the <b>"praktikak"</b> network. Password: <b>izarpark</b>.</li>
+      <li><b>Configuration:</b> No additional setup is required.</li>
+      <br><img src="Praktikak wifi.png" class="img-fluid mt-2">
+    </ul>
+  </div>
+
+</div>
+
+<script>
+  function showLang(lang) {
+    document.getElementById("eu").style.display = "none";
+    document.getElementById("en").style.display = "none";
+    document.getElementById(lang).style.display = "block";
+  }
+</script>
 </div>
 
 <!-- ================= CONTACT ================= -->
