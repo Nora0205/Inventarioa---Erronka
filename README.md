@@ -12,6 +12,7 @@ Kontaktua.html – Harremanetarako orria
 README.md – Dokumentazio hau
 .png fitxategiak – Irudiak eta tutorialerako baliabideak
 .zip / .rar – Dokumentazio edo baliabide gehigarriak
+
 🚀 Funtzionaltasunak
 🔐 Erabiltzaileen autentifikazioa (Login)
 📊 Stock edo datuen bistaratzea (oinarrizkoa)
@@ -28,16 +29,19 @@ Chrome, Firefox edo Edge gomendatzen da
 Deskargatu instaladorea.png
 Jasangarritasuna.png
 eta beste irudiak
+
 🧑‍💻 Erabilera
 Ireki Login.html
 Sartu sistemara
 Nabigatu aplikazioan zehar:
 Stock informazioa ikusi
 Beste ataletara joan (kontaktua, etab.)
+
 🛠️ Teknologiak
 HTML5
 CSS (oinarrizkoa)
 Irudi bidezko dokumentazioa
+
 📷 Dokumentazioa
 
 Proiektuan hainbat pantaila-argazki daude:
@@ -45,12 +49,15 @@ Proiektuan hainbat pantaila-argazki daude:
 Instalazio pausoak
 Aplikazioaren erabilera
 Sistemaren konfigurazioa
+
 👥 Egileak
 Unai
 Nora
+
 📌 Oharrak
 Proiektua hezkuntza edo praktika helburuetarako sortua da
 Ez du backend konexiorik (edo mugatua da, badagokio)
+
 📄 Lizentzia
 
 Proiektu hau erabilera akademikorako da.
